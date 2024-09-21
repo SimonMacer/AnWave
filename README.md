@@ -75,6 +75,9 @@ https://github.com/SimonMacer/AnWave/discussions/14
 【AnWave】如何開始? 開始安裝 AMD Software: Adrenalin Edition 或 GeForce Game Ready
 https://github.com/SimonMacer/AnWave/discussions/7
 
+【AnWave】NVIDIA Power Management 簡介
+https://github.com/SimonMacer/AnWave/discussions/15
+
 【移除 GPU Driver】AnWave Advanced Cleanup Utility (進階清理公用程式)
 https://github.com/SimonMacer/AnWave/discussions/8
 
