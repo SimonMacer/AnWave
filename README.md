@@ -102,3 +102,6 @@ https://github.com/SimonMacer/AnWave/discussions/9
 
 【AnWave】Microsoft Defender Uninstaller - 內建防毒移除工具
 https://github.com/SimonMacer/AnWave/discussions/10
+
+【AMD Ryzen】AMD Ryzen CPU - Precision Boost Overdrive (PBO) Google Spreadsheets
+https://github.com/SimonMacer/AnWave/discussions/13
