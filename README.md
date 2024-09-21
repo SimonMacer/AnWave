@@ -69,3 +69,39 @@ The following features require Windows Update Service Extended service:
 How to uninstall Windows Update Service Extended service?
 
 Open Windows Key-Point, in the【Configure Windows Update for Business】tab > Settings. Click the【Uninstall】button of【Uninstall Windows Update Service Extended (wuauservx.exe)】item.
+
+【AnWave】How to use AnWave?
+
+https://github.com/SimonMacer/AnWave/discussions/2
+
+【AnWave】NVIDIA Power Management
+
+https://github.com/SimonMacer/AnWave/discussions/3
+
+【AnWave】AMD Radeon Software Customize Setup
+
+https://github.com/SimonMacer/AnWave/discussions/4
+
+【AnWave】Advanced Cleanup Utility - GPU Cleanup Tool
+
+https://github.com/SimonMacer/AnWave/discussions/5
+
+【HOW-TO】Install Legacy DX11 driver into Adrenalin 24.x.x and Disable DXNAVI on RDNA2 architecture (2024-09-22 Updated)
+
+https://github.com/SimonMacer/AnWave/discussions/6
+
+【AnWave】如何開始? 開始安裝 AMD Software: Adrenalin Edition 或 GeForce Game Ready
+
+https://github.com/SimonMacer/AnWave/discussions/7
+
+【移除 GPU Driver】AnWave Advanced Cleanup Utility (進階清理公用程式)
+
+https://github.com/SimonMacer/AnWave/discussions/8
+
+【AnWave】AnWave Windows Key-Point - Windows 設定選項管理器
+
+https://github.com/SimonMacer/AnWave/discussions/9
+
+【AnWave】Microsoft Defender Uninstaller - 內建防毒移除工具
+
+https://github.com/SimonMacer/AnWave/discussions/10
