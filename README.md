@@ -44,50 +44,39 @@ AnWave is portable. Download the AnWave self-extracting file to extract AnWave t
 ### AnWave Library
 ===================================================
 
-### 【AnWave】How to use AnWave?
-https://github.com/SimonMacer/AnWave/discussions/2
+### 【AnWave】How to use AnWave?:https://github.com/SimonMacer/AnWave/discussions/2
 
-### 【AnWave】NVIDIA Power Management
-https://github.com/SimonMacer/AnWave/discussions/3
+### 【AnWave】NVIDIA Power Management:https://github.com/SimonMacer/AnWave/discussions/3
 
-### 【AnWave】AMD Radeon Software Customize Setup
-https://github.com/SimonMacer/AnWave/discussions/4
+### 【AnWave】AMD Radeon Software Customize Setup:https://github.com/SimonMacer/AnWave/discussions/4
 
-### 【AnWave】Advanced Cleanup Utility - GPU Cleanup Tool
-https://github.com/SimonMacer/AnWave/discussions/5
+### 【AnWave】Advanced Cleanup Utility - GPU Cleanup Tool:https://github.com/SimonMacer/AnWave/discussions/5
 
-### 【HOW-TO】Install Legacy DX11 driver into Adrenalin 24.x.x and Disable DXNAVI on RDNA2 architecture (2024-09-22 Updated)
-https://github.com/SimonMacer/AnWave/discussions/6
+### 【HOW-TO】Install Legacy DX11 driver into Adrenalin 24.x.x and Disable DXNAVI on RDNA2 architecture (2024-09-22 Updated):https://github.com/SimonMacer/AnWave/discussions/6
 
-### 【AnWave】Windows Key-Point - Windows Settings Options Manager
-https://github.com/SimonMacer/AnWave/discussions/11
+### 【AnWave】Windows Key-Point - Windows Settings Options Manager:https://github.com/SimonMacer/AnWave/discussions/11
 
-### 【AnWave】Cleanup or Install (UWP/DCH) Radeon Panel Only
-https://github.com/SimonMacer/AnWave/discussions/12
+### 【AnWave】Cleanup or Install (UWP/DCH) Radeon Panel Only:https://github.com/SimonMacer/AnWave/discussions/12
 
-### 【AMD Ryzen】AMD Ryzen CPU - Precision Boost Overdrive (PBO) Google Spreadsheets
-https://github.com/SimonMacer/AnWave/discussions/13
+### 【AMD Ryzen】AMD Ryzen CPU - Precision Boost Overdrive (PBO) Google Spreadsheets:https://github.com/SimonMacer/AnWave/discussions/13
 
-### 【HOW-TO】Restore Microsoft Dolby Digital Decoder/Encoder MFT support in Windows 11, version 24H2
-https://github.com/SimonMacer/AnWave/discussions/14
+### 【HOW-TO】Restore Microsoft Dolby Digital Decoder/Encoder MFT support in Windows 11, version 24H2:https://github.com/SimonMacer/AnWave/discussions/14
 
 ### AnWave 台灣-繁體中文
 ===================================================
 
-### 【AnWave】如何開始? 開始安裝 AMD Software: Adrenalin Edition 或 GeForce Game Ready
-https://github.com/SimonMacer/AnWave/discussions/7
+### 【AnWave】如何開始? 開始安裝 AMD Software: Adrenalin Edition 或 GeForce Game Ready:https://github.com/SimonMacer/AnWave/discussions/7
 
-### 【AnWave】NVIDIA Power Management 簡介
-https://github.com/SimonMacer/AnWave/discussions/15
+### 【AnWave】NVIDIA Power Management 簡介:https://github.com/SimonMacer/AnWave/discussions/15
 
-### 【移除 GPU Driver】AnWave Advanced Cleanup Utility (進階清理公用程式)
-https://github.com/SimonMacer/AnWave/discussions/8
+### 【移除 GPU Driver】AnWave Advanced Cleanup Utility (進階清理公用程式):https://github.com/SimonMacer/AnWave/discussions/8
 
-### 【AnWave】AnWave Windows Key-Point - Windows 設定選項管理器
-https://github.com/SimonMacer/AnWave/discussions/9
+### 【AnWave】AnWave Windows Key-Point - Windows 設定選項管理器:https://github.com/SimonMacer/AnWave/discussions/9
 
-### 【AnWave】Microsoft Defender Uninstaller - 內建防毒移除工具
-https://github.com/SimonMacer/AnWave/discussions/10
+### 【AnWave】Microsoft Defender Uninstaller - 內建防毒移除工具:https://github.com/SimonMacer/AnWave/discussions/10
+
+### AMD / NVIDIA Drivers Download Link
+===================================================
 
 ### AMD Software: Adrenalin Edition Download
 
