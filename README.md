@@ -68,4 +68,4 @@ The following features require Windows Update Service Extended service:
 
 How to uninstall Windows Update Service Extended service?
 
-Open Windows Key-Point, in 【Configure Windows Update for Business】tab > Settings. Click【Uninstall Windows Update Service Extended (wuauservx.exe)】item of【Uninstall】button.
+Open Windows Key-Point, in the【Configure Windows Update for Business】tab > Settings. Click the【Uninstall】button of【Uninstall Windows Update Service Extended (wuauservx.exe)】item.
