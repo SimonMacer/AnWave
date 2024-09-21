@@ -42,49 +42,51 @@ AnWave is portable. Download the AnWave self-extracting file to extract AnWave t
 ![AnWave Self-extracting](https://private-user-images.githubusercontent.com/136802581/369598805-d395d4c5-2b2b-4fcf-9ccf-c2e3229c8a23.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjY5NTM5MTAsIm5iZiI6MTcyNjk1MzYxMCwicGF0aCI6Ii8xMzY4MDI1ODEvMzY5NTk4ODA1LWQzOTVkNGM1LTJiMmItNGZjZi05Y2NmLWMyZTMyMjljOGEyMy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwOTIxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkyMVQyMTIwMTBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0yMDhkZTlmYWUzZDBhYjExZjYzMzY4ZTRkMzk1YWNjYzNjZTZkMjI1MWY4NzE2ZDhiNWRmYmRhNGU0MGExZTAwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.O2_Jo1gaL4GA242ECZ9vwSHeKb6bnFXKFfJ4K1eTBIA "AnWave Self-extracting")
 
 ### AnWave Library
+===================================================
 
-【AnWave】How to use AnWave?
+### 【AnWave】How to use AnWave?
 https://github.com/SimonMacer/AnWave/discussions/2
 
-【AnWave】NVIDIA Power Management
+### 【AnWave】NVIDIA Power Management
 https://github.com/SimonMacer/AnWave/discussions/3
 
-【AnWave】AMD Radeon Software Customize Setup
+### 【AnWave】AMD Radeon Software Customize Setup
 https://github.com/SimonMacer/AnWave/discussions/4
 
-【AnWave】Advanced Cleanup Utility - GPU Cleanup Tool
+### 【AnWave】Advanced Cleanup Utility - GPU Cleanup Tool
 https://github.com/SimonMacer/AnWave/discussions/5
 
-【HOW-TO】Install Legacy DX11 driver into Adrenalin 24.x.x and Disable DXNAVI on RDNA2 architecture (2024-09-22 Updated)
+### 【HOW-TO】Install Legacy DX11 driver into Adrenalin 24.x.x and Disable DXNAVI on RDNA2 architecture (2024-09-22 Updated)
 https://github.com/SimonMacer/AnWave/discussions/6
 
-【AnWave】Windows Key-Point - Windows Settings Options Manager
+### 【AnWave】Windows Key-Point - Windows Settings Options Manager
 https://github.com/SimonMacer/AnWave/discussions/11
 
-【AnWave】Cleanup or Install (UWP/DCH) Radeon Panel Only
+### 【AnWave】Cleanup or Install (UWP/DCH) Radeon Panel Only
 https://github.com/SimonMacer/AnWave/discussions/12
 
-【AMD Ryzen】AMD Ryzen CPU - Precision Boost Overdrive (PBO) Google Spreadsheets
+### 【AMD Ryzen】AMD Ryzen CPU - Precision Boost Overdrive (PBO) Google Spreadsheets
 https://github.com/SimonMacer/AnWave/discussions/13
 
-【HOW-TO】Restore Microsoft Dolby Digital Decoder/Encoder MFT support in Windows 11, version 24H2
+### 【HOW-TO】Restore Microsoft Dolby Digital Decoder/Encoder MFT support in Windows 11, version 24H2
 https://github.com/SimonMacer/AnWave/discussions/14
 
 ### AnWave 台灣-繁體中文
+===================================================
 
-【AnWave】如何開始? 開始安裝 AMD Software: Adrenalin Edition 或 GeForce Game Ready
+### 【AnWave】如何開始? 開始安裝 AMD Software: Adrenalin Edition 或 GeForce Game Ready
 https://github.com/SimonMacer/AnWave/discussions/7
 
-【AnWave】NVIDIA Power Management 簡介
+### 【AnWave】NVIDIA Power Management 簡介
 https://github.com/SimonMacer/AnWave/discussions/15
 
-【移除 GPU Driver】AnWave Advanced Cleanup Utility (進階清理公用程式)
+### 【移除 GPU Driver】AnWave Advanced Cleanup Utility (進階清理公用程式)
 https://github.com/SimonMacer/AnWave/discussions/8
 
-【AnWave】AnWave Windows Key-Point - Windows 設定選項管理器
+### 【AnWave】AnWave Windows Key-Point - Windows 設定選項管理器
 https://github.com/SimonMacer/AnWave/discussions/9
 
-【AnWave】Microsoft Defender Uninstaller - 內建防毒移除工具
+### 【AnWave】Microsoft Defender Uninstaller - 內建防毒移除工具
 https://github.com/SimonMacer/AnWave/discussions/10
 
 ### AMD Software: Adrenalin Edition Download
