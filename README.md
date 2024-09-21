@@ -20,9 +20,20 @@ This is a personal project developed using Visual Studio 2022 C#. Includes AMD R
 * Microsoft Windows 10 or newer
 * 64-bit operating system
 
-### Releases
+### AnWave Sub-Features Version
+* AnWave: 4.30.8.22
+* AnWave Advanced Cleanup Utility: 3.02.1180
+* AnWave Windows Key-Point: 2.8.30.52
+* AMD Radeon Software Customize Setup: 6.20.32.25
+* NVIDIA Power Management Panel and Service: 3.50.560.84
+* Windows Update Service Extended: 10.0.26100.1856
+* Microsoft Defender Uninstaller: 1.1.0.423
+* MF Dolby Digital Atmos Codec Pack: 10.0.22621.4169
+* Windows Error Report Collector: 10.0.26100.1225
 
-Download the latest version:https://github.com/SimonMacer/AnWave/releases/tag/Public
+### Public Release
+
+Download the latest public release:https://github.com/SimonMacer/AnWave/releases/tag/Public
 
 ### How to use AnWave?
 
