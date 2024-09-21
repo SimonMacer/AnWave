@@ -4,6 +4,8 @@ This is a personal project developed using Visual Studio 2022 C#. Includes AMD R
 
 AnWave All in One Features
 
+【Main Feature】AnWave UI - Manage downloaded AMD/NVIDIA drivers
+
 【Main Feature】AMD Radeon Software Customize Setup
 
 【Main Feature】Advanced Cleanup Utility
@@ -28,6 +30,28 @@ https://forums.guru3d.com/threads/anwave-2024-advanced-cleanup-utility-gpu-clean
 
 https://forum.gamer.com.tw/C.php?bsn=60030&snA=629234&tnum=0
 
+【原創】AnWave Windows Key-Point - Windows 設定選項管理器 | 設定商務用 Windows Update 輕鬆設定管理工具
+
+https://forum.gamer.com.tw/C.php?bsn=60030&snA=645785&tnum=1
+
 This project will be moved to GitHub. The original sourceforge.net is still open but the content will be gradually migrated.
 
 https://sourceforge.net/projects/nvidia-power-management/
+
+AnWave will call the 7-Zip DLL file to decompress the AMD/NVIDIA driver installation execution file.
+
+https://www.7-zip.org/
+
+Using Display Driver Uninstaller (DDU) to remove AMD/NVIDIA drivers requiring download of Display Driver Uninstaller (DDU) application.
+
+https://www.wagnardsoft.com/
+
+AMD Software: Adrenalin Edition Download
+
+https://www.amd.com/en/support/download/drivers.html
+
+NVIDIA GeForce® Drivers Download
+
+https://www.nvidia.com/en-us/drivers/
+
+https://www.nvidia.com/en-us/geforce/drivers/
