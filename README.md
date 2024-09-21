@@ -105,3 +105,6 @@ https://github.com/SimonMacer/AnWave/discussions/10
 
 【AMD Ryzen】AMD Ryzen CPU - Precision Boost Overdrive (PBO) Google Spreadsheets
 https://github.com/SimonMacer/AnWave/discussions/13
+
+【HOW-TO】Restore Microsoft Dolby Digital Decoder/Encoder MFT support in Windows 11, version 24H2
+https://github.com/SimonMacer/AnWave/discussions/14
