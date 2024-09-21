@@ -63,7 +63,7 @@ AnWave is portable. Download the AnWave self-extracting file to extract AnWave t
 ### 【HOW-TO】Restore Microsoft Dolby Digital Decoder/Encoder MFT support in Windows 11, version 24H2:https://github.com/SimonMacer/AnWave/discussions/14
 
 ===================================================
-### ※AnWave 台灣-繁體中文
+### ※AnWave Library 台灣-繁體中文
 --------
 
 ### 【AnWave】如何開始? 開始安裝 AMD Software: Adrenalin Edition 或 GeForce Game Ready:https://github.com/SimonMacer/AnWave/discussions/7
