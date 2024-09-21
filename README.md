@@ -88,6 +88,9 @@ https://github.com/SimonMacer/AnWave/discussions/6
 【AnWave】Windows Key-Point - Windows Settings Options Manager
 https://github.com/SimonMacer/AnWave/discussions/11
 
+【AnWave】Cleanup or Install (UWP/DCH) Radeon Panel Only
+https://github.com/SimonMacer/AnWave/discussions/12
+
 【AnWave】如何開始? 開始安裝 AMD Software: Adrenalin Edition 或 GeForce Game Ready
 https://github.com/SimonMacer/AnWave/discussions/7
 
