@@ -85,6 +85,9 @@ https://github.com/SimonMacer/AnWave/discussions/5
 【HOW-TO】Install Legacy DX11 driver into Adrenalin 24.x.x and Disable DXNAVI on RDNA2 architecture (2024-09-22 Updated)
 https://github.com/SimonMacer/AnWave/discussions/6
 
+【AnWave】Windows Key-Point - Windows Settings Options Manager
+https://github.com/SimonMacer/AnWave/discussions/11
+
 【AnWave】如何開始? 開始安裝 AMD Software: Adrenalin Edition 或 GeForce Game Ready
 https://github.com/SimonMacer/AnWave/discussions/7
 
