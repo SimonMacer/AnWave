@@ -31,9 +31,9 @@ This is a personal project developed using Visual Studio 2022 C#. Includes AMD R
 * MF Dolby Digital Atmos Codec Pack: 10.0.22621.4169
 * Windows Error Report Collector: 10.0.26100.1225
 
-### Public Release
+### Release
 
-Download the latest public release:https://github.com/SimonMacer/AnWave/releases/tag/Public
+Download the latest release:https://github.com/SimonMacer/AnWave/releases/tag/AnWave
 
 ### How to use AnWave?
 
