@@ -20,9 +20,9 @@
 ### 【Windows Update】使用 AnWave - Windows Key-Point 停用 Windows Update 驅動程式的自動更新
 --------
 
-### For Windows 10/11 家用版 (Home) - 停用【Windows Update 的驅動程式更新模組功能】以防止驅動程式被覆蓋
-
 ![停用 Windows 更新的驅動程式](https://i.imgur.com/oC9L8od.png "停用 Windows 更新的驅動程式")
+
+### For Windows 10/11 家用版 (Home) - 停用【Windows Update 的驅動程式更新模組功能】以防止驅動程式被覆蓋
 
 如果您安裝的 Windows 是家用版本 (Home)，那麼【不包含 Windows 更新的驅動程式】ExcludeWUDriversInQualityUpdate 原則設定可能沒有作用。您可以在 Windows Key-Point 中停用【Windows Update 的驅動程式更新模組功能】選項以在家用版 (Home) 上停止接收驅動程式更新。
 
