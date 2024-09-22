@@ -26,7 +26,7 @@
 
 如果您安裝的 Windows 是家用版本 (Home)，那麼【不包含 Windows 更新的驅動程式】ExcludeWUDriversInQualityUpdate 原則設定可能沒有作用。您可以在 Windows Key-Point 中停用【Windows Update 的驅動程式更新模組功能】選項以在家用版 (Home) 上停止接收驅動程式更新。
 
-【設定商務用 Windows Update】標籤頁中的【接收驅動程式更新】>【Windows Update 的驅動程式更新模組功能】取消勾選狀態。
+如何停用?【設定商務用 Windows Update】標籤頁中的【接收驅動程式更新】>【Windows Update 的驅動程式更新模組功能】取消勾選狀態。
 
 ### For Windows 10/11 專業版 (Pro) 或更高級的版本 - 啟用【不包含 Windows 更新的驅動程式】原則設定以防止驅動程式被覆蓋
 專業版 (Pro) 或更高級的版本適用【不包含 Windows 更新的驅動程式】ExcludeWUDriversInQualityUpdate 原則。
