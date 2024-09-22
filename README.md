@@ -39,7 +39,7 @@ Download the latest release:https://github.com/SimonMacer/AnWave/releases/tag/An
 
 AnWave is portable. Download the AnWave self-extracting file to extract AnWave to a specified location.
 
-![AnWave Self-extracting](https://private-user-images.githubusercontent.com/136802581/369598805-d395d4c5-2b2b-4fcf-9ccf-c2e3229c8a23.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjY5NTM5MTAsIm5iZiI6MTcyNjk1MzYxMCwicGF0aCI6Ii8xMzY4MDI1ODEvMzY5NTk4ODA1LWQzOTVkNGM1LTJiMmItNGZjZi05Y2NmLWMyZTMyMjljOGEyMy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwOTIxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkyMVQyMTIwMTBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0yMDhkZTlmYWUzZDBhYjExZjYzMzY4ZTRkMzk1YWNjYzNjZTZkMjI1MWY4NzE2ZDhiNWRmYmRhNGU0MGExZTAwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.O2_Jo1gaL4GA242ECZ9vwSHeKb6bnFXKFfJ4K1eTBIA "AnWave Self-extracting")
+![AnWave Self-extracting](https://i.imgur.com/0WZKQSW.png "AnWave Self-extracting")
 
 ### **※[Configure Windows Update for Business (繁體中文)](https://github.com/SimonMacer/AnWave/blob/AnWabe-Stable/ConfWU.md#configure-windows-update-for-business)**
 * **[【設定商務用 Windows Update】](https://github.com/SimonMacer/AnWave/blob/AnWabe-Stable/ConfWU.md#%E8%A8%AD%E5%AE%9A%E5%95%86%E5%8B%99%E7%94%A8-windows-update)**
