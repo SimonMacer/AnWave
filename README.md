@@ -81,6 +81,8 @@ AnWave is portable. Download the AnWave self-extracting file to extract AnWave t
 
 ### 【AnWave】Microsoft Defender Uninstaller - 內建防毒移除工具:https://github.com/SimonMacer/AnWave/discussions/10
 
+### 【Windows Setup】Windows 10/11 下載 & 安裝 - 跳過 TPM、安全啟動、RAM 檢查 & 建立本機帳號 & 關閉 BitLocker:https://github.com/SimonMacer/AnWave/discussions/16
+
 ===================================================
 ### ※AMD / NVIDIA Drivers Download Link
 --------
