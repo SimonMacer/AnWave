@@ -83,6 +83,8 @@ AnWave is portable. Download the AnWave self-extracting file to extract AnWave t
 
 ### 【Windows Setup】Windows 10/11 下載 & 安裝 - 跳過 TPM、安全啟動、RAM 檢查 & 建立本機帳號 & 關閉 BitLocker:https://github.com/SimonMacer/AnWave/discussions/16
 
+### 【Windows Setup】動手製作萬用 Windows 10/11 Installation Media 媒體:https://github.com/SimonMacer/AnWave/discussions/18
+
 ### 【Windows Fixed】修復 Windows 11［開始］功能表無法運作。我們將在您下次登入時嘗試修復此問題。:https://github.com/SimonMacer/AnWave/discussions/17
 
 ===================================================
