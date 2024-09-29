@@ -87,6 +87,8 @@ AnWave is portable. Download the AnWave self-extracting file to extract AnWave t
 
 ### 【Windows Fixed】修復 Windows 11［開始］功能表無法運作。我們將在您下次登入時嘗試修復此問題。:https://github.com/SimonMacer/AnWave/discussions/17
 
+### 【Windows Update】手動停用 Windows Update (註冊碼):https://github.com/SimonMacer/AnWave/discussions/19
+
 ===================================================
 ### ※AMD / NVIDIA Drivers Download Link
 --------
