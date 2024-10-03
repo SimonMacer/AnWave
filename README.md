@@ -36,7 +36,7 @@ https://youtu.be/aDBdy2tO20M
 
 ### ※Release
 
-Download the latest release:https://github.com/SimonMacer/AnWave/releases/tag
+Download the latest release:https://github.com/SimonMacer/AnWave/releases
 
 ### ※How to use AnWave?
 
