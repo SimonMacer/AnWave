@@ -24,9 +24,9 @@ https://youtu.be/aDBdy2tO20M
 * 64-bit operating system
 
 ### ※AnWave Sub-Features Version
-* AnWave: 4.40.12.80
+* AnWave: 4.50.11.2
 * AnWave Advanced Cleanup Utility: 3.02.1206
-* AnWave Windows Key-Point: 3.0.11.30
+* AnWave Windows Key-Point: 3.0.12.34
 * AMD Radeon Software Customize Setup: 6.20.32.28
 * NVIDIA Power Management Panel and Service: 3.55.565.92
 * Windows Update Service Extended: 10.0.26100.2128
@@ -48,9 +48,9 @@ Download the latest release:https://github.com/SimonMacer/AnWave/releases
 
 ### ※How to use AnWave?
 
-AnWave is portable. Download the AnWave self-extracting file to extract AnWave to a specified location.
+AnWave is portable. Download the AnWave executable file to install AnWave to a specified location.
 
-![AnWave Self-extracting](https://i.imgur.com/0WZKQSW.png "AnWave Self-extracting")
+![AnWave Setup](https://i.imgur.com/lhW0nyH.png "AnWave Setup")
 
 ### **※[Configure Windows Update for Business (繁體中文)](https://github.com/SimonMacer/AnWave/blob/AnWabe-Stable/ConfWU.md#configure-windows-update-for-business)**
 * **[【設定商務用 Windows Update】](https://github.com/SimonMacer/AnWave/blob/AnWabe-Stable/ConfWU.md#%E8%A8%AD%E5%AE%9A%E5%95%86%E5%8B%99%E7%94%A8-windows-update)**
