@@ -24,9 +24,9 @@ https://youtu.be/aDBdy2tO20M
 * 64-bit operating system
 
 ### ※AnWave Sub-Features Version
-* AnWave: 4.50.11.2
+* AnWave: 4.52.3.48
 * AnWave Advanced Cleanup Utility: 3.02.1206
-* AnWave Windows Key-Point: 3.0.12.34
+* AnWave Windows Key-Point: 3.1.10.42
 * AMD Radeon Software Customize Setup: 6.20.32.28
 * NVIDIA Power Management Panel and Service: 3.55.565.92
 * Windows Update Service Extended: 10.0.26100.2128
