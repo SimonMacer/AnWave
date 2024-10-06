@@ -48,7 +48,7 @@ Download the latest release:https://github.com/SimonMacer/AnWave/releases
 
 AnWave is portable. Download the AnWave executable file to install AnWave to a specified location.
 
-![AnWave Setup](https://i.imgur.com/lhW0nyH.png "AnWave Setup")
+![AnWave Setup](https://i.imgur.com/iiJCg0X.png "AnWave Setup")
 
 ### **※[Configure Windows Update for Business (繁體中文)](https://github.com/SimonMacer/AnWave/blob/AnWabe-Stable/ConfWU.md#configure-windows-update-for-business)**
 * **[【設定商務用 Windows Update】](https://github.com/SimonMacer/AnWave/blob/AnWabe-Stable/ConfWU.md#%E8%A8%AD%E5%AE%9A%E5%95%86%E5%8B%99%E7%94%A8-windows-update)**
