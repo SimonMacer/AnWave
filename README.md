@@ -24,7 +24,7 @@ https://youtu.be/aDBdy2tO20M
 * 64-bit operating system
 
 ### ※AnWave Sub-Features Version
-* AnWave: 4.80.14.25
+* AnWave: 4.81.15.32
 * AnWave Startup Assistant: 1.4.18.35
 * AnWave Advanced Cleanup Utility: 3.10.1284
 * AnWave Windows Key-Point: 3.40.24.66
