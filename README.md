@@ -37,7 +37,7 @@ https://youtu.be/aDBdy2tO20M
 * Windows Error Report Collector: 10.0.26100.1557
 
 ### ※AnWave 2024 Split Feature Release
-* Microsoft Defender Uninstaller version 1.1.0.502
+* Microsoft Defender Uninstaller version 1.1.8.305
 * Microsoft Dolby Digital Atmos Pack version 10.0.22621.4169
 
 [AnWave 2024 Split Feature Release Download](https://github.com/SimonMacer/AnWave/releases/tag/AnWave-Split)
