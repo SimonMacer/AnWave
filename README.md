@@ -24,21 +24,21 @@ https://youtu.be/AnxMkhC1bHg?si=cvi8pWJhVf9ik73R
 * 64-bit operating system
 
 ### ※AnWave Sub-Features Version
-* AnWave: 4.82.16.40
+* AnWave: 4.83.17.45
 * AnWave Startup Assistant: 1.4.18.35
 * AnWave Advanced Cleanup Utility: 3.10.1284
-* AnWave Windows Key-Point: 3.40.24.66
+* AnWave Windows Key-Point: 3.42.28.65
 * AMD Radeon Software Customize Setup: 6.21.28.50
 * NVIDIA Power Management Panel and Service: 3.55.565.92
 * Windows Update Service Extended: 10.0.26100.2128
 * Microsoft Defender Uninstaller: 1.1.8.305
-* Microsoft Dolby Digital Atmos Pack: 10.0.22621.4169
+* Microsoft Dolby Digital Atmos Pack: 10.0.22621.4317
 * Super Command Line Startup: ----
 * Windows Error Report Collector: 10.0.26100.1557
 
 ### ※AnWave 2024 Split Feature Release
 * Microsoft Defender Uninstaller version 1.1.8.305
-* Microsoft Dolby Digital Atmos Pack version 10.0.22621.4169
+* Microsoft Dolby Digital Atmos Pack version 10.0.22621.4317
 
 [AnWave 2024 Split Feature Release Download](https://github.com/SimonMacer/AnWave/releases/tag/AnWave-Split)
 
