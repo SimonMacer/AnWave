@@ -102,6 +102,8 @@ AnWave is portable. Download the AnWave executable file to install AnWave to a s
 
 ### 【Windows Update】手動停用 Windows Update (註冊碼):https://github.com/SimonMacer/AnWave/discussions/19
 
+### 【AnWave】AMD iGPU 內顯 + NVIDIA 獨顯: 如何徹底去除所有 AMD 驅動程序服務進程，徹底精簡！:https://github.com/SimonMacer/AnWave/discussions/23
+
 ===================================================
 ### ※AMD / NVIDIA Drivers Download Link
 --------
