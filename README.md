@@ -80,6 +80,8 @@ AnWave is portable. Download the AnWave executable file to install AnWave to a s
 
 ### 【HOW-TO】Restore Microsoft Dolby Digital Decoder/Encoder MFT support in Windows 11, version 24H2:https://github.com/SimonMacer/AnWave/discussions/14
 
+### 【Microsoft Defender Uninstaller】Remove Windows Defender (+ Optional Windows Apps) from the install.wim:https://github.com/SimonMacer/AnWave/discussions/25
+
 ===================================================
 ### ※AnWave Library 台灣-繁體中文
 --------
