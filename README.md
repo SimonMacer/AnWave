@@ -82,6 +82,8 @@ AnWave is portable. Download the AnWave executable file to install AnWave to a s
 
 ### 【Microsoft Defender Uninstaller】Remove Windows Defender (+ Optional Windows Apps) from the install.wim:https://github.com/SimonMacer/AnWave/discussions/25
 
+### 【Microsoft Defender】HOW-TO Disable Microsoft Defender Antivirus on Windows 10/11:https://github.com/SimonMacer/AnWave/discussions/26
+
 ===================================================
 ### ※AnWave Library 台灣-繁體中文
 --------
