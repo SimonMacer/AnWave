@@ -24,7 +24,7 @@ https://youtu.be/AnxMkhC1bHg?si=cvi8pWJhVf9ik73R
 * 64-bit operating system
 
 ### ※AnWave Sub-Features Version
-* AnWave: 5.2.0.18
+* AnWave: 5.3.11.20
 * AnWave Assistant: 1.5.20.61
 * AnWave Advanced Cleanup Utility: 3.10.1284
 * AnWave Windows Key-Point: 3.60.28.30
