@@ -24,7 +24,7 @@ https://youtu.be/AnxMkhC1bHg?si=cvi8pWJhVf9ik73R
 * 64-bit operating system
 
 ### ※AnWave Sub-Features Version
-* AnWave: 5.40.8.52
+* AnWave: 5.41.10.25
 * AnWave Assistant: 1.5.20.61
 * AnWave Advanced Cleanup Utility: 3.10.1284
 * AnWave Windows Key-Point: 3.60.42.54
@@ -35,7 +35,7 @@ https://youtu.be/AnxMkhC1bHg?si=cvi8pWJhVf9ik73R
 * Microsoft Dolby Digital Atmos Pack: 10.0.22621.4317
 * Super Command Line Startup: ----
 * Windows Error Report Collector: 10.0.26100.1557
-* Simple File Backup Tool: 1.13.1802.246
+* Simple File Backup Tool: 1.14.1830.251
 
 ### ※AnWave 2024 Split Feature Release
 * Microsoft Defender Uninstaller version 1.2.11.160
