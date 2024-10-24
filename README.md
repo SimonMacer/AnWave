@@ -27,7 +27,7 @@ https://youtu.be/AnxMkhC1bHg?si=cvi8pWJhVf9ik73R
 * AnWave: 5.42.15.24
 * AnWave Assistant: 1.5.20.61
 * AnWave Advanced Cleanup Utility: 3.10.1284
-* AnWave Windows Key-Point: 3.62.155.58
+* AnWave Windows Key-Point: 3.62.155.28
 * AMD Radeon Software Customize Setup: 6.50.34.20
 * NVIDIA Power Management Panel and Service: 3.55.565.92
 * Windows Update Service Extended: 10.0.26100.2128
