@@ -1,0 +1,74 @@
+# 提供給巴哈姆特電腦應用綜合討論專用@Uncyler825
+# AutoDiagnosticReporting PowerShell 2025-04-16
+# https://github.com/SimonMacer/AnWave
+$nid = (Get-Process msinfo32).Id
+Stop-Process -Id $nid
+
+$logArray = @("System","Security","Application", "Setup")
+$servername = $env:computername
+New-Item -Force -Path "C:\EventReport" -ItemType Directory
+$destinationpath = "C:\EventReport\"
+if ($destinationpath -notmatch '.+?\\$')
+{
+    $destinationpath += '\'
+}
+if (!(Test-Path -Path $destinationpath))
+{
+    New-Item -ItemType directory -Path $destinationpath
+}
+$logdate = Get-Date -format yyyyMMddHHmm
+$StopWatch = [system.diagnostics.stopwatch]::startNew()
+Clear-Host
+Foreach($log in $logArray)
+{
+    $destination = $destinationpath + $servername + "-" + $log + "-" + $logdate + ".evtx"
+    Write-Host "Extracting the $log file now."
+    wevtutil epl $log $destination
+    # WevtUtil cl $log
+
+}
+$StopWatch.Stop()
+$TotalTime = $StopWatch.Elapsed.TotalSeconds
+$TotalTime = [math]::Round($totalTime, 2)
+
+$OutputFile = 'C:\EventReport\system-info.txt'
+msinfo32.exe /report $OutputFile /computer $_;
+
+$p = Get-Process msinfo32
+Wait-Process -Id $p.Id
+Wait-Process -Name "msinfo32"
+Wait-Process -InputObject $p
+
+Get-ComputerInfo -Property "*version"
+
+Get-WmiObject Win32_VideoController | format-table Name, Description,VideoProcessor,DriverVersion > "C:\EventReport\Graphics-DriverVersion.txt"
+
+Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\* |
+  Select-Object @{l='ComputerName';e={$env:computername}},DisplayName,DisplayVersion |
+    Where-Object {$_.DisplayName -match ''} > "C:\EventReport\install-apps.txt"
+
+Get-ItemProperty HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\* |
+  Select-Object @{l='ComputerName';e={$env:computername}},DisplayName,DisplayVersion |
+    Where-Object {$_.DisplayName -match ''} > "C:\EventReport\install-WOW6432Node-apps.txt"
+
+Get-CimInstance -ClassName Win32_QuickFixEngineering -Property HotFixId |
+    Select-Object -Property HotFixId > "C:\EventReport\install-Windows-KB.txt"
+
+Get-Process | Format-Table Id, Name, Path, MainWindowTitle, FileVersionInfo -AutoSize > "C:\EventReport\Get-Process.txt"
+
+$userPath = $env:username
+$sourceWinDmp = "C:\Windows\*.dmp"
+$source = "C:\Windows\minidump\*.*"
+$destination = "C:\EventReport"
+Copy-Item $sourceWinDmp -Destination $destination -confirm:$false -recurse
+Copy-Item $source -Destination $destination -confirm:$false -recurse
+New-Item -Force -Path "C:\EventReport\CrashDumps" -ItemType Directory
+$sourceUser = "C:\Users\$userPath\AppData\Local\CrashDumps\*.*"
+$destinationpathUser = "C:\EventReport\CrashDumps"
+Copy-Item $sourceUser -Destination $destinationpathUser -confirm:$false -recurse
+
+$logdateZip = Get-Date -format yyyyMMddHHmm
+Compress-Archive -Path "C:\EventReport\CrashDumps\*.*" -Update -DestinationPath "C:\EventReport\CrashDumpsReporting-$logdateZip.zip"
+Compress-Archive -Path "C:\EventReport\*.*" -Update -DestinationPath "C:\AutoDiagnosticReporting-$logdateZip.zip"
+Remove-Item -Force -Path "C:\EventReport" -confirm:$false -recurse
+Exit
