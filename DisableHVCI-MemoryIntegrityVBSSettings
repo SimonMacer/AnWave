@@ -1,0 +1,50 @@
+# 提供給巴哈姆特電腦應用綜合討論專用@Uncyler825
+# DisableHVCI-MemoryIntegrityVBSSettings PowerShell 2025-04-16
+# https://github.com/SimonMacer/AnWave
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Bypass -Force
+Read-Host "(HVCI) 停用 VBS 虛擬化型安全性和記憶體完整性 > 任意鍵繼續!"
+$DSAccount = Read-Host "您是否想要重設 Windows Hello 和使用者帳戶密碼? (Y = 是)" -WarningAction Inquire
+$HVM = Read-Host "您是否想要關閉 Hyper-V? (Y = 是)" -WarningAction Inquire
+if ( $DSAccount -eq 'y' )
+{
+Set-LocalUser -name $env:username -Password ([securestring]::new())
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System" -Name 'AllowDomainPINLogon' -Type DWord -Value 0 -Force
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\PolicyManager\default\Settings\AllowSignInOptions" -Name 'value' -Type DWord -Value 0 -Force
+New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Biometrics"
+New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Biometrics" -Name 'Enabled' -Type DWord -Value 0 -Force
+New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\PassportforWork"
+New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\PassportforWork" -Name 'Enabled' -Type DWord -Value 0 -Force
+Start-Process cmd -ArgumentList '/s,/c,takeown /f C:\Windows\ServiceProfiles\LocalService\AppData\Local\Microsoft\NGC /r /d y & icacls C:\Windows\ServiceProfiles\LocalService\AppData\Local\Microsoft\NGC /grant administrators:F /t & RD /S /Q C:\Windows\ServiceProfiles\LocalService\AppData\Local\Microsoft\Ngc & MD C:\Windows\ServiceProfiles\LocalService\AppData\Local\Microsoft\Ngc & icacls C:\Windows\ServiceProfiles\LocalService\AppData\Local\Microsoft\Ngc /T /Q /C /RESET' -Verb runAs
+CLS
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System" -Name 'AllowDomainPINLogon' -Type DWord -Value 1 -Force
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\PolicyManager\default\Settings\AllowSignInOptions" -Name 'value' -Type DWord -Value 1 -Force
+Remove-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Biometrics" -Recurse -Force -Confirm:$false
+Remove-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\PassportforWork" -Recurse -Force -Confirm:$false
+}
+if ($HVM -eq 'y' )
+{
+bcdedit /set hypervisorlaunchtype off
+}
+$DeviceGuardKey = "HKLM:\SYSTEM\ControlSet001\Control\DeviceGuard"
+try
+{
+Remove-ItemProperty -Path $DeviceGuardKey -Name 'EnableVirtualizationBasedSecurity' -Force
+} catch {}
+try
+{
+Remove-ItemProperty -Path $DeviceGuardKey -Name 'RequirePlatformSecurityFeatures' -Force
+} catch {}
+$HypervisorEnforcedCodeIntegrityKey = "HKLM:\SYSTEM\ControlSet001\Control\DeviceGuard\Scenarios\HypervisorEnforcedCodeIntegrity"
+try
+{
+Set-ItemProperty -Path $HypervisorEnforcedCodeIntegrityKey -Name 'Enabled' -Type DWord -Value 0 -Force
+} catch {}
+CLS
+Write-Output '請重新啟動系統!'
+$RebootASK = Read-Host "您要立即重新啟動系統嗎? (Y = Yes)" -WarningAction Inquire
+if ( $RebootASK -eq 'y' )
+{
+Restart-Computer -Force
+} else {
+Exit
+}
