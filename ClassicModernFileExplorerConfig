@@ -1,0 +1,56 @@
+# 提供給巴哈姆特電腦應用綜合討論專用@Uncyler825
+# ClassicModernFileExplorerConfig PowerShell 2025-04-16
+# https://github.com/SimonMacer/AnWave
+$ErrorCount =  $false
+try
+{
+$FullFECKey = "HKCU:\SOFTWARE\Classes\CLSID\{2aa9162e-c906-4dd9-ad0b-3d24a8eef5a0}"
+$FullFECSubKey = "HKCU:\SOFTWARE\Classes\CLSID\{2aa9162e-c906-4dd9-ad0b-3d24a8eef5a0}\InProcServer32"
+$FullFEC2Key = "HKCU:\SOFTWARE\Classes\CLSID\{6480100b-5a83-4d1e-9f69-8ae5a88e9a33}"
+$FullFECSub2Key = "HKCU:\SOFTWARE\Classes\CLSID\{6480100b-5a83-4d1e-9f69-8ae5a88e9a33}\InProcServer32"
+$CuFECKey = Get-ItemPropertyValue $FullFECKey -Name '(Default)'
+$CuFECSubKey = Get-ItemPropertyValue $FullFECSubKey -Name '(Default)'
+$ThreadingModel = Get-ItemPropertyValue $FullFECSubKey -Name 'ThreadingModel'
+$CuFEC2Key = Get-ItemPropertyValue $FullFEC2Key -Name '(Default)'
+$CuFECSub2Key = Get-ItemPropertyValue $FullFECSub2Key -Name '(Default)'
+$ThreadingModel2 = Get-ItemPropertyValue $FullFECSub2Key -Name 'ThreadingModel'
+} catch {
+$ErrorCount =  $true
+}
+if ((!( $CuFECKey -eq 'CLSID_ItemsViewAdapter' -And $CuFECSubKey -eq 'C:\Windows\System32\Windows.UI.FileExplorer.dll_' -And $ThreadingModel -eq 'Apartment' -And $CuFEC2Key -eq 'File Explorer Xaml Island View Adapter' -And $CuFECSub2Key -eq 'C:\Windows\System32\Windows.UI.FileExplorer.dll_' -And $ThreadingModel2 -eq 'Apartment')) -Or $ErrorCount)
+{
+CLS
+$AskFE = Read-Host "您是否想要切換成經典檔案總管? (Y = 是)" -WarningAction Inquire
+if ( $AskFE -eq 'y' )
+{
+New-Item -Path $FullFECKey
+New-ItemProperty -Path $FullFECKey -Name '(Default)' -PropertyType String -Value 'CLSID_ItemsViewAdapter' -Force
+New-Item -Path $FullFECSubKey
+New-ItemProperty -Path $FullFECSubKey -Name '(Default)' -PropertyType String -Value 'C:\Windows\System32\Windows.UI.FileExplorer.dll_' -Force
+New-ItemProperty -Path $FullFECSubKey -Name 'ThreadingModel' -PropertyType String -Value 'Apartment' -Force
+New-Item -Path $FullFEC2Key
+New-ItemProperty -Path $FullFEC2Key -Name '(Default)' -PropertyType String -Value 'File Explorer Xaml Island View Adapter' -Force
+New-Item -Path $FullFECSub2Key
+New-ItemProperty -Path $FullFECSub2Key -Name '(Default)' -PropertyType String -Value 'C:\Windows\System32\Windows.UI.FileExplorer.dll_' -Force
+New-ItemProperty -Path $FullFECSub2Key -Name 'ThreadingModel' -PropertyType String -Value 'Apartment' -Force
+Get-Process -Name explorer |Stop-Process
+$FEProc = Start-Process explorer -Passthru
+CLS
+Write-Output '檔案總管: 經典!'
+} else {
+CLS
+}
+} else {
+$AskFE = Read-Host "您是否想要切換成現代檔案總管? (Y = 是)" -WarningAction Inquire
+if ( $AskFE -eq 'y' )
+{
+Remove-Item -Path $FullFECKey -Recurse -Force -Confirm:$false
+Remove-Item -Path $FullFEC2Key -Recurse -Force -Confirm:$false
+Get-Process -Name explorer |Stop-Process
+$FEProc = Start-Process explorer -Passthru
+CLS
+Write-Output '檔案總管: 現代!'
+} else {
+CLS
+}
+}
