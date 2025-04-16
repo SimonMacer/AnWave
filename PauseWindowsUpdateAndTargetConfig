@@ -1,0 +1,183 @@
+# 提供給巴哈姆特電腦應用綜合討論專用@Uncyler825
+# PauseWindowsUpdateAndTargetConfig PowerShell 2025-04-16
+# https://github.com/SimonMacer/AnWave
+$WUPKey = "HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings"
+$WUFoDKey = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate"
+$betaWU = test-path -path $WUPKey
+$BoLPrvWU = $false
+if (!$betaWU)
+{
+New-Item -Path $WUPKey
+}
+$AskWUAddDay = Read-Host "設定 Windows Update 暫停更新延遲天數 (R = 刪除機碼並恢復更新)" -WarningAction Inquire
+$AskWUStop = Read-Host "您是否想要防止 Windows Update 自動下載下一個 Windows 版本功能更新? (Y = 是，設定目標版本;N = 否，不進行設置;R = 刪除機碼並恢復自動下載更新)" -WarningAction Inquire
+$AskEWUDStop = Read-Host "您是否想要啟用 [不包含 Windows 更新的驅動程式]? (Y = 是，啟用;N = 否，不進行設置;R = 刪除機碼並恢復自動驅動程式更新)" -WarningAction Inquire
+if ( $AskWUStop -eq 'y')
+{
+$BoLPrvWU = $true
+$betaWUFoD = test-path -path $WUFoDKey
+if (!$betaWUFoD)
+{
+New-Item -Path $WUFoDKey
+}
+$info = [Environment]::OSVersion.Version
+$Major = $info.Major
+if ([int]$info.Build -igt 21999) {
+    $Major = 11
+}
+$OSVersion = [System.Version]::new($Major, $info.Minor, $info.Build)
+$OSFoDInfo = (Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion") | Select-Object -Property DisplayVersion
+$FoDVersion = $OSFoDInfo.DisplayVersion
+try
+{
+Set-ItemProperty -Path $WUFoDKey -Name 'ProductVersion' -Type String -Value "Windows $Major" -Force
+} catch {
+New-Item -Path $WUFoDKey
+New-ItemProperty -Path $WUFoDKey -Name 'ProductVersion' -PropertyType String -Value "Windows $Major" -Force
+}
+try
+{
+Set-ItemProperty -Path $WUFoDKey -Name 'TargetReleaseVersionInfo' -Type String -Value $FoDVersion -Force
+} catch {
+New-Item -Path $WUFoDKey
+New-ItemProperty -Path $WUFoDKey -Name 'TargetReleaseVersionInfo' -PropertyType String -Value $FoDVersion -Force
+}
+} else {
+if ( $AskWUStop -eq 'r' )
+{
+Remove-ItemProperty -Path $WUFoDKey -Name 'ProductVersion' -Force -Confirm:$false
+Remove-ItemProperty -Path $WUFoDKey -Name 'TargetReleaseVersionInfo' -Force -Confirm:$false
+}
+}
+if ( $AskEWUDStop -eq 'y' )
+{
+try
+{
+Set-ItemProperty -Path $WUFoDKey -Name 'ExcludeWUDriversInQualityUpdate' -Type Dword -Value 1 -Force
+} catch {
+New-Item -Path $WUFoDKey
+New-ItemProperty -Path $WUFoDKey -Name 'ExcludeWUDriversInQualityUpdate' -PropertyType Dword -Value 1 -Force
+}
+try
+{
+Set-ItemProperty -Path $WUPKey -Name 'ExcludeWUDriversInQualityUpdate' -Type Dword -Value 1 -Force
+} catch {
+New-Item -Path $WUPKey
+New-ItemProperty -Path $WUPKey -Name 'ExcludeWUDriversInQualityUpdate' -PropertyType Dword -Value 1 -Force
+}
+}
+if ( $AskEWUDStop -eq 'r' )
+{
+Remove-ItemProperty -Path $WUFoDKey -Name 'ExcludeWUDriversInQualityUpdate' -Force -Confirm:$false
+Remove-ItemProperty -Path $WUPKey -Name 'ExcludeWUDriversInQualityUpdate' -Force -Confirm:$false
+}
+if ( $AskWUAddDay -eq 'r' )
+{
+Remove-ItemProperty -Path $WUPKey -Name 'PauseFeatureUpdatesEndTime' -Force -Confirm:$false
+Remove-ItemProperty -Path $WUPKey -Name 'PauseFeatureUpdatesStartTime' -Force -Confirm:$false
+Remove-ItemProperty -Path $WUPKey -Name 'PauseQualityUpdatesEndTime' -Force -Confirm:$false
+Remove-ItemProperty -Path $WUPKey -Name 'PauseQualityUpdatesStartTime' -Force -Confirm:$false
+Remove-ItemProperty -Path $WUPKey -Name 'PauseUpdatesExpiryTime' -Force -Confirm:$false
+Remove-ItemProperty -Path $WUPKey -Name 'PauseUpdatesStartTime' -Force -Confirm:$false
+CLS
+Write-Output '繼續 Windows Update 更新!'
+if ( $BoLPrvWU )
+{
+Write-Output "系統將停留在 Windows $Major $FoDVersion!"
+}
+try
+{
+$ExcludeWUDriversInQualityUpdate = Get-ItemPropertyValue $WUFoDKey -Name 'ExcludeWUDriversInQualityUpdate'
+} catch {
+$ExcludeWUDriversInQualityUpdate = 0
+}
+Write-Output "不包含 Windows 更新的驅動程式: $ExcludeWUDriversInQualityUpdate!"
+} else {
+try
+{
+if ([int]$AskWUAddDay -And [int]$AskWUAddDay -igt 0 )
+{
+$YearS = (Get-Date).ToString('yyyy')
+$YearSReq = [int]$AskWUAddDay / 365.2
+$PassYearS = [int]$YearS + [int]$YearSReq
+if ( [int]$PassYearS -igt 3000 )
+{
+$PassYearSFixed = [int]$YearSReq - ([int]$PassYearS - 3000)
+$PassYearSFixed = [int]$PassYearSFixed * 365.2
+$AskWUAddDay = $PassYearSFixed
+}
+$StartDay = (Get-Date).AddHours(-8).ToString('yyyy-MM-ddTHH:mm:ssZ')
+$PeriodDay = (Get-Date).AddHours(-8).AddDays($AskWUAddDay).ToString('yyyy-MM-ddTHH:mm:ssZ')
+try
+{
+Set-ItemProperty -Path $WUPKey -Name 'PauseFeatureUpdatesStartTime' -Type String -Value $StartDay -Force
+} catch {
+New-Item -Path $WUPKey
+New-ItemProperty -Path $WUPKey -Name 'PauseFeatureUpdatesStartTime' -PropertyType String -Value $StartDay -Force
+}
+try
+{
+Set-ItemProperty -Path $WUPKey -Name 'PauseQualityUpdatesStartTime' -Type String -Value $StartDay -Force
+} catch {
+New-Item -Path $WUPKey
+New-ItemProperty -Path $WUPKey -Name 'PauseQualityUpdatesStartTime' -PropertyType String -Value $StartDay -Force
+}
+try
+{
+Set-ItemProperty -Path $WUPKey -Name 'PauseUpdatesStartTime' -Type String -Value $StartDay -Force
+} catch {
+New-Item -Path $WUPKey
+New-ItemProperty -Path $WUPKey -Name 'PauseUpdatesStartTime' -PropertyType String -Value $StartDay -Force
+}
+try
+{
+Set-ItemProperty -Path $WUPKey -Name 'PauseFeatureUpdatesEndTime' -Type String -Value $PeriodDay -Force
+} catch {
+New-Item -Path $WUPKey
+New-ItemProperty -Path $WUPKey -Name 'PauseFeatureUpdatesEndTime' -PropertyType String -Value $PeriodDay -Force
+}
+try
+{
+Set-ItemProperty -Path $WUPKey -Name 'PauseQualityUpdatesEndTime' -Type String -Value $PeriodDay -Force
+} catch {
+New-Item -Path $WUPKey
+New-ItemProperty -Path $WUPKey -Name 'PauseQualityUpdatesEndTime' -PropertyType String -Value $PeriodDay -Force
+}
+try
+{
+Set-ItemProperty -Path $WUPKey -Name 'PauseUpdatesExpiryTime' -Type String -Value $PeriodDay -Force
+} catch {
+New-Item -Path $WUPKey
+New-ItemProperty -Path $WUPKey -Name 'PauseUpdatesExpiryTime' -PropertyType String -Value $PeriodDay -Force
+}
+CLS
+if ( $BoLPrvWU )
+{
+Write-Output "系統將停留在 Windows $Major $FoDVersion!"
+}
+Write-Output "暫停 Windows updates 直到 $PeriodDay"
+try
+{
+$ExcludeWUDriversInQualityUpdate = Get-ItemPropertyValue $WUFoDKey -Name 'ExcludeWUDriversInQualityUpdate'
+} catch {
+$ExcludeWUDriversInQualityUpdate = 0
+}
+Write-Output "不包含 Windows 更新的驅動程式: $ExcludeWUDriversInQualityUpdate!"
+} else {
+CLS
+if ( $BoLPrvWU )
+{
+Write-Output "系統將停留在 Windows $Major $FoDVersion!"
+try
+{
+$ExcludeWUDriversInQualityUpdate = Get-ItemPropertyValue $WUFoDKey -Name 'ExcludeWUDriversInQualityUpdate'
+} catch {
+$ExcludeWUDriversInQualityUpdate = 0
+}
+Write-Output "不包含 Windows 更新的驅動程式: $ExcludeWUDriversInQualityUpdate!"
+}
+}
+} catch {
+Write-Output "OOH! 延遲的天數不可以輸入非數字字元! 如果想跳過此設定請輸入 R"
+}
+}
