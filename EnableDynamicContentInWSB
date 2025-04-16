@@ -1,0 +1,73 @@
+# 提供給巴哈姆特電腦應用綜合討論專用@Uncyler825
+# EnableDynamicContentInWSB PowerShell 2025-04-16
+# https://github.com/SimonMacer/AnWave
+$ErrorValue = $false
+$ControlValueDisabled = 0
+$ControlValueActive = 1
+$WSBValueUserValue = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search"
+$WSBKeyWoW = "HKLM:\SOFTWARE\WOW6432Node\Policies\Microsoft\Windows\Windows Search"
+$GetWSB = Get-ItemPropertyValue $WSBValueUserValue -Name 'EnableDynamicContentInWSB'
+if ( $GetWSB -eq $null)
+{
+$ErrorValue = $true
+}
+if ($GetWSB -ne 0 -Or $ErrorValue)
+{
+CLS
+$WSBAsk = Read-Host "停用 DynamicContentInWSB 以改進工作列 Windows 搜尋性能 (放大鏡) - Windows 11 (D = 停用;R = 刪除機碼並恢復預設值;X = 離開)" -WarningAction Inquire
+if ( $WSBAsk -eq 'd' )
+{
+if ( $ErrorValue )
+{
+New-Item -Path $WSBValueUserValue
+New-ItemProperty -Path $WSBValueUserValue -Name 'EnableDynamicContentInWSB' -PropertyType DWord -Value $ControlValueDisabled -Force
+} else {
+Set-ItemProperty -Path $WSBValueUserValue -Name 'EnableDynamicContentInWSB' -Type DWord -Value $ControlValueDisabled -Force
+}
+try
+{
+Set-ItemProperty -Path $WSBKeyWoW -Name 'EnableDynamicContentInWSB' -Type DWord -Value $ControlValueDisabled -Force
+} catch {
+New-Item -Path $WSBKeyWoW
+New-ItemProperty -Path $WSBKeyWoW -Name 'EnableDynamicContentInWSB' -PropertyType DWord -Value $ControlValueDisabled -Force
+}
+CLS
+Write-Output '停用 DynamicContentInWSB - Windows 11 > OK!'
+} else {
+CLS
+if ( $WSBAsk -eq 'r' )
+{
+Remove-ItemProperty -Path $WSBValueUserValue -Name 'EnableDynamicContentInWSB' -Force -Confirm:$false
+Remove-ItemProperty -Path $WSBKeyWoW -Name 'EnableDynamicContentInWSB' -Force -Confirm:$false
+CLS
+} else {
+CLS
+}
+}
+} else {
+CLS
+$WSBAsk = Read-Host "啟用 DynamicContentInWSB - Windows 11 (E = 啟用;R = 刪除機碼並恢復預設值;X = 離開)" -WarningAction Inquire
+if ( $WSBAsk -eq 'e' )
+{
+Set-ItemProperty -Path $WSBValueUserValue -Name 'EnableDynamicContentInWSB' -Type DWord -Value $ControlValueActive -Force
+try
+{
+Set-ItemProperty -Path $WSBKeyWoW -Name 'EnableDynamicContentInWSB' -Type DWord -Value $ControlValueActive -Force
+} catch {
+New-Item -Path $WSBKeyWoW
+New-ItemProperty -Path $WSBKeyWoW -Name 'EnableDynamicContentInWSB' -PropertyType DWord -Value $ControlValueActive -Force
+}
+CLS
+Write-Output '啟用 DynamicContentInWSB - Windows 11 > OK!'
+} else {
+CLS
+if ( $WSBAsk -eq 'r' )
+{
+Remove-ItemProperty -Path $WSBValueUserValue -Name 'EnableDynamicContentInWSB' -Force -Confirm:$false
+Remove-ItemProperty -Path $WSBKeyWoW -Name 'EnableDynamicContentInWSB' -Force -Confirm:$false
+CLS
+} else {
+CLS
+}
+}
+}
