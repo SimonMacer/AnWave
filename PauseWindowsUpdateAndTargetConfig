@@ -1,13 +1,18 @@
 # 提供給巴哈姆特電腦應用綜合討論專用@Uncyler825
-# PauseWindowsUpdateAndTargetConfig PowerShell 2025-04-16
+# PauseWindowsUpdateAndTargetConfig PowerShell 2025-04-19
 # https://github.com/SimonMacer/AnWave
 $WUPKey = "HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings"
 $WUFoDKey = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate"
 $betaWU = test-path -path $WUPKey
+$betaWUPolicies = test-path -path $WUFoDKey
 $BoLPrvWU = $false
 if (!$betaWU)
 {
 New-Item -Path $WUPKey
+}
+if (!$betaWUPolicies)
+{
+New-Item -Path $WUFoDKey
 }
 $AskWUAddDay = Read-Host "設定 Windows Update 暫停更新延遲天數 (R = 刪除機碼並恢復更新)" -WarningAction Inquire
 $AskWUStop = Read-Host "您是否想要防止 Windows Update 自動下載下一個 Windows 版本功能更新? (Y = 是，設定目標版本;N = 否，不進行設置;R = 刪除機碼並恢復自動下載更新)" -WarningAction Inquire
