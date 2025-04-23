@@ -1,10 +1,9 @@
 # 提供給巴哈姆特電腦應用綜合討論專用@Uncyler825
-# DisableHVCI-MemoryIntegrityVBSSettings PowerShell 2025-04-16
+# DisableHVCI-MemoryIntegrityVBSSettings PowerShell 2025-04-23
 # https://github.com/SimonMacer/AnWave
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Bypass -Force
 Read-Host "(HVCI) 停用 VBS 虛擬化型安全性和記憶體完整性 > 任意鍵繼續!"
 $DSAccount = Read-Host "您是否想要重設 Windows Hello 和使用者帳戶密碼? (Y = 是)" -WarningAction Inquire
-$HVM = Read-Host "您是否想要關閉 Hyper-V? (Y = 是)" -WarningAction Inquire
 if ( $DSAccount -eq 'y' )
 {
 Set-LocalUser -name $env:username -Password ([securestring]::new())
@@ -21,10 +20,32 @@ Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\PolicyManager\default\Settings\
 Remove-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Biometrics" -Recurse -Force -Confirm:$false
 Remove-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\PassportforWork" -Recurse -Force -Confirm:$false
 }
-if ($HVM -eq 'y' )
-{
-bcdedit /set hypervisorlaunchtype off
-}
+$command = 'dism /Online /Disable-Feature:microsoft-hyper-v-all /NoRestart'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'dism /Online /Disable-Feature:IsolatedUserMode /NoRestart'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'dism /Online /Disable-Feature:Microsoft-Hyper-V-Hypervisor /NoRestart'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'dism /Online /Disable-Feature:Microsoft-Hyper-V-Online /NoRestart'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'dism /Online /Disable-Feature:HypervisorPlatform /NoRestart'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'mountvol X: /s'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy %WINDIR%\System32\SecConfig.efi X:\EFI\Microsoft\Boot\SecConfig.efi /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'bcdedit /create {0cb3b571-2f2e-4343-a879-d86a476d7215} /d "DebugTool" /application osloader'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} path "\EFI\Microsoft\Boot\SecConfig.efi"'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'bcdedit /set {bootmgr} bootsequence {0cb3b571-2f2e-4343-a879-d86a476d7215}'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} loadoptions DISABLE-LSA-ISO,DISABLE-VBS'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} device partition=X:'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'bcdedit /set hypervisorlaunchtype off'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
 $DeviceGuardKey = "HKLM:\SYSTEM\ControlSet001\Control\DeviceGuard"
 try
 {
