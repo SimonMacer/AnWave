@@ -1,6 +1,11 @@
 Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14]
+# ⌈逐步推行⌋👌[開始功能表] 新增功能！開始功能表右鍵選單中的額外選項。Microsoft 新增了新的選項來重新排列「開始」功能表中的已釘選圖示。開始窗格的上下文功能表中有新的命令，可以將項目移至左側、右側或頂部。
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1230538894]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+
 # ⌈逐步推行⌋👌[開始功能表] 新增功能！新的開始功能表佈局可在 KB5055627 (26100.3909) 上使用。新的開始功能表採用了新的佈局，並具有關閉推薦部分的功能。
 # Request 156965516, 1853569164
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2792562829]
