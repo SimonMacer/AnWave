@@ -1,0 +1,66 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14]
+# ⌈逐步推行⌋👌【New】正在開始為 Windows 11 23H2 Build 22631 版本中引入檔案總管上下文功能表（如剪下、複製、貼上、重新命名、共用和刪除）標籤更改。
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\4098520719]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+
+# ⌈逐步推行⌋👌[設定] 新增功能！我們將在 Settings > System > About 下推出 “top cards”。這些 Top Card 提供了一種查看 PC 關鍵規格（處理器、RAM、存儲和 GPU）的簡便方法，可説明您一目了然地瞭解 PC 的功能。
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\593004686]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\861440142]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+
+# ⌈逐步推行⌋👌[檔案總管] 新增功能！檔案總管主頁中推薦的文件現已可用。
+# Request 1853569164
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\156965516]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1916873356]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3878395533]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\436524174]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+
+# ⌈逐步推行⌋👌新增功能！當游標停留在閒置中的工作列應用程式時，顯示捷徑清單。
+# Request 156965516
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1853569164]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3870238861]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+
+# ⌈逐步推行⌋👌新增功能！ 在系統匣中顯示表情圖示及其他面板圖示 (Emoji)。
+# Request 1853569164
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3058906765]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+
+# ⌈逐步推行⌋👌[工作列] 新增功能！顯示較小的工作列按鈕。
+# Request 1853569164
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3231150730]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+
+# ⌈逐步推行⌋👌[檔案總管] 新增功能！在新的索引標籤中開啟桌面資料夾和外部資料夾連結。
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1507140749]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3037514383]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
