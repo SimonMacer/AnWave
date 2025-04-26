@@ -1,5 +1,5 @@
 # 提供給巴哈姆特電腦應用綜合討論專用@Uncyler825
-# HideRecommendedSectionConfig PowerShell 2025-04-25
+# HideRecommendedSectionConfig PowerShell 2025-04-26
 # https://github.com/SimonMacer/AnWave
 $ErrorCount =  $false
 try
@@ -16,7 +16,7 @@ $ErrorCount =  $true
 if ((!( $CuRecommendedSectionKey -eq 1 -And $CuEducationKey -eq 1 -And $CuExplorerKey -eq 1)) -Or $ErrorCount)
 {
 CLS
-$AskFE = Read-Host "您是否想要停用在 Windows 11 開始功能表中隱藏建議選項 (如果支援)? (Y = 是)" -WarningAction Inquire
+$AskFE = Read-Host "您是否想要停用在 Windows 11 開始功能表中的建議選項 (如果支援)? (Y = 是)" -WarningAction Inquire
 if ( $AskFE -eq 'y' )
 {
 New-Item -Path $FullRecommendedSectionKey
@@ -26,19 +26,19 @@ New-ItemProperty -Path $FullEducationKey -Name 'IsEducationEnvironment' -Propert
 New-Item -Path $FullExplorerKey
 New-ItemProperty -Path $FullExplorerKey -Name 'HideRecommendedSection' -PropertyType Dword -Value '1' -Force
 CLS
-Write-Output '在 Windows 11 開始功能表中隱藏建議選項 (如果支援): 已停用! (需要重新啟動系統才會生效)'
+Write-Output '在 Windows 11 開始功能表中的建議選項 (如果支援): 已停用! (需要重新啟動系統才會生效)'
 } else {
 CLS
 }
 } else {
-$AskFE = Read-Host "您是否想要啟用在 Windows 11 開始功能表中隱藏建議選項 (如果支援)? (Y = 是)" -WarningAction Inquire
+$AskFE = Read-Host "您是否想要啟用在 Windows 11 開始功能表中的建議選項 (如果支援)? (Y = 是)" -WarningAction Inquire
 if ( $AskFE -eq 'y' )
 {
 Remove-ItemProperty -Path $FullRecommendedSectionKey -Name 'HideRecommendedSection' -Force
 Remove-ItemProperty -Path $FullEducationKey -Name 'IsEducationEnvironment' -Force
 Remove-ItemProperty -Path $FullExplorerKey -Name 'HideRecommendedSection' -Force
 CLS
-Write-Output '在 Windows 11 開始功能表中隱藏建議選項 (如果支援): 已啟用! (需要重新啟動系統才會生效)'
+Write-Output '在 Windows 11 開始功能表中的建議選項 (如果支援): 已啟用! (需要重新啟動系統才會生效)'
 } else {
 CLS
 }
