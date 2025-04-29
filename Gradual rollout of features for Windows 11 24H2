@@ -1,6 +1,32 @@
 Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14]
+# ⌈逐步推行⌋👌[手機連結] 新增！ 您可以從 [開始] 功能表直接存取跨裝置功能，在 Windows 計算機和行動裝置上執行更多任務作。 例如，您可以撥打電話、傳送簡訊、存取相片，或在行動裝置和計算機之間共用內容。
+# Request 1230538894, 1853569164, 905601679
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1970751628]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2114784909]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2943499918]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3597742221]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\4031139983]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\762256525]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+
 # ⌈逐步推行⌋👌[開始功能表] 新增功能！開始功能表右鍵選單中的額外選項。Microsoft 新增了新的選項來重新排列「開始」功能表中的已釘選圖示。開始窗格的上下文功能表中有新的命令，可以將項目移至左側、右側或頂部。
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1230538894]
 "EnabledState"=dword:00000002
