@@ -1,0 +1,40 @@
+Enable All Gradual rollout of features for Windows 11 24H2
+
+Microsoft uses Controlled Feature Rollout (CFR) technology to telemetry control most features. Some features may not be available immediately. Or as part of the next major feature update.
+
+Vivetool uses a public ID. In fact, each Vivetool ID corresponds to a real CFR Key.
+
+Controlled Feature Rollout (CFR) List:
+# [Phone Link] New! You can do even more with your Windows PC and your mobile device with direct access to cross-device features from the Start menu. For example, you can make phone calls, send SMS messages, access your photos, or share content between your mobile device and PC.
+# [Start Menu] New! Additional options in the right-click menu of the Start menu. Microsoft has added new options to rearrange pinned icons in the Start menu. The Start Pane context menu has new commands to move items to the left, right, or top.
+# [Start Menu] New! The New Start Menu Layout is avaiable on KB5055627 (26100.3902). The New Start Menu is getting a new layout and the ability to *turn off the recommended section.
+# [File Explorer] Fixed: The “see more” (…) menu in the File Explorer command bar opens in the wrong direction in some cases.
+# [File Explorer] New! Recommended files in File Explorer Home are now available to all Windows Insiders who are signed in with their personal Microsoft account (and local accounts). These files will provide you quick access to relevant files based on your activity in the Recommended section which is displayed as a carousel with thumbnail previews. This includes content such as files you frequently use, have recently downloaded, or added to your File Explorer Gallery. Users with a work/school account (Entra ID) will have additional types of recommendations available with this update. This change is not yet rolling out in the EEA (European Economic Area). Quick access folders will continue to be available in the navigation pane for easy access to pinned folders.
+# [File Explorer] New! Opening new folders in a new tab instead of creating additional windows.
+# [Task Manager] New! We are beginning to roll out a change to the way Task Manager calculates CPU utilization for the Processes, Performance, and Users pages. Task Manager will now use the standard metrics to display CPU workload consistently across all pages and aligning with industry standards and third-party tools. For backward compatibility, a new optional column called CPU Utility is available (hidden by default) on the Details tab showing the previous CPU value used on the Processes page.
+# [Taskbar] New! Show jump list when hovering on inactive taskbar apps.
+# New! During text entry, type Windows logo key + . (period). The emoji keyboard will appear. Select an emoji with the mouse, or keep typing to search through the available emojis for one you like.
+# [Taskbar] New! Show smaller taskbar icons" option in the Settings app.
+# [Settings] New! We are rolling out “top cards” under Settings > System > About. These top cards provide an easy way to view your PC’s key specifications—processor, RAM, storage, and GPU—helping you understand your PC’s capabilities at a glance. This is designed to simplify decision-making by highlighting potential areas for hardware improvements while giving you a clear snapshot of your PC. Top Cards won’t appear yet on managed commercial PCs. Note this change appears only on specific PC form-factors such as desktops.
+
+I record the CFR keys receive from each cumulative update. Windows 11 23H2 and 24H2 CFR Table > https://docs.google.com/spreadsheets/d/1u1LWlYuPaKY_3ZTNQxdRmkC1xE7u8G7oPgLYs-0KTEU/edit?pli=1&gid=0#gid=0
+
+# How to Enable All Gradual rollout of features for Windows 11 24H2
+1. Install Windows 11 24H2 Build 26100.3915 (KB5055627) or later.
+2. Copy Windows 11 24H2 Build 26100.3915 Cumulative Features Enablement to a *.reg file and import.
+https://github.com/SimonMacer/AnWave/blob/PowerShell.zh-TW/Windows%2011%2024H2%20Build%2026100.3915%20Cumulative%20Features%20Enablement
+3. Copy Gradual rollout of features for Windows 11 24H2 (English) to a *.reg file and import.
+https://github.com/SimonMacer/AnWave/blob/PowerShell.zh-TW/Gradual%20rollout%20of%20features%20for%20Windows%2011%2024H2%20(English)
+4. You will now need to restart your computer, for the changes to take effect.
+
+# [Phone Link] How to Enable Direct access to cross-device features from the Start menu.
+1. Make sure to Update All your Apps from the Microsoft Store, by going to Updates & downloads.
+2. You will now need to restart your computer, for the changes to take effect.
+
+# [Phone Link] How to Enable Direct access to cross-device features from the Start menu (YouTube)
+https://youtu.be/WuHIR2xDxGE?si=H_INnCPDM_cxw_0L
+
+# How to revert All Gradual rollout of features
+1. Open Regedit.exe.
+2. Delete 'HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14'.
+3. You will now need to restart your computer, for the changes to take effect.
