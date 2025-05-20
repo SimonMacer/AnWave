@@ -1,7 +1,7 @@
 Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14]
-# ⌈逐步推行⌋👌[Windows 共用] 新增！ 直接在 Windows 共享中使用圖片壓縮工具。
+# ⌈逐步推行⌋👌[Windows 共用] 新增！ 在 Windows 共享視窗中，作為共享時快速編輯和增強影像的功能的一部分，我們調整了 UI，以便您現在可以從高、中或低品質中選擇其壓縮比例，而不是從 0-100 的整個範圍中進行選擇。
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3020579983]
 "EnabledState"=dword:00000002
 "EnabledStateOptions"=dword:00000000
