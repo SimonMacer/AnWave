@@ -7,6 +7,7 @@ Windows Registry Editor Version 5.00
 "EnabledState"=dword:00000002
 "EnabledStateOptions"=dword:00000000
 
+# [Notification] New! Microsoft is introducing a New Notification Center, which adds the clock back. You will also need to enable an additional option from Settings > Time & Language > Date & Time which is Show time in Notification Center.
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2479876749]
 "EnabledState"=dword:00000002
 "EnabledStateOptions"=dword:00000000
