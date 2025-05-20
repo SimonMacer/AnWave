@@ -2,7 +2,6 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14]
 # ⌈逐步推行⌋👌[Windows 共用] 新增！ 直接在 Windows 共享中的使用圖片壓縮工具。
-# Request 1853569164
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3020579983]
 "EnabledState"=dword:00000002
 "EnabledStateOptions"=dword:00000000
