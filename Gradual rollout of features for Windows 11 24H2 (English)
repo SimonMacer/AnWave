@@ -1,6 +1,12 @@
 Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14]
+# [Notification] New! Microsoft is introducing a New Notification Center, which adds the clock back. You will also need to enable an additional option from Settings > Time & Language > Date & Time which is Show time in Notification Center.
+# Request 1853569164
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3020579983]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+
 # [Phone Link] New! You can do even more with your Windows PC and your mobile device with direct access to cross-device features from the Start menu. For example, you can make phone calls, send SMS messages, access your photos, or share content between your mobile device and PC.
 # Request 1230538894, 1853569164, 905601679
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1970751628]
