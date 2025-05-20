@@ -1,6 +1,12 @@
 Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14]
+# ⌈逐步推行⌋👌[通知] 新增！ Microsoft 正在推出一個新的通知中心，增加在 [通知中心] 顯示時間功能。您可以從 設定 > 時間與語言 > 日期和時間 中啟用附加選項，即 在 [通知中心] 顯示時間。
+# Request 1853569164
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3020579983]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+
 # ⌈逐步推行⌋👌[手機連結] 新增！ 您可以從 [開始] 功能表直接存取跨裝置功能，在 Windows 計算機和行動裝置上執行更多任務作。 例如，您可以撥打電話、傳送簡訊、存取相片，或在行動裝置和計算機之間共用內容。
 # Request 1230538894, 1853569164, 905601679
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1970751628]
