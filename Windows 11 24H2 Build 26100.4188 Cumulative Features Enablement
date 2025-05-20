@@ -240,16 +240,6 @@ Windows Registry Editor Version 5.00
 "RolloutState"=dword:00000000
 "RolloutType"=dword:00000000
 
-[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\482553484]
-"EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:00000001
-"Variant"=dword:00000000
-"VariantPayloadKind"=dword:00000000
-"VariantPayload"=dword:00000000
-"FlightId"="FX:132B3360"
-"RolloutState"=dword:00000000
-"RolloutType"=dword:00000000
-
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\63330958]
 "EnabledState"=dword:00000002
 "EnabledStateOptions"=dword:00000001
