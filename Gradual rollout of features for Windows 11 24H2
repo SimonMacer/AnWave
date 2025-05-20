@@ -1,7 +1,7 @@
 Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14]
-# ⌈逐步推行⌋👌[通知] 新增！ Microsoft 正在推出一個新的通知中心，增加在 [通知中心] 顯示時間功能。您可以從 設定 > 時間與語言 > 日期和時間 中啟用附加選項，即 在 [通知中心] 顯示時間。
+# ⌈逐步推行⌋👌[Windows 共用] 新增！ 直接在 Windows 共享中的使用圖片壓縮工具。
 # Request 1853569164
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3020579983]
 "EnabledState"=dword:00000002
