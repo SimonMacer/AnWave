@@ -1,7 +1,7 @@
 Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14]
-# [Windows Share] New! Compression tool for images in Windows Share.
+# [Windows Share] New! In the Windows share window, as part of the ability to quickly edit and enhance images while sharing, we have adjusted the UI so that now you can now select their compression scale from High, Medium, or Low Quality, instead of choosing from an entire scale ranging from 0-100.
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3020579983]
 "EnabledState"=dword:00000002
 "EnabledStateOptions"=dword:00000000
