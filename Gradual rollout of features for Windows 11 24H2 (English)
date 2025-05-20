@@ -1,8 +1,7 @@
 Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14]
-# [Notification] New! Microsoft is introducing a New Notification Center, which adds the clock back. You will also need to enable an additional option from Settings > Time & Language > Date & Time which is Show time in Notification Center.
-# Request 1853569164
+# [Windows Share] New! Compression tool for images in Windows Share.
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3020579983]
 "EnabledState"=dword:00000002
 "EnabledStateOptions"=dword:00000000
