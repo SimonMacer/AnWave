@@ -1,26 +1,14 @@
-【OS】Windows 11 24H2 Build 26100.4061 and 23H2 Build 22631.5335 光碟映像檔 ISO
+【OS】Windows 11 24H2 Build 26100.4188 光碟映像檔 ISO
 
 :簡介
-本 Windows 11 24H2 和 23H2 光碟映像檔為本人製作自用並分享於此，所以個人化及功能是以我的需求為主。如果您喜歡本人製作的 Windows 11 歡迎下載使用。
+本 Windows 11 24H2 光碟映像檔為本人製作自用並分享於此，所以個人化及功能是以我的需求為主。如果您喜歡本人製作的 Windows 11 歡迎下載使用。
 
-:Windows 11 24H2 和 23H2 光碟映像檔 ISO 包含:
-1. Windows 11 Home Edition, version 23H2 (22631.5335)
-2. Windows 11 Pro Edition, version 23H2 (22631.5335)
-3. Windows 11 Enterprise, version 23H2 (22631.5335)
-4. Windows 11 IoT Enterprise, version 23H2 (22631.5335)
-5. Windows 11 Education, version 23H2 (22631.5335)
-6. Windows 11 Pro Education, version 23H2 (22631.5335)
-7. Windows 11 Pro for Workstations, version 23H2 (22631.5335)
-8. Windows 11 Home Edition, version 24H2 (26100.4061)
-9. Windows 11 Pro Edition, version 24H2 (26100.4061)
-10. Windows 11 Enterprise, version 24H2 (26100.4061)
-11. Windows 11 IoT Enterprise, version 24H2 (26100.4061)
-12. Windows 11 Education, version 24H2 (26100.4061)
-14. Windows 11 Pro Education, version 24H2 (26100.4061)
-15. Windows 11 Pro for Workstations, version 24H2 (26100.4061)
-16. Windows 11 Enterprise LTSC 2024, version 24H2 (26100.4061)
-17. Windows 11 IoT Enterprise LTSC 2024, version 24H2 (26100.4061)
-18. Windows 11 IoT Enterprise Subscription LTSC 2024, version 24H2 (26100.4061)
+:Windows 11 24H2 光碟映像檔 ISO 包含:
+1. Windows 11 Home Edition, version 24H2 (26100.4188)
+2. Windows 11 Pro Edition, version 24H2 (26100.4188)
+3. Windows 11 Education, version 24H2 (26100.4188)
+4. Windows 11 Pro Education, version 24H2 (26100.4188)
+5. Windows 11 Pro for Workstations, version 24H2 (26100.4188)
 
 :功能隨選安裝 (FOD)
 1. Dolby AC-3 功能隨選安裝 (FOD)
@@ -35,12 +23,15 @@
 > ⌈逐步推行⌋👌[檔案總管] 新增功能！檔案總管主頁中推薦的文件現已可用。
 > ⌈逐步推行⌋👌[工作管理員] 新增功能！我們開始對 Task Manager 計算 Processes、Performance 和 Users 頁面的 CPU 利用率的方式進行更改。Task Manager 現在將使用標準指標在所有頁面中一致地顯示 CPU 工作負載，並與行業標準和第三方工具保持一致。為了向後相容，Details 選項卡上提供了一個名為 CPU Utility 的新可選列（預設情況下隱藏），其中顯示了 Processes 頁面上使用的上一個 CPU 值。* 註 1
 > ⌈逐步推行⌋👌[設定] 新增功能！我們將在 Settings > System > About 下推出 “top cards”。這些 Top Card 提供了一種查看 PC 關鍵規格（處理器、RAM、存儲和 GPU）的簡便方法，可説明您一目了然地瞭解 PC 的功能。
+> ⌈逐步推行⌋👌[通知] 最新！Microsoft 正在推出一個新的通知中心，新增在 [通知中心] 顯示時間功能。您還需要從 [設定] > [時間與語言] > [日期和時間] 中啟用在 [通知中心] 顯示時間選項。
 > ⌈逐步推行⌋👌[開始功能表] 新增功能！新的開始功能表佈局可在 KB5055627 (26100.3915) 上使用。新的開始功能表採用了新的佈局，並具有關閉推薦部分的功能。
+> ⌈逐步推行⌋👌[開始功能表] 新增功能！開始功能表右鍵選單中的額外選項。Microsoft 新增了新的選項來重新排列「開始」功能表中的已釘選圖示。開始窗格的上下文功能表中有新的命令，可以建立新的應用程式資料夾或將項目移至左側、右側或頂部。
 > ⌈逐步推行⌋👌[手機連結] 新增功能！您可以從 [開始] 功能表直接存取跨裝置功能，在 Windows 計算機和行動裝置上執行更多任務作。 例如，您可以撥打電話、傳送簡訊、存取相片，或在行動裝置和計算機之間共用內容。
-
-* 註 1: Windows 11 23H2 Build 22631 建置版本不包含此功能。
-
-:逐步推行啟用表格: https://docs.google.com/spreadsheets/d/1u1LWlYuPaKY_3ZTNQxdRmkC1xE7u8G7oPgLYs-0KTEU/edit?usp=sharing
+> ⌈逐步推行⌋👌[Windows 共用] 新增！ 在 Windows 共享視窗中，作為共享時快速編輯和增強影像的功能的一部分，我們調整了 UI，以便您現在可以從高、中或低品質中選擇其壓縮比例，而不是從 0-100 的整個範圍中進行選擇。
+> ⌈逐步推行⌋👌[Windows 設定] 改進 Windows 設定！現在可以透過「設定」>「系統」>「進階」使用進階設置，並具有一些新功能。高級頁面是針對開發人員頁面的重新設計，旨在讓更廣泛的受眾更容易找到其設定。透過重新設計此頁面，我們新增了其他設定：啟用長路徑、虛擬工作區和檔案總管 + 版本控制。
+> ⌈逐步推行⌋👌[工作列和系統匣] 我們正在改進快速設定中的輔助功能彈出窗口，透過視覺、聽覺、運動和移動性對輔助技術進行分組，以便於識別，從而幫助您根據需要找到合適的輔助功能。
+> ⌈逐步推行⌋👌[語音輸入] 您可以控制髒話濾鏡。當你打開它時，它會用星號掩蓋髒話。當您關閉它時，單字就會以口語顯示。若要變更設置，請開啟語音輸入（Win + H），選擇設定圖標，然後開啟過濾髒話開關。
+> ⌈逐步推行⌋👌[圖形] 新功能！在「設定」>「系統」>「顯示」>「更新」下管理 PC 的 HDR 功能，包括：「使用 HDR」的更清晰標籤，更好地解釋支援哪些媒體類型。即使關閉 HDR 也能夠傳輸 HDR 視訊。在配備杜比視界 (Dolby Vision) 的電腦上，新的切換按鈕可讓您獨立於 HDR 開啟或關閉杜比視界 - 讓您更能控制觀看體驗。
 
 :設置
 > BypassCPUCheck: 跳過 CPU 檢查。
@@ -69,19 +60,11 @@
 
 :下載
 RAR Part 1 分割檔
-https://drive.google.com/file/d/12XD07j3vFlxfhlAkvzBgTmTeFQnnL2au/view?usp=sharing
+https://drive.google.com/file/d/1f8RYbzcXUs-d0GoPuWk7HRJQqq08qxe1/view?usp=sharing
 RAR Part 2 分割檔
-https://drive.google.com/file/d/1XFTb6myRtD6Rc5O635qSk2eBppTx8w1M/view?usp=sharing
+https://drive.google.com/file/d/1MuKVx_TJjWXr5DvKwZYD3jK8rAaIM30N/view?usp=sharing
 RAR Part 3 分割檔
-https://drive.google.com/file/d/1CGm-6l44cofsiiITIO_nKpNSgSKUjSaA/view?usp=sharing
-RAR Part 4 分割檔
-https://drive.google.com/file/d/14ndJpVrbJe49JnjGsiK8KqC1y5EgFYyz/view?usp=sharing
-RAR Part 5 分割檔
-https://drive.google.com/file/d/1AK7FjI7_-js53s0TlqyTdWlsujGcQ4Ly/view?usp=sharing
-RAR Part 6 分割檔
-https://drive.google.com/file/d/1vkgAEqL7hGgLBTEB0axFzdcnotmAWe9q/view?usp=sharing
-RAR Part 7 分割檔
-https://drive.google.com/file/d/1yHEyyHlgIYoiP2acEE3whA1-BPsXmZAG/view?usp=sharing
+https://drive.google.com/file/d/1kjOJUy3-MoyYu4ByQpYRCWXJqiYhkFtp/view?usp=sharing
 
 :解壓密碼:stdaio-26100-6650-release-prod
 
