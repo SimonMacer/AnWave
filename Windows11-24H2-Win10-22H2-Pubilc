@@ -32,6 +32,10 @@
 > ⌈逐步推行⌋👌[工作列和系統匣] 我們正在改進快速設定中的輔助功能彈出窗口，透過視覺、聽覺、運動和移動性對輔助技術進行分組，以便於識別，從而幫助您根據需要找到合適的輔助功能。
 > ⌈逐步推行⌋👌[語音輸入] 您可以控制髒話濾鏡。當你打開它時，它會用星號掩蓋髒話。當您關閉它時，單字就會以口語顯示。若要變更設置，請開啟語音輸入（Win + H），選擇設定圖標，然後開啟過濾髒話開關。
 > ⌈逐步推行⌋👌[圖形] 新功能！在「設定」>「系統」>「顯示」>「更新」下管理 PC 的 HDR 功能，包括：「使用 HDR」的更清晰標籤，更好地解釋支援哪些媒體類型。即使關閉 HDR 也能夠傳輸 HDR 視訊。在配備杜比視界 (Dolby Vision) 的電腦上，新的切換按鈕可讓您獨立於 HDR 開啟或關閉杜比視界 - 讓您更能控制觀看體驗。
+> ⌈逐步推行⌋👌[Notepad] 新功能! Microsoft 正開始改進 Notepad 基本功能，您可以在工具列上見到此改進，與「檔案」、「編輯」和「檢視」選項並列，新增粗體、斜體和超連結，同時支援清單和標題功能及支援 Markdown 語法。
+https://blogs.windows.com/windows-insider/2025/05/30/text-formatting-in-notepad-begin-rolling-out-to-windows-insiders/
+# 包含 May 28, 2025—KB5058499 (OS Build 26100.4202) Preview 中的逐步推行部分功能。
+https://support.microsoft.com/en-us/topic/may-28-2025-kb5058499-os-build-26100-4202-preview-d4c2f1ee-8138-4038-b705-546945076f92
 
 :設置
 > BypassCPUCheck: 跳過 CPU 檢查。
