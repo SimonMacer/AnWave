@@ -34,6 +34,8 @@
 > ⌈逐步推行⌋👌[圖形] 新功能！在「設定」>「系統」>「顯示」>「更新」下管理 PC 的 HDR 功能，包括：「使用 HDR」的更清晰標籤，更好地解釋支援哪些媒體類型。即使關閉 HDR 也能夠傳輸 HDR 視訊。在配備杜比視界 (Dolby Vision) 的電腦上，新的切換按鈕可讓您獨立於 HDR 開啟或關閉杜比視界 - 讓您更能控制觀看體驗。
 > ⌈逐步推行⌋👌[Notepad] 新功能! Microsoft 正開始改進 Notepad 基本功能，您可以在工具列上見到此改進，與「檔案」、「編輯」和「檢視」選項並列，新增粗體、斜體和超連結，同時支援清單和標題功能及支援 Markdown 語法。
 https://blogs.windows.com/windows-insider/2025/05/30/text-formatting-in-notepad-begin-rolling-out-to-windows-insiders/
+> ⌈逐步推行⌋👌[復原] 新功能! 快速機器復原已包含在 Windows 11 24H2 Build 26100.4202 (KB5058499) 版本中。快速機器復原是一項功能，可讓 Windows 裝置在遇到嚴重錯誤而無法開機時進行復原。 這項功能可以自動在雲端中搜尋補救措施，並從廣泛的開機失敗中復原，大幅降低當多個裝置受到影響時，IT 系統管理員的負擔。在「啟動修復」的基礎下，快速機器復原會使用安全且連線的 Windows 復原環境來掃描 Windows Update 是否有補救選項。 這可讓裝置復原，而不需要手動介入。
+https://learn.microsoft.com/zh-tw/windows/configuration/quick-machine-recovery/?tabs=intune
 > 包含 May 28, 2025—KB5058499 (OS Build 26100.4202) Preview 中的逐步推行部分功能。
 https://support.microsoft.com/en-us/topic/may-28-2025-kb5058499-os-build-26100-4202-preview-d4c2f1ee-8138-4038-b705-546945076f92
 
