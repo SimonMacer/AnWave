@@ -28,7 +28,7 @@ Controlled Feature Rollout (CFR) List:
 https://blogs.windows.com/windows-insider/2025/05/30/text-formatting-in-notepad-begin-rolling-out-to-windows-insiders/
 # [Recovery] New! The Quick Machine Recovery features is already exists in Windows 11 24H2 Build 26100.4202 (KB5058499). Quick machine recovery is a feature that enables the recovery of Windows devices when they encounter critical errors that prevent them from booting. This feature can automatically search for remediations in the cloud and recover from widespread boot failures, significantly reducing the burden on IT administrators when multiple devices are affected. Building on the foundation of Startup Repair, quick machine recovery uses a secure and connected Windows Recovery Environment to scan Windows Update for remediation options. This allows devices to be recovered without requiring manual intervention.
 https://learn.microsoft.com/en-us/windows/configuration/quick-machine-recovery/?tabs=intune
-# Includes the gradual rollout feature from May 28, 2025—KB5058499 (OS Build 26100.4202) Preview.
+# Includes the gradual rollout features from May 28, 2025—KB5058499 (OS Build 26100.4202) Preview.
 https://support.microsoft.com/en-us/topic/may-28-2025-kb5058499-os-build-26100-4202-preview-d4c2f1ee-8138-4038-b705-546945076f92
 
 # How to Enable All Gradual rollout of features for Windows 11 24H2
