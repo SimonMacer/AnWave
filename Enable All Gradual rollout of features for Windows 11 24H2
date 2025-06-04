@@ -24,6 +24,10 @@ Controlled Feature Rollout (CFR) List:
 # [Taskbar & System Tray] We are improving Accessibility flyout in quick settings by grouping the assistive technologies by vision, hearing, motor and mobility for easy identification to help you find the right accessibility feature based on your needs.
 # [Voice typing] You control the profanity filter. When you turn it on, it masks profanity with asterisks. When you turn it off, words appear as spoken. To change the setting, open voice typing (Win + H), select the settings icon, and turn on the Filter profanity switch.
 # [Graphics] New! Manage your PC’s HDR features under Settings > System > Display > Updates include: A clearer label for “Use HDR” that better explains which media types are supported. The ability to stream HDR video even when HDR is turned off. On PCs with Dolby Vision, a new toggle lets you turn Dolby Vision on or off independently of HDR—giving you more control over your viewing experience.
+# [Notepad] New! The Text Formatting in Notepad app in Windows 11 features is already exists in Windows 11 24H2 Build 26100.4202 (KB5058499).
+https://blogs.windows.com/windows-insider/2025/05/30/text-formatting-in-notepad-begin-rolling-out-to-windows-insiders/
+# Includes the gradual rollout feature from May 28, 2025—KB5058499 (OS Build 26100.4202) Preview.
+https://support.microsoft.com/en-us/topic/may-28-2025-kb5058499-os-build-26100-4202-preview-d4c2f1ee-8138-4038-b705-546945076f92
 
 # How to Enable All Gradual rollout of features for Windows 11 24H2
 1. Install Windows 11 24H2 Build 26100.4202 (KB5058499) or later.
