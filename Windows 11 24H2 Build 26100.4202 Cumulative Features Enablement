@@ -2,6 +2,17 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14]
 
+# KB5058499 - 26100.4202 Part 2
+# To get the copy current user settings toggles in language & region setting.
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2047487630]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+
+# New welcome experience in Paint.
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2962891406]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+
 # KB5058499 - 26100.4202
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1082013326]
 "EnabledState"=dword:00000002
@@ -94,18 +105,22 @@ Windows Registry Editor Version 5.00
 "RolloutType"=dword:00000000
 
 # KB5058499 - 26100.4188
+# New Enter Product Key, Troubleshoot Activation, Phone Activation and Retail Demo Confirm Page.
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1414391436]
 "EnabledState"=dword:00000002
 "EnabledStateOptions"=dword:00000000
 
+# New Enter Product Key, Troubleshoot Activation, Phone Activation and Retail Demo Confirm Page.
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2378413708]
 "EnabledState"=dword:00000002
 "EnabledStateOptions"=dword:00000000
 
+# New Enter Product Key, Troubleshoot Activation, Phone Activation and Retail Demo Confirm Page.
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2722096780]
 "EnabledState"=dword:00000002
 "EnabledStateOptions"=dword:00000000
 
+# New Enter Product Key, Troubleshoot Activation, Phone Activation and Retail Demo Confirm Page.
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2956977804]
 "EnabledState"=dword:00000002
 "EnabledStateOptions"=dword:00000000
