@@ -42,7 +42,7 @@ https://support.microsoft.com/en-us/topic/may-28-2025-kb5058499-os-build-26100-4
 
 # How to Enable All Gradual rollout of features for Windows 11 24H2
 1. Install Windows 11 24H2 Build 26100.4349 (KB5060842) or later.
-2. Copy Windows 11 24H2 Build 26100.4202 Cumulative Features Enablement to a *.reg file and import.
+2. Copy Windows 11 24H2 Build 26100.4349 Cumulative Features Enablement to a *.reg file and import.
 https://github.com/SimonMacer/AnWave/blob/PowerShell.zh-TW/Windows%2011%2024H2%20Build%2026100.4349%20Cumulative%20Features%20Enablement
 3. Copy Gradual rollout of features for Windows 11 24H2 (English) to a *.reg file and import.
 https://github.com/SimonMacer/AnWave/blob/PowerShell.zh-TW/Gradual%20rollout%20of%20features%20for%20Windows%2011%2024H2%20(English)
