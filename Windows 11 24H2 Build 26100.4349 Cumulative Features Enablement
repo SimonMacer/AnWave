@@ -2,6 +2,17 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14]
 
+# KB5060842 - 26100.4349
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1497430158]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000001
+"Variant"=dword:00000000
+"VariantPayloadKind"=dword:00000000
+"VariantPayload"=dword:00000000
+"FlightId"="FX:13710586"
+"RolloutState"=dword:00000000
+"RolloutType"=dword:00000000
+
 # KB5058499 - 26100.4202 Part 3
 # New Notepad AI Write
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1377939084]
