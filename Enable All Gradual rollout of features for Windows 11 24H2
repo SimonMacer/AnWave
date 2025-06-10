@@ -8,7 +8,9 @@ Controlled Feature Rollout (CFR) List:
 # [Phone Link] New! You can do even more with your Windows PC and your mobile device with direct access to cross-device features from the Start menu. For example, you can make phone calls, send SMS messages, access your photos, or share content between your mobile device and PC.
 # [Start Menu] New! Additional options in the right-click menu of the Start menu. Microsoft has added new options to rearrange pinned icons in the Start menu. The Start Pane context menu has new commands to move items to the left, right, or top.
 # [Start Menu] New! Additional options in the right-click menu of the Start menu. Microsoft has added new options to rearrange pinned icons in the Start menu. The Start Pane context menu has new commands create a new app folder.
-# [Start Menu] New! The New Start Menu Layout is avaiable on KB5055627 (26100.3902). The New Start Menu is getting a new layout and the ability to *turn off the recommended section.
+*Disabled* # [Start Menu] New! The New Start Menu Layout is avaiable on KB5055627 (26100.3902). The New Start Menu is getting a new layout and the ability to *turn off the recommended section.
+Enable New Start Menu Layout: https://github.com/SimonMacer/AnWave/blob/PowerShell.zh-TW/Enable%20New%20Start%20Menu%20Layout
+Disable New Start Menu Layout: https://github.com/SimonMacer/AnWave/blob/PowerShell.zh-TW/Disable%20New%20Start%20Menu%20Layout
 # [File Explorer] Fixed: The “see more” (…) menu in the File Explorer command bar opens in the wrong direction in some cases.
 # [File Explorer] New! Recommended files in File Explorer Home are now available to all Windows Insiders who are signed in with their personal Microsoft account (and local accounts). These files will provide you quick access to relevant files based on your activity in the Recommended section which is displayed as a carousel with thumbnail previews. This includes content such as files you frequently use, have recently downloaded, or added to your File Explorer Gallery. Users with a work/school account (Entra ID) will have additional types of recommendations available with this update. This change is not yet rolling out in the EEA (European Economic Area). Quick access folders will continue to be available in the navigation pane for easy access to pinned folders.
 # [File Explorer] New! Opening new folders in a new tab instead of creating additional windows.
@@ -39,9 +41,9 @@ https://learn.microsoft.com/en-us/windows/configuration/quick-machine-recovery/?
 https://support.microsoft.com/en-us/topic/may-28-2025-kb5058499-os-build-26100-4202-preview-d4c2f1ee-8138-4038-b705-546945076f92
 
 # How to Enable All Gradual rollout of features for Windows 11 24H2
-1. Install Windows 11 24H2 Build 26100.4202 (KB5058499) or later.
+1. Install Windows 11 24H2 Build 26100.4349 (KB5060842) or later.
 2. Copy Windows 11 24H2 Build 26100.4202 Cumulative Features Enablement to a *.reg file and import.
-https://github.com/SimonMacer/AnWave/blob/PowerShell.zh-TW/Windows%2011%2024H2%20Build%2026100.4202%20Cumulative%20Features%20Enablement
+https://github.com/SimonMacer/AnWave/blob/PowerShell.zh-TW/Windows%2011%2024H2%20Build%2026100.4349%20Cumulative%20Features%20Enablement
 3. Copy Gradual rollout of features for Windows 11 24H2 (English) to a *.reg file and import.
 https://github.com/SimonMacer/AnWave/blob/PowerShell.zh-TW/Gradual%20rollout%20of%20features%20for%20Windows%2011%2024H2%20(English)
 4. You will now need to restart your computer, for the changes to take effect.
