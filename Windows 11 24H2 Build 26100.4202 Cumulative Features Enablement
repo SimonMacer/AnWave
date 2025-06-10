@@ -3,6 +3,30 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14]
 
 # KB5058499 - 26100.4202 Part 3
+
+# New Notepad AI Write
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1377939084]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000001
+"Variant"=dword:00000000
+"VariantPayloadKind"=dword:00000000
+"VariantPayload"=dword:00000000
+"FlightId"="FX:136F8893"
+"RolloutState"=dword:00000000
+"RolloutType"=dword:00000000
+"ImpressionTime"=hex(b):50,c4,2d,41,23,da,db,01
+
+# New Snipping Tool Color Picker Tool
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\352073359]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000001
+"Variant"=dword:00000000
+"VariantPayloadKind"=dword:00000000
+"VariantPayload"=dword:00000000
+"FlightId"="FX:136F87C5"
+"RolloutState"=dword:00000000
+"RolloutType"=dword:00000000
+
 # The Win + Shift + T keyboard shortcut launches the Snipping Tool's Text Extraction feature, which allows you to copy text directly from anywhere on your screen. This feature uses Optical Character Recognition (OCR) to identify and extract text from images or text on your screen.
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1563311759]
 "EnabledState"=dword:00000002
