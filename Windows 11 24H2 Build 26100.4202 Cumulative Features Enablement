@@ -3,7 +3,6 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14]
 
 # KB5058499 - 26100.4202 Part 3
-
 # New Notepad AI Write
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1377939084]
 "EnabledState"=dword:00000002
