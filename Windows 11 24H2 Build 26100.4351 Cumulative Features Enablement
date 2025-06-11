@@ -2,6 +2,39 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14]
 
+# KB5063060 - 26100.4351
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1776227469]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000001
+"Variant"=dword:00000000
+"VariantPayloadKind"=dword:00000000
+"VariantPayload"=dword:00000000
+"FlightId"="FX:136A7E18"
+"RolloutState"=dword:00000000
+"RolloutType"=dword:00000000
+"ImpressionTime"=hex(b):bf,ff,4b,30,f5,da,db,01
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2743383695]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000001
+"Variant"=dword:00000000
+"VariantPayloadKind"=dword:00000000
+"VariantPayload"=dword:00000000
+"FlightId"="FX:136A7E19"
+"RolloutState"=dword:00000000
+"RolloutType"=dword:00000000
+"ImpressionTime"=hex(b):72,b0,87,2c,f5,da,db,01
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\518933134]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000001
+"Variant"=dword:00000000
+"VariantPayloadKind"=dword:00000000
+"VariantPayload"=dword:00000000
+"FlightId"="FX:136F8930"
+"RolloutState"=dword:00000000
+"RolloutType"=dword:00000000
+
 # KB5060842 - 26100.4349
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1497430158]
 "EnabledState"=dword:00000002
