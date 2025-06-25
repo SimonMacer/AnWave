@@ -1,0 +1,17 @@
+# 提供給巴哈姆特電腦應用綜合討論專用@Uncyler825
+# TerminateWindowsUpdateCleanupConfig PowerShell 2025-06-25
+# https://github.com/SimonMacer/AnWave
+# Terminate Windows Update Service!
+$command = 'net stop wuauserv'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'net stop bits'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+# Clear the downloaded update file!
+$command = 'del /f /s /q %windir%\SoftwareDistribution\Download\*'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+# Start Windows Update Service!
+$command = 'net start wuauserv'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'net start bits'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+CLS
