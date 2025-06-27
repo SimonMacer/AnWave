@@ -57,10 +57,10 @@ Get-CimInstance -ClassName Win32_QuickFixEngineering -Property HotFixId |
 Get-Process | Format-Table Id, Name, Path, MainWindowTitle, FileVersionInfo -AutoSize > "C:\EventReport\Get-Process.txt"
 
 $userPath = $env:username
-$sourceWinDmp = "C:\Windows\*.dmp"
+# $sourceWinDmp = "C:\Windows\*.dmp"
 $source = "C:\Windows\minidump\*.*"
 $destination = "C:\EventReport"
-Copy-Item $sourceWinDmp -Destination $destination -confirm:$false -recurse
+# Copy-Item $sourceWinDmp -Destination $destination -confirm:$false -recurse
 Copy-Item $source -Destination $destination -confirm:$false -recurse
 New-Item -Force -Path "C:\EventReport\CrashDumps" -ItemType Directory
 $sourceUser = "C:\Users\$userPath\AppData\Local\CrashDumps\*.*"
