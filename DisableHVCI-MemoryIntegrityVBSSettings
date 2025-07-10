@@ -1,11 +1,58 @@
 # 提供給巴哈姆特電腦應用綜合討論專用@Uncyler825
-# DisableHVCI-MemoryIntegrityVBSSettings PowerShell 2025-04-23
+# DisableHVCI-MemoryIntegrityVBSSettings PowerShell 2025-07-11
 # https://github.com/SimonMacer/AnWave
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Bypass -Force
-Read-Host "(HVCI) 停用 VBS 虛擬化型安全性和記憶體完整性 > 任意鍵繼續!"
-$DSAccount = Read-Host "您是否想要重設 Windows Hello 和使用者帳戶密碼? (Y = 是)" -WarningAction Inquire
-if ( $DSAccount -eq 'y' )
+Read-Host "(HVCI) 停用(重新啟用) VBS 虛擬化型安全性和記憶體完整性 > 任意鍵繼續!"
+$VBSEnableMode = Read-Host "請選擇 VBS 虛擬化型安全性和記憶體完整性設定模式: (D = 停用;U = 停用 + 重設 Windows Hello 和使用者帳戶密碼;E = 重新啟用)" -WarningAction Inquire
+if ( $VBSEnableMode -eq 'e' )
 {
+$DeviceGuardKey = "HKLM:\SYSTEM\ControlSet001\Control\DeviceGuard"
+try
+{
+Set-ItemProperty -Path $DeviceGuardKey -Name 'EnableVirtualizationBasedSecurity' -Type DWord -Value 1 -Force
+} catch {}
+try
+{
+Remove-ItemProperty -Path $DeviceGuardKey -Name 'RequirePlatformSecurityFeatures' -Force
+} catch {}
+$HypervisorEnforcedCodeIntegrityKey = "HKLM:\SYSTEM\ControlSet001\Control\DeviceGuard\Scenarios\HypervisorEnforcedCodeIntegrity"
+try
+{
+Set-ItemProperty -Path $HypervisorEnforcedCodeIntegrityKey -Name 'Enabled' -Type DWord -Value 1 -Force
+} catch {}
+CLS
+$command = 'mountvol X: /s'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy %WINDIR%\System32\SecConfig.efi X:\EFI\Microsoft\Boot\SecConfig.efi /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'bcdedit /create {0cb3b571-2f2e-4343-a879-d86a476d7215} /d "DebugTool" /application osloader'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} path "\EFI\Microsoft\Boot\SecConfig.efi"'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'bcdedit /set {bootmgr} bootsequence {0cb3b571-2f2e-4343-a879-d86a476d7215}'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} loadoptions ENABLE-LSA-ISO, ENABLE-VBS'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} device partition=X:'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'mountvol X: /d'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+CLS
+Write-Output '請重新啟動系統!'
+$RebootASK = Read-Host "您要立即重新啟動系統嗎? (Y = Yes)" -WarningAction Inquire
+if ( $RebootASK -eq 'y' )
+{
+Restart-Computer -Force
+} else {
+Exit
+}
+}
+if ( $VBSEnableMode -eq 'd' -or $VBSEnableMode -eq 'u' )
+{
+if ( $VBSEnableMode -eq 'u' )
+{
+CLS
+Write-Output "重設 Windows Hello 和使用者帳戶密碼中!"
 Set-LocalUser -name $env:username -Password ([securestring]::new())
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System" -Name 'AllowDomainPINLogon' -Type DWord -Value 0 -Force
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\PolicyManager\default\Settings\AllowSignInOptions" -Name 'value' -Type DWord -Value 0 -Force
@@ -44,6 +91,8 @@ $command = 'bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} loadoptions DISA
 Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
 $command = 'bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} device partition=X:'
 Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'mountvol X: /d'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
 $command = 'bcdedit /set hypervisorlaunchtype off'
 Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
 $DeviceGuardKey = "HKLM:\SYSTEM\ControlSet001\Control\DeviceGuard"
@@ -69,3 +118,8 @@ Restart-Computer -Force
 } else {
 Exit
 }
+}
+CLS
+Write-Output '您未選擇任何模式! 即將退出 PowerShell...'
+Pause
+Exit
