@@ -36,6 +36,174 @@ $command = 'copy "%WINDIR%\Boot\EFI_EX\bootmgfw_EX.efi" "X:\EFI\Microsoft\Boot\b
 Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
 $command = 'copy "%WINDIR%\Boot\EFI_EX\bootmgfw_EX.efi" "X:\EFI\Boot\bootx64.efi" /Y'
 Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\cs-CZ\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\cs-CZ\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\cs-CZ\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\cs-CZ\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\da-DK\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\da-DK\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\da-DK\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\da-DK\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\de-DE\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\de-DE\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\de-DE\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\de-DE\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\el-GR\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\el-GR\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\el-GR\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\el-GR\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\en-GB\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\en-GB\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\en-GB\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\en-GB\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\en-US\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\en-US\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\en-US\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\en-US\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\es-ES\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\es-ES\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\es-ES\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\es-ES\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\es-MX\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\es-MX\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\es-MX\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\es-MX\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\et-EE\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\et-EE\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\et-EE\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\et-EE\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\fi-FI\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\fi-FI\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\fi-FI\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\fi-FI\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\fr-CA\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\fr-CA\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\fr-CA\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\fr-CA\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\fr-FR\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\fr-FR\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\fr-FR\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\fr-FR\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\hr-HR\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\hr-HR\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\hr-HR\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\hr-HR\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\hu-HU\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\hu-HU\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\hu-HU\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\hu-HU\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\it-IT\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\it-IT\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\it-IT\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\it-IT\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\ja-JP\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\ja-JP\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\ja-JP\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\ja-JP\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\ko-KR\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\ko-KR\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\ko-KR\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\ko-KR\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\lt-LT\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\lt-LT\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\lt-LT\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\lt-LT\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\lv-LV\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\lv-LV\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\lv-LV\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\lv-LV\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\nb-NO\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\nb-NO\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\nb-NO\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\nb-NO\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\nl-NL\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\nl-NL\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\nl-NL\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\nl-NL\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\pl-PL\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\pl-PL\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\pl-PL\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\pl-PL\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\pt-BR\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\pt-BR\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\pt-BR\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\pt-BR\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\pt-PT\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\pt-PT\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\pt-PT\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\pt-PT\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\ro-RO\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\ro-RO\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\ro-RO\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\ro-RO\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\ru-RU\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\ru-RU\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\ru-RU\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\ru-RU\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\sk-SK\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\sk-SK\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\sk-SK\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\sk-SK\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\sl-SI\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\sl-SI\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\sl-SI\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\sl-SI\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\sr-Latn-RS\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\sr-Latn-RS\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\sr-Latn-RS\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\sr-Latn-RS\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\sv-SE\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\sv-SE\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\sv-SE\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\sv-SE\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\tr-TR\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\tr-TR\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\tr-TR\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\tr-TR\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\uk-UA\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\uk-UA\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\uk-UA\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\uk-UA\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\zh-CN\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\zh-CN\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\zh-CN\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\zh-CN\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\zh-TW\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\zh-TW\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\zh-TW\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\zh-TW\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\Fonts_EX\chs_boot_EX.ttf" "X:\EFI\Microsoft\Boot\Fonts\chs_boot.ttf" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\Fonts_EX\cht_boot_EX.ttf" "X:\EFI\Microsoft\Boot\Fonts\cht_boot.ttf" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\Fonts_EX\jpn_boot_EX.ttf" "X:\EFI\Microsoft\Boot\Fonts\jpn_boot.ttf" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\Fonts_EX\kor_boot_EX.ttf" "X:\EFI\Microsoft\Boot\Fonts\kor_boot.ttf" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\Fonts_EX\malgun_boot_EX.ttf" "X:\EFI\Microsoft\Boot\Fonts\malgun_boot.ttf" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\Fonts_EX\malgunn_boot_EX.ttf" "X:\EFI\Microsoft\Boot\Fonts\malgunn_boot.ttf" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\Fonts_EX\meiryo_boot_EX.ttf" "X:\EFI\Microsoft\Boot\Fonts\meiryo_boot.ttf" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\Fonts_EX\meiryon_boot_EX.ttf" "X:\EFI\Microsoft\Boot\Fonts\meiryon_boot.ttf" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\Fonts_EX\msjh_boot_EX.ttf" "X:\EFI\Microsoft\Boot\Fonts\msjh_boot.ttf" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\Fonts_EX\msjhn_boot_EX.ttf" "X:\EFI\Microsoft\Boot\Fonts\msjhn_boot.ttf" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\Fonts_EX\msyh_boot_EX.ttf" "X:\EFI\Microsoft\Boot\Fonts\msyh_boot.ttf" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\Fonts_EX\msyhn_boot_EX.ttf" "X:\EFI\Microsoft\Boot\Fonts\msyhn_boot.ttf" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\Fonts_EX\segmono_boot_EX.ttf" "X:\EFI\Microsoft\Boot\Fonts\segmono_boot.ttf" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\Fonts_EX\segoe_slboot_EX.ttf" "X:\EFI\Microsoft\Boot\Fonts\segoe_slboot.ttf" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\Fonts_EX\segoen_slboot_EX.ttf" "X:\EFI\Microsoft\Boot\Fonts\segoen_slboot.ttf" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\Fonts_EX\wgl4_boot_EX.ttf" "X:\EFI\Microsoft\Boot\Fonts\wgl4_boot.ttf" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
 $command = 'reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Secureboot\Servicing" /v "WindowsUEFICA2023Capable" /t REG_DWORD /d 2 /f'
 Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
 $command = 'mountvol X: /d'
