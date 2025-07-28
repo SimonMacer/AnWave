@@ -1,0 +1,81 @@
+# 提供給巴哈姆特電腦應用綜合討論專用@Uncyler825
+# WindowsUEFICA2023Capable PowerShell 2025-07-28
+# https://github.com/SimonMacer/AnWave
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Bypass -Force
+$CA2 = $false
+Read-Host "Windows Boot Manager of Windows UEFI CA 2023 Update > Press any key to continue!"
+try {
+$dbBytes  = (Get-SecureBootUEFI -Name db -ErrorAction Stop).Bytes
+$dbString = [System.Text.Encoding]::ASCII.GetString($dbBytes)
+if ($dbString -match 'Windows UEFI CA 2023') {
+$CA2 = $true
+Write-Host "Windows UEFI CA 2023 found in DB." -ForegroundColor Green
+}
+else {
+CLS
+Write-Host "Windows UEFI CA 2023 not in DB." -ForegroundColor Red
+Pause
+Exit
+}
+}
+catch {
+CLS
+Write-Host "Windows UEFI CA 2023 not in DB." -ForegroundColor Red
+Pause
+Exit
+}
+if ($CA2 -eq $true) {
+$AskCA2 = Read-Host "Would you like to update Windows Boot Manager of Windows UEFI CA 2023? (Y = Yes, Windows Boot Manager of Windows UEFI CA 2023;N = No;R = Restore EFI Partition)" -WarningAction Inquire
+if ( $AskCA2 -eq 'y') {
+CLS
+$command = 'mountvol X: /s'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\bootmgfw_EX.efi" "X:\EFI\Microsoft\Boot\bootmgfw.efi" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\bootmgfw_EX.efi" "X:\EFI\Microsoft\Boot\bootmgr.efi" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'copy "%WINDIR%\Boot\EFI_EX\bootmgfw_EX.efi" "X:\EFI\Boot\bootx64.efi" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Secureboot\Servicing" /v "WindowsUEFICA2023Capable" /t REG_DWORD /d 2 /f'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'mountvol X: /d'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+CLS
+Write-Host "Windows Boot Manager of Windows UEFI CA 2023 Update successful!" -ForegroundColor Green
+Write-Output 'Please restart the system!'
+$RebootASK = Read-Host "Would you like to restart the system? (Y = Yes)" -WarningAction Inquire
+if ( $RebootASK -eq 'y' )
+{
+Restart-Computer -Force
+}
+}
+if ( $AskCA2 -eq 'r') {
+CLS
+$command = 'mountvol X: /s'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'bcdboot "%WINDIR%" /s X: /f UEFI'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Secureboot\Servicing" /v "WindowsUEFICA2023Capable" /t REG_DWORD /d 1 /f'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'mountvol X: /d'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+CLS
+Write-Host "Restore Windows Boot Manager successful!" -ForegroundColor Green
+Write-Output 'Please restart the system!'
+$RebootASK = Read-Host "Would you like to restart the system? (Y = Yes)" -WarningAction Inquire
+if ( $RebootASK -eq 'y' )
+{
+Restart-Computer -Force
+}
+}
+if ( $AskCA2 -eq 'n') {
+Exit
+} else {
+Exit
+}
+} else {
+CLS
+Write-Host "Windows UEFI CA 2023 not in DB." -ForegroundColor Red
+Pause
+Exit
+}
