@@ -1,5 +1,5 @@
 # 提供給巴哈姆特電腦應用綜合討論專用@Uncyler825
-# WindowsUEFICA2023Capable PowerShell 2025-07-28
+# WindowsUEFICA2023Capable PowerShell 2025-07-30
 # https://github.com/SimonMacer/AnWave
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Bypass -Force
 $CA2 = $false
@@ -308,7 +308,9 @@ if ( $AskCA2 -eq 'r') {
 CLS
 $command = 'mountvol X: /s'
 Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
-$command = 'bcdboot "%WINDIR%" /s X: /f UEFI'
+$command = 'del X:\*.* /f /s /q'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'bcdboot %systemroot% /s X:'
 Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
 $command = 'reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Secureboot\Servicing" /v "WindowsUEFICA2023Capable" /t REG_DWORD /d 1 /f'
 Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
