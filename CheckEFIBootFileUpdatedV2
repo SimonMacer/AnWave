@@ -1,0 +1,244 @@
+# 提供給巴哈姆特電腦應用綜合討論專用@Uncyler825
+# CheckEFIBootFileUpdatedV2 PowerShell 2025-07-30
+# 2025-07-30 Modified By: https://github.com/SimonMacer/AnWave
+# Added KEK certificate.
+# Added Try {} catch {} to DB, KEK and DBX certificate detection.
+# Mount the EFI partition to verify the actual Windows Boot Manager certificate.
+# Original Author: Matthew Graeber (@mattifestation)
+# Modified By: Jeremiah Cox (@int0x6)
+# Modified By: Joel Roth (@nafai)
+# Additional Source: https://gist.github.com/mattifestation/991a0bea355ec1dc19402cef1b0e3b6f
+# Additional Source: https://www.powershellgallery.com/packages/SplitDbxContent/1.0
+License: BSD 3-Clause
+CLS
+function Get-UefiDatabaseSignatures {
+    [CmdletBinding()]
+    param (
+        [Parameter(Mandatory, ValueFromPipeline, ParameterSetName = 'UEFIVariable')]
+        [ValidateScript({ ($_.GetType().Fullname -eq 'Microsoft.SecureBoot.Commands.UEFIEnvironmentVariable') -and ($_.Name -in "kek","pk","db","dbx") })]
+        $Variable,
+
+        [Parameter(Mandatory, ParameterSetName = 'ByteArray')]
+        [Byte[]]
+        [ValidateNotNullOrEmpty()]
+        $BytesIn,
+
+        [Parameter(Mandatory, ParameterSetName = 'File')]
+        [string]
+        [ValidateScript({ (Resolve-Path "$_").where({Test-Path $_}).Path })]
+        $Filename
+    )
+
+    $SignatureTypeMapping = @{
+        'C1C41626-504C-4092-ACA9-41F936934328' = 'EFI_CERT_SHA256_GUID' # Most often used for dbx
+        'A5C059A1-94E4-4AA7-87B5-AB155C2BF072' = 'EFI_CERT_X509_GUID'   # Most often used for db
+    }
+
+    $Bytes = $null
+
+    if ($Filename)
+    {
+        $Bytes = Get-Content -Encoding Byte $Filename -ErrorAction Stop
+    }
+    elseif ($Variable)
+    {
+        $Bytes = $Variable.Bytes
+    }
+    else
+    {
+        $Bytes = $BytesIn
+    }
+
+    # Modified from Split-Dbx
+    if (($Bytes[40] -eq 0x30) -and ($Bytes[41] -eq 0x82 ))
+    {
+        Write-Debug "Removing signature."
+
+        $sig_length = $Bytes[42] * 256 + $Bytes[43] + 4
+        if ($sig_length -gt ($Bytes.Length + 40)) {
+            Write-Error "Signature longer than file size!" -ErrorAction Stop
+        }
+
+        [System.Byte[]]$Bytes = @($Bytes[($sig_length+40)..($Bytes.Length - 1)].Clone())
+    }
+    else
+    {
+        Write-Debug "Signature not found. Assuming it's already split."
+    }
+
+    try
+    {
+        $MemoryStream = New-Object -TypeName IO.MemoryStream -ArgumentList @(,$Bytes)
+        $BinaryReader = New-Object -TypeName IO.BinaryReader -ArgumentList $MemoryStream, ([Text.Encoding]::Unicode)
+    }
+    catch
+    {
+        throw $_
+        return
+    }
+
+    while ($BinaryReader.PeekChar() -ne -1) {
+        $SignatureType = $SignatureTypeMapping[([Guid][Byte[]] $BinaryReader.ReadBytes(16)).Guid]
+        $SignatureListSize = $BinaryReader.ReadUInt32()
+        $SignatureHeaderSize = $BinaryReader.ReadUInt32()
+        $SignatureSize = $BinaryReader.ReadUInt32()
+
+        $SignatureHeader = $BinaryReader.ReadBytes($SignatureHeaderSize)
+
+        $SignatureCount = ($SignatureListSize - 0x1C) / $SignatureSize
+
+        $SignatureList = 1..$SignatureCount | ForEach-Object {
+            $SignatureDataBytes = $BinaryReader.ReadBytes($SignatureSize)
+
+            $SignatureOwner = [Guid][Byte[]] $SignatureDataBytes[0..15]
+
+            switch ($SignatureType) {
+                'EFI_CERT_SHA256_GUID' {
+                    $SignatureData = ([Byte[]] $SignatureDataBytes[0x10..0x2F] | ForEach-Object { $_.ToString('X2') }) -join ''
+                }
+
+                'EFI_CERT_X509_GUID' {
+                    $SignatureData = New-Object Security.Cryptography.X509Certificates.X509Certificate2 -ArgumentList @(,([Byte[]] $SignatureDataBytes[16..($SignatureDataBytes.Count - 1)]))
+                }
+            }
+
+            [PSCustomObject] @{
+                PSTypeName = 'EFI.SignatureData'
+                SignatureOwner = $SignatureOwner
+                SignatureData = $SignatureData
+            }
+        }
+
+        [PSCustomObject] @{
+            PSTypeName = 'EFI.SignatureList'
+            SignatureType = $SignatureType
+            SignatureList = $SignatureList
+        }
+    }
+}
+
+$CN_regex = '(CN=)((\w|\s)+)(,(.+))'
+
+function Get-PFXCert {
+    param ([string]$FileName)
+
+    $null = (Get-PfxCertificate -FilePath $FileName).Issuer -match $CN_regex
+    return $Matches[2]
+}
+
+function Validate-Cert {
+    param ([string]$CertName)
+
+    if ($global:SecureBoot -eq $true) {
+        if (($global:db_Certs | where { $_ -contains $CertName }).Count -eq 1 -and ($global:dbx_Certs | where { $_ -contains $CertName }).Count -eq 0) {
+            $Status = 'allowed'
+        }
+        else {
+            $Status = 'banned'
+        }
+    }
+    else {
+        $Status = 'allowed'
+    }
+
+    return $Status
+}
+
+function Print-Header {
+    param([string]$Header)
+    return ("`n{0}`n{1}" -f $Header, ($Header -replace '(.)','-'))
+}
+
+$SecureBoot = Confirm-SecureBootUEFI
+
+'Secure Boot: {0}' -f $(switch ($SecureBoot) {
+    $true   { 'ENABLED' }
+    $false  { 'DISABLED' }
+    default { 'UNSUPPORTED' }
+})
+
+try {
+$db_Certs = @((Get-SecureBootUEFI db | Get-UefiDatabaseSignatures).SignatureList.SignatureData.Subject | where { $_ -match 'Microsoft' } | foreach { $null = $_ -match $CN_regex; $Matches[2] })
+} catch {
+$db_Certs = $false
+}
+if ( $db_Certs -eq $false) {
+Print-Header 'EFI DB Certificates'
+} else {
+Print-Header 'EFI DB Certificates'
+foreach ($Cert in $db_Certs) {
+    "    {0}" -f $Cert
+}
+}
+
+try {
+$kek_Certs = @((Get-SecureBootUEFI kek | Get-UefiDatabaseSignatures).SignatureList.SignatureData.Subject | where { $_ -match 'Microsoft' } | foreach { $null = $_ -match $CN_regex; $Matches[2] })
+} catch {
+$kek_Certs = $false
+}
+if ( $kek_Certs -eq $false) {
+Print-Header 'EFI KEK Certificates'
+} else {
+Print-Header 'EFI KEK Certificates'
+foreach ($Cert in $kek_Certs) {
+    "    {0}" -f $Cert
+}
+}
+
+try {
+$dbx_Certs = @((Get-SecureBootUEFI dbx | Get-UefiDatabaseSignatures).SignatureList.SignatureData.Subject | where { $_ -match 'Microsoft' } | foreach { $null = $_ -match $CN_regex; $Matches[2] })
+} catch {
+$dbx_Certs = $false
+}
+if ( $dbx_Certs -eq $false) {
+Print-Header 'EFI DBX Certificates'
+} else {
+Print-Header 'EFI DBX Certificates'
+foreach ($Cert in $dbx_Certs) {
+    "    {0}" -f $Cert
+}
+}
+
+$Updates = Get-ItemPropertyValue -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Secureboot' -Name AvailableUpdates
+
+Print-Header ("AvailableUpdates: 0x{0:x}" -f $Updates)
+switch ($Updates) {
+    ($Updates -bor 0x2)   { '    Install the updated certificate definitions to the DBX.' }
+    ($Updates -bor 0x40)  { '    Install the updated certificate definitions to the DB.' }
+    ($Updates -bor 0x80)  { '    Enable the revocation.' }
+    ($Updates -bor 0x100) { '    Update the Boot Manager on your device.' }
+    ($Updates -bor 0x200) { '    Apply the SVN update to the firmware.' }
+}
+
+Write-Host "Mount the EFI partition to label X:" -ForegroundColor Green
+$command = 'mountvol X: /s'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+
+$BootMgr_File = "X:\EFI\Microsoft\Boot\bootmgfw.efi"
+$BootMgr_Cert = Get-PFXCert $BootMgr_File
+Write-Host "Validate that $BootMgr_File file is signed by the $BootMgr_Cert certificate!" -ForegroundColor Green
+Write-Host "Unmount X: EFI partition!" -ForegroundColor Green
+$command = 'mountvol X: /d'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+
+Print-Header 'EFI Files'
+"Boot Manager [{0}] on Disk {1} is {2}.`n" -f $BootMgr_Cert, $SystemDisk, (Validate-Cert $BootMgr_Cert)
+
+foreach ($Volume in (Get-Volume | where { $_.DriveType -ne 'Fixed' -and $_.OperationalStatus -eq 'OK' })) {
+    $EFI_File = "$($Volume.DriveLetter):\EFI\boot\bootx64.efi"
+
+    if (-not (Test-Path $EFI_File)) {
+        continue
+    }
+
+    $EFI_Cert = Get-PFXCert $EFI_File
+
+    if ($Volume.DriveType -eq 'Removable') {
+        $DriveType = 'USB'
+    }
+    else {
+        $DriveType = 'ISO'
+    }
+
+    'Boot File [{0}] on {1} ({2}:) is {3}.' -f $EFI_Cert, $DriveType, $Volume.DriveLetter, (Validate-Cert $EFI_Cert)
+}
