@@ -5,433 +5,433 @@ Windows Registry Editor Version 5.00
 # To get the notification center on secondary monitors in the latest Dev/Beta CU (.5722)
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2090623116]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://x.com/phantomofearth/status/1949950642430070807
 
 # New Windows 11 25H2 Method to Remove Bloatware
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3378000526]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1853569164]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://itstechbased.com/new-windows-11-25h2-method-to-remove-bloatware/
 
 # Enable All New Features from the Biggest Windows 11 24H2 June Update (KB5060829 or Build 26100.4484)
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1633192078]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1717188239]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://itstechbased.com/how-to-enable-all-new-features-from-the-biggest-windows-11-24h2-june-update-kb5060829-or-build-26100-4484/
 
 # Enable the New Flyouts Location Setting in Windows 11 26200.5661
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3784524941]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://itstechbased.com/how-to-enable-the-new-flyouts-location-setting-in-windows-11-26200-5661/
 
 # New Windows 11 Start Menu
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3036241548]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2792562829]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\762256525]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\734731404]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2114784909]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\905601679]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1853569164]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://itstechbased.com/new-windows-11-start-menu-is-here-how-to-enable/
 
 # Enable All New Features from the Biggest Windows 11 24H2 May Update (KB5058499 or Build 26100.4202)
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1398311054]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\560125070]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\403600526]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1671849614]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3885912207]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3895955085]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\875924621]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\293617295]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://itstechbased.com/how-to-enable-all-new-features-from-the-biggest-windows-11-24h2-may-update-kb5058499-or-build-26100-4202/
 
 # Enable All New Features in Windows 11 Dev/Beta – New AI Actions, New Taskbar Change, New Apps
 # Enable New AI Actions in File Explorer
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\4098520719]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 # Enable New AI Actions in File Explorer
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\929719951]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 # Enable New AI Actions in File Explorer
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1853569164]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 # Enable New Win + Shift + T keyboard shortcut for Snipping Tool
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2135178895]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 # Enable New Text descriptions for Accessibility Features in the Quick Settings Menu
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1082013326]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 # Enable New Compression Tool for Images in Windows Share
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3020579983]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 # EnterProductKeyPage
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1414391436]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 # TroubleshootActivation
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2722096780]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 # PhoneActivationPage
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2956977804]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 # RetailDemoConfirmPage
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2378413708]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://itstechbased.com/how-to-enable-all-new-features-in-windows-11-dev-beta-new-ai-actions-new-taskbar-change-new-apps/
 
 # New Advanced Settings in Windows 11 Dev/Beta
 # Enable New Advanced Settings
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1263161998]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://itstechbased.com/new-advanced-settings-in-windows-11-dev-beta-how-to-enable/
 
 # Enable All New Features from the Big Windows 11 24H2 April Update (KB5055627)
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1230538894]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1970751628]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3597742221]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2943499918]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\4031139983]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://itstechbased.com/how-to-enable-all-new-features-from-the-big-windows-11-24h2-april-update-kb5055627/
 
 # Enable the New Notification Center in Windows 11 22635.5240
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2479876749]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1853569164]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://itstechbased.com/how-to-enable-the-new-notification-center-in-windows-11-22635-5240/
 
 # Enable the New Small Taskbar Buttons in Windows 11 (Beta/Dev)
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3231150730]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1853569164]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://itstechbased.com/how-to-enable-the-new-small-taskbar-buttons-in-windows-11-beta-dev/
 
 # Enable New Taskbar Battery Icon and Percentage in Windows 11 Release Preview or Main Release
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1772039821]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1853569164]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\593004686]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://itstechbased.com/how-to-enable-new-taskbar-battery-icon-and-percentage-in-windows-11-release-preview-or-main-release/
 
 # Enable the New Drag to Share Feature in Windows 11 22635.4805
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3895955085]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\467837582]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1853569164]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://itstechbased.com/how-to-enable-the-new-drag-to-share-feature-in-windows-11-22635-4805/
 
 # Enable All New Features in the Big Windows 11 24H2 January 2025 Update (Build 26100.3025)
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\4284123279]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1798011530]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1853569164]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3765016717]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://itstechbased.com/how-to-enable-all-new-features-in-the-big-windows-11-24h2-january-2025-update-build-26100-3025/
 
 # Enable All New Features in Windows 11 22635.4800 – New Start Menu, New File Explorer Home, New Copy Dialog and more
 # Enable New Windows Search Improvements
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\403600526]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 # Enable New Copy, Open and Save Dialogs
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1691966604]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 # Enable New Recommended Files Section in File Explorer
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\436524174]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1916873356]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 # Enable New Top Cards in the About Section in the Settings App
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\607965839]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1958247566]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1853569164]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://itstechbased.com/how-to-enable-all-new-features-in-windows-11-22635-4800-new-start-menu-new-file-explorer-home-new-copy-dialog-and-more/
 
 # Enable New Big Features in the File Explorer in Windows 11 22635.4580
 # Enable New Restore Tabs Feature
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2734718606]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1853569164]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 # Enable New Open Files in a New Tab in the same Window Feature
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1507140749]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3037514383]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1853569164]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 # Turn off or Snooze the Start Backup Reminders in the File Explorer
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\4216146060]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1853569164]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://itstechbased.com/new-big-features-in-the-file-explorer-in-windows-11-22635-4580-how-to-enable/
 
 # Enable All New Features in the Big Windows 11 24H2 Update (Build 26100.2448)
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3648452751]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3008297102]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://itstechbased.com/how-to-enable-all-new-features-in-the-big-windows-11-24h2-update-build-26100-2448/
 
 # Enable All New Features in Windows 11 – New Taskbar, Start Menu Features (Canary and Beta)
 # Enable New Start Menu Share from the Recommended Section
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2089776268]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 # Enable New Taskbar Share from jumplist
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2042203277]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 # Enable New Reset This PC and Go Back Dialogs in Settings
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1796606605]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3888384140]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://itstechbased.com/how-to-enable-all-new-features-in-windows-11-new-taskbar-start-menu-features-canary-and-beta/
 
 # Enable new HDR options (Dolby Vision mode and Allow HDR video streaming even when HDR is off)
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3120369804]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 # Enable Recall visual changes
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\4005114509]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 # The new administrator protection security feature has finally been backported to Dev and Beta with today's CUs (26200.5670, 26120.4520)
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3404045453]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3903118991]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1717400716]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2129281678]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://x.com/phantomofearth/status/1938724705113887176
 
 # To enable the new Recall Home page rolling out in the latest Dev/Beta CUs
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3654690447]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2775721102]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://x.com/phantomofearth/status/1937511142940688479
 
 # These are present (but not rolling out) in the latest Dev/Beta CUs
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2352098958]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://x.com/phantomofearth/status/1937337791689728057
 
 # To enable the new Desktop Spotlight flyout changes hidden in the latest Dev/Beta CUs
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3661243022]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://x.com/phantomofearth/status/1937319179096396147
 
 # Windows 11 is getting the option to change where on-screen indicators such as the volume flyout appear! You'll be able to put them in the top left (like in Windows 10) or top center.
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3784524941]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://x.com/phantomofearth/status/1937256454051815478
 
 # To enable the GIF export feature in Snipping Tool
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\683631244]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://x.com/phantomofearth/status/1935750224070234540
 
 # To enable the AM/PM symbol option in region settings
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\980690575]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://x.com/phantomofearth/status/1935750224070234540
 
 # To enable new adaptive energy saver mode in Friday's Insider CUs
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2270316174]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://x.com/phantomofearth/status/1934330181465837811
 
 # The migration flow in the Backup app is hidden in today's RP CU
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3054127758]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://x.com/phantomofearth/status/1933269018275967287
 
 # Accessibility preferences card in Settings Home
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1233379981]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 # Your device card in Settings Home
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\674339468]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1300669582]
 "EnabledState"=dword:00000002
@@ -440,214 +440,214 @@ Windows Registry Editor Version 5.00
 # Rejuvenated repair upgrade from WU flow in Settings
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1726130317]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1893854349]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://x.com/phantomofearth/status/1933199047206064432
 
 # There are two "find similar images" actions. (One is supposed to be create similar images.)
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1119572620]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://x.com/phantomofearth/status/1932920867438166407
 
 # Recall Home page and Collections
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2318364300]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1797601933]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\345844876]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 # App icons in the Recall timeline
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3697484940]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 # Related files list in screenray context menus for text
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3213313164]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://x.com/phantomofearth/status/1932924304599179607
 
 # To get the copy current user settings toggles in language & region settings in recent Dev/Beta CUs
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2047487630]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://x.com/phantomofearth/status/1931397817311830029
 
 # To get this new Narrator feature discoverability dialog
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1286483087]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2388666510]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://x.com/phantomofearth/status/1931397036915425574
 
 # The "Search permissions" and "Searching Windows" settings pages are being merged into a single "Search" settings page.
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1066149519]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://x.com/phantomofearth/status/1931394473478492319
 
 # To enable lightweight text formatting support in Notepad
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2971409037]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://x.com/phantomofearth/status/1928505788798054871
 
 # To enable the Win + Shift + T keyboard shortcut for Snipping Tool's text extractor in Dev/Beta
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2135178895]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://x.com/phantomofearth/status/1924592166904422460
 
 # Microsoft Store app recommendations in the Open With app picker in Beta
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2942457999]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1823873164]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://x.com/phantomofearth/status/1926071091170062362
 
 # Enable new inbox app features in Canary/Dev
 # Color picker tool
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\352073359]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 # Perfect screenshot on Copilot+ PCs
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3355084431]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 # Object Select on Copilot+ PCs
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\28463247]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 # Sticker Generator on Copilot+ PCs
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1814187150]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 # New welcome experience
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2962891406]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://x.com/phantomofearth/status/1925629779065053430
 
 # AI Write
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1377939084]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://x.com/phantomofearth/status/1925653358209044502
 
 # To enable the default apps settings improvements
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2026912399]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1717188239]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://x.com/phantomofearth/status/1924973491360510288
 
 # Here's the simplified Windows Backup landing page being tested in Dev/Beta. Storage estimate and the folders/apps/settings/credentials sections are gone, in favor of text about the benefits of Windows Backup.
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1627139726]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://x.com/phantomofearth/status/1924899168306270372
 
 # More IDs: to enable the compression tool for images in Windows Share, with a completely different UX to what we saw earlier this year.
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3020579983]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://x.com/phantomofearth/status/1924600674785902838
 
 
 # Text descriptions for accessibility features in the quick settings menu can be enabled.
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1082013326]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://x.com/phantomofearth/status/1924599137846120711
 
 # To try out the AI Agent in Settings on a Snapdragon Copilot+ PC running Dev 26200.5600
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1913823374]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3600297103]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://x.com/phantomofearth/status/1922078100587774439
 
 # To enable the updated accessibility flyout with features grouped into vision/hearing/motor and mobility in the quick settings menu in builds 26200.5570 and 26120.3941
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\612251278]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://x.com/phantomofearth/status/1915831202411425995
 
 # Want to enable the option to finally turn off the ****ing profanity filter in voice typing in 26200.5570, 26120.3941 and 22635.5305
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\629344395]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://x.com/phantomofearth/status/1915828890930417795
 
 # More feature IDs! To enable the rejuvenated rename your printer dialog rolling out to Dev/Beta
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3309853838]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://x.com/phantomofearth/status/1914458645338660912
 
 # Vocabulary builder (custom words in dictionary)
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1076119695]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 # Voice access toggle in quick settings
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\594951310]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://x.com/phantomofearth/status/1914454602935644604
 
 # To enable the new Reading Coach text actions in Click to Do that started rolling out to Dev/Beta
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2558024335]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://x.com/phantomofearth/status/1914450887772189135
 
 # To enable the new fullscreen Snipping Tool text extractor experience that doesn't require a screenshot to be taken
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\4047814287]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\28486799]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://x.com/phantomofearth/status/1912285420274016394
 
 # To enable the improvements to the new customizable lock widgets experience in Dev/Beta including weather widget customization
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2943499918]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://x.com/phantomofearth/status/1910796694289342743
 
 # To get more mouse options from the old Control Panel dialog in accessibility settings (pointer image customization, mouse pointer trails, hide while typing, etc.) in the latest Dev/Beta CUs
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1143375503]
 "EnabledState"=dword:00000002
-"EnabledStateOptions"=dword:0000000
+"EnabledStateOptions"=dword:00000000
 # https://x.com/phantomofearth/status/1909785329051095104
 
 # New! During text entry, type Windows logo key + . (period). The emoji keyboard will appear. Select an emoji with the mouse, or keep typing to search through the available emojis for one you like.
