@@ -2,6 +2,12 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14]
 
+# The ability to pin apps in the share using section of the Windows Share sheet has started to quietly roll out to Dev/Beta Insiders.
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3427948174]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+# https://x.com/phantomofearth/status/1954573064777126161
+
 # To get the notification center on secondary monitors in the latest Dev/Beta CU (.5722)
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2090623116]
 "EnabledState"=dword:00000002
