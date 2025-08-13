@@ -72,7 +72,9 @@ Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
 
 $logdateZip = Get-Date -format yyyyMMddHHmm
 Compress-Archive -Path "C:\EventReport\CrashDumps" -Update -DestinationPath "C:\EventReport\CrashDumpsReporting-$logdateZip.zip"
+Remove-Item -Force -Path "C:\EventReport\CrashDumps" -confirm:$false -recurse
 Compress-Archive -Path "C:\EventReport\LiveKernelReports" -Update -DestinationPath "C:\EventReport\LiveKernelReports-$logdateZip.zip"
+Remove-Item -Force -Path "C:\EventReport\LiveKernelReports" -confirm:$false -recurse
 Compress-Archive -Path "C:\EventReport" -Update -DestinationPath "C:\AutoDiagnosticReporting-$logdateZip.zip"
 Remove-Item -Force -Path "C:\EventReport" -confirm:$false -recurse
 Exit
