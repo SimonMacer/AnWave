@@ -57,15 +57,12 @@ Get-CimInstance -ClassName Win32_QuickFixEngineering -Property HotFixId |
 Get-Process | Format-Table Id, Name, Path, MainWindowTitle, FileVersionInfo -AutoSize > "C:\EventReport\Get-Process.txt"
 
 $userPath = $env:username
-# $sourceWinDmp = "C:\Windows\*.dmp"
-$source = "C:\Windows\minidump\*.*"
-$destination = "C:\EventReport"
-# Copy-Item $sourceWinDmp -Destination $destination -confirm:$false -recurse
-Copy-Item $source -Destination $destination -confirm:$false -recurse
+$command = 'xcopy "C:\Windows\minidump\*.*" "C:\EventReport" /y /e /c'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
 New-Item -Force -Path "C:\EventReport\CrashDumps" -ItemType Directory
 $sourceUser = "C:\Users\$userPath\AppData\Local\CrashDumps\*.*"
-$destinationpathUser = "C:\EventReport\CrashDumps"
-Copy-Item $sourceUser -Destination $destinationpathUser -confirm:$false -recurse
+$command = 'xcopy "$sourceUser" "C:\EventReport\CrashDumps" /y /e /c'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
 New-Item -Force -Path "C:\EventReport\LiveKernelReports" -ItemType Directory
 $command = 'xcopy "C:\Windows\LiveKernelReports\*.*" "C:\EventReport\LiveKernelReports" /y /e /c'
 Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
