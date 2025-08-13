@@ -71,8 +71,8 @@ $command = 'xcopy "C:\Windows\LiveKernelReports\*.*" "C:\EventReport\LiveKernelR
 Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
 
 $logdateZip = Get-Date -format yyyyMMddHHmm
-Compress-Archive -Path "C:\EventReport\CrashDumps\*.*" -Update -DestinationPath "C:\EventReport\CrashDumpsReporting-$logdateZip.zip"
-Compress-Archive -Path "C:\EventReport\LiveKernelReports\*.*" -Update -DestinationPath "C:\EventReport\LiveKernelReports-$logdateZip.zip"
-Compress-Archive -Path "C:\EventReport\*.*" -Update -DestinationPath "C:\AutoDiagnosticReporting-$logdateZip.zip"
+Compress-Archive -Path "C:\EventReport\CrashDumps" -Update -DestinationPath "C:\EventReport\CrashDumpsReporting-$logdateZip.zip"
+Compress-Archive -Path "C:\EventReport\LiveKernelReports" -Update -DestinationPath "C:\EventReport\LiveKernelReports-$logdateZip.zip"
+Compress-Archive -Path "C:\EventReport" -Update -DestinationPath "C:\AutoDiagnosticReporting-$logdateZip.zip"
 Remove-Item -Force -Path "C:\EventReport" -confirm:$false -recurse
 Exit
