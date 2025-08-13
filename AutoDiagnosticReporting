@@ -73,6 +73,7 @@ Copy-Item $sourceLKR -Destination $destinationpathLKR -confirm:$false -recurse
 
 $logdateZip = Get-Date -format yyyyMMddHHmm
 Compress-Archive -Path "C:\EventReport\CrashDumps\*.*" -Update -DestinationPath "C:\EventReport\CrashDumpsReporting-$logdateZip.zip"
+Compress-Archive -Path "C:\EventReport\LiveKernelReports\*.*" -Update -DestinationPath "C:\EventReport\LiveKernelReports-$logdateZip.zip"
 Compress-Archive -Path "C:\EventReport\*.*" -Update -DestinationPath "C:\AutoDiagnosticReporting-$logdateZip.zip"
 Remove-Item -Force -Path "C:\EventReport" -confirm:$false -recurse
 Exit
