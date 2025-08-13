@@ -60,8 +60,7 @@ $userPath = $env:username
 $command = 'xcopy "C:\Windows\minidump\*.*" "C:\EventReport" /y /e /c'
 Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
 New-Item -Force -Path "C:\EventReport\CrashDumps" -ItemType Directory
-$sourceUser = "C:\Users\$userPath\AppData\Local\CrashDumps\*.*"
-$command = 'xcopy "$sourceUser" "C:\EventReport\CrashDumps" /y /e /c'
+$command = 'xcopy "C:\Users\%username%\AppData\Local\CrashDumps\*.*" "C:\EventReport\CrashDumps" /y /e /c'
 Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
 New-Item -Force -Path "C:\EventReport\LiveKernelReports" -ItemType Directory
 $command = 'xcopy "C:\Windows\LiveKernelReports\*.*" "C:\EventReport\LiveKernelReports" /y /e /c'
