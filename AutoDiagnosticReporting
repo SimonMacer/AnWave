@@ -1,5 +1,5 @@
 # 提供給巴哈姆特電腦應用綜合討論專用@Uncyler825
-# AutoDiagnosticReporting PowerShell 2025-04-16
+# AutoDiagnosticReporting PowerShell 2025-08-13
 # https://github.com/SimonMacer/AnWave
 $nid = (Get-Process msinfo32).Id
 Stop-Process -Id $nid
