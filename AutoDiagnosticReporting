@@ -66,6 +66,10 @@ New-Item -Force -Path "C:\EventReport\CrashDumps" -ItemType Directory
 $sourceUser = "C:\Users\$userPath\AppData\Local\CrashDumps\*.*"
 $destinationpathUser = "C:\EventReport\CrashDumps"
 Copy-Item $sourceUser -Destination $destinationpathUser -confirm:$false -recurse
+New-Item -Force -Path "C:\EventReport\LiveKernelReports" -ItemType Directory
+$sourceLKR = "C:\Windows\LiveKernelReports\*.*"
+$destinationpathLKR = "C:\EventReport\LiveKernelReports"
+Copy-Item $sourceLKR -Destination $destinationpathLKR -confirm:$false -recurse
 
 $logdateZip = Get-Date -format yyyyMMddHHmm
 Compress-Archive -Path "C:\EventReport\CrashDumps\*.*" -Update -DestinationPath "C:\EventReport\CrashDumpsReporting-$logdateZip.zip"
