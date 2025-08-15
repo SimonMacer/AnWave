@@ -2,6 +2,17 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14]
 
+# Dark mode file operation dialogs can be enabled in today's Dev/Beta CU (.5751).
+# Request 156965516, 1853569164
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2813728398]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\465967759]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+# https://x.com/phantomofearth/status/1956411431819092066
+
 # To enable these animations, which have started to roll out to Dev/Beta in .5751 (KB5064071).
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2024945807]
 "EnabledState"=dword:00000002
