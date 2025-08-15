@@ -2,6 +2,12 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14]
 
+# Get window mode screen recording in Snipping Tool feature for Windows 11 23H2 and 24H2/25H2.
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1559370894]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+"FlightId"="FX:1380CD35"
+
 # The ability to pin apps in the share using section of the Windows Share sheet has started to quietly roll out to Dev/Beta Insiders.
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3427948174]
 "EnabledState"=dword:00000002
