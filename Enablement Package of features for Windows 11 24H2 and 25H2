@@ -2,6 +2,52 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14]
 
+# Windows 11 Build 26100.5061 (KB5064081) Gradual rollout
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\882258575]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+"FlightId"="FX:136C5619"
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1147016846]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+"FlightId"="FX:137C69F1"
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1215837838]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+"FlightId"="FX:137C4381"
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2762093710]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+"FlightId"="FX:137C4383"
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2996974734]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+"FlightId"="FX:137C4382"
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3234867854]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+"FlightId"="FX:137C4380"
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3442478222]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+"FlightId"="FX:1380603C"
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3769377935]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+"FlightId"="FX:137C4384"
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\651447950]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+"FlightId"="FX:137C4385"
+
 # Get window mode screen recording in Snipping Tool feature for Windows 11 23H2 and 24H2/25H2.
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1559370894]
 "EnabledState"=dword:00000002
