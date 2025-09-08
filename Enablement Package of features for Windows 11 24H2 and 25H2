@@ -2,6 +2,16 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14]
 
+# Address regressions in Windows 11, version 24H2 related to application/game graphics presentation model overrides.
+# August 29, 2025 - KB5064081 (OS Build 26100.5074) Preview
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2155495054]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\342256271]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+
 # Dark mode file operation dialogs can be enabled in today's Dev/Beta CU (.5751).
 # Request 156965516, 1853569164
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2813728398]
