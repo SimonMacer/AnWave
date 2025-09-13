@@ -12,8 +12,8 @@ $info = [Environment]::OSVersion.Version
 $OSVersion = [System.Version]::new($info.Build, $SecurityOSString)
 $FixedSecurityOSString = $OSVersion
 CLS
-Write-Host "Uninstall KB: KB$SecurityUpdateString" -ForegroundColor Green
-Write-Host "Uninstall OS Build: $FixedSecurityOSString" -ForegroundColor Green
+Write-Information "Uninstall KB: KB$SecurityUpdateString"
+Write-Information "Uninstall OS Build: $FixedSecurityOSString"
 $ConfirmUKB = Read-Host "您輸入的 Windows KB 編號及 OS Build 都正確嗎? (輸入 Y 確認並繼續)" -WarningAction Inquire
 if ( $ConfirmUKB -eq 'y' )
 {
