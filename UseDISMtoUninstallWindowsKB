@@ -22,7 +22,7 @@ if ( $ConfirmUKB -eq 'y' )
 if ($null -ne (Get-HotFix -Id KB$CUNumber -ErrorAction SilentlyContinue))
 {
 Get-WindowsPackage -Online |
-Where-Object { ($_.PackageName -like *$FixedCurrentOSBuild*) -and ($_.PackageState -eq ([Microsoft.Dism.Commands.PackageFeatureState]::Installed)) -and ($_.ReleaseType -eq ([Microsoft.Dism.Commands.ReleaseType]::SecurityUpdate)) } |
+Where-Object { ($_.PackageName -like "*$FixedCurrentOSBuild*") -and ($_.PackageState -eq ([Microsoft.Dism.Commands.PackageFeatureState]::Installed)) -and ($_.ReleaseType -eq ([Microsoft.Dism.Commands.ReleaseType]::SecurityUpdate)) } |
 ForEach-Object {
 Remove-WindowsPackage -Online -PackageName ($_.PackageName) -NoRestart |
 ForEach-Object {
