@@ -2,17 +2,18 @@
 # UseDISMtoUninstallWindowsKB PowerShell 2025-09-13
 # https://github.com/SimonMacer/AnWave
 Read-Host "使用 DISM 逐步移除 Windows 累績更新 > 任意鍵繼續!"
-$SecurityUpdateString = Read-Host "請輸入 Windows 累績更新 KB 編號 (不包含 KB)。KB:" -WarningAction Inquire
+$SecurityUpdateString = Read-Host "請輸入 Windows 累績更新 KB 編號 (不包含 KB)。KB" -WarningAction Inquire
 if ($SecurityUpdateString)
 {
-$SecurityOSString = Read-Host "請輸入 Windows 累績更新 KB 編號的操作系統內部版本最後逗號(.)後的編號。例如 26200.6584 則輸入 6584。最後逗號(.)後的編號:" -WarningAction Inquire
+$SecurityOSString = Read-Host "請輸入 Windows 累績更新 KB 編號的操作系統內部版本最後逗號(.)後的編號。例如 26200.6584 則輸入 6584。最後逗號(.)後的編號" -WarningAction Inquire
 if ($SecurityOSString)
 {
 $info = [Environment]::OSVersion.Version
 $OSVersion = [System.Version]::new($info.Build, $SecurityOSString)
 $FixedSecurityOSString = $OSVersion
-Write-Information "Uninstall KB: KB$SecurityUpdateString" -ForegroundColor Green
-Write-Information "Uninstall OS Build: $FixedSecurityOSString" -ForegroundColor Green
+CLS
+Write-Host "Uninstall KB: KB$SecurityUpdateString" -ForegroundColor Green
+Write-Host "Uninstall OS Build: $FixedSecurityOSString" -ForegroundColor Green
 $ConfirmUKB = Read-Host "您輸入的 Windows KB 編號及 OS Build 都正確嗎? (輸入 Y 確認並繼續)" -WarningAction Inquire
 if ( $ConfirmUKB -eq 'y' )
 {
