@@ -1,0 +1,37 @@
+# 提供給巴哈姆特電腦應用綜合討論專用@Uncyler825
+# WindowsPackageFinder PowerShell 2025-09-24
+# https://github.com/SimonMacer/AnWave
+$userPath = $env:username
+$FindWP = Read-Host "搜尋 Windows Package" -WarningAction Inquire
+$FindAppx = Read-Host "搜尋 Windows Appx Provisioned Package" -WarningAction Inquire
+$filePath = "C:\Users\$userPath\Desktop\Packagelist.txt"
+$filePathAppx = "C:\Users\$userPath\Desktop\AppxProvisionedPackagelist.txt"
+if (Test-Path $filePath)
+{
+try
+{
+Remove-Item $filePath -verbose
+} catch {}
+}
+if (Test-Path $filePathAppx)
+{
+try
+{
+Remove-Item $filePathAppx -verbose
+} catch {}
+}
+CLS
+Write-Host "搜尋 Windows Package:" -ForegroundColor Blue
+Get-WindowsPackage -Online | Where-Object { $_.PackageName -like "*$FindWP*" } |
+ForEach-Object {
+               $WPackageName = ($_.PackageName)
+               Write-Host "$WPackageName" -ForegroundColor Green
+               $WPackageName | Out-File -FilePath $filePath -Append
+    }
+Write-Host "搜尋 Windows Appx Provisioned Package:" -ForegroundColor Blue
+Get-AppxProvisionedPackage -Online | Where-Object { $_.PackageName -like "*$FindAppx*" } |
+ForEach-Object {
+               $AppxProvisionedPackageName = ($_.PackageName)
+               Write-Host "$AppxProvisionedPackageName" -ForegroundColor Green
+               $AppxProvisionedPackageName | Out-File -FilePath $filePathAppx -Append
+    }
