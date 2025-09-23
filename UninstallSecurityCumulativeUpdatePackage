@@ -1,0 +1,40 @@
+# 提供給巴哈姆特電腦應用綜合討論專用@Uncyler825
+# UninstallSecurityCumulativeUpdatePackage PowerShell 2025-09-23
+# https://github.com/SimonMacer/AnWave
+Set-StrictMode -Version 'latest'
+$InformationPreference = [Management.Automation.ActionPreference]::Continue
+Read-Host "移除 Windows Security Cumulative Update Package> 任意鍵繼續!"
+$OSLCUInfo = Get-ItemPropertyValue 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion' 'LCUVer'
+$LCUOut = $OSLCUInfo -Replace "10.0."
+$LCU = ""
+$SecOSNumber = Read-Host "請輸入 OS 組建: (輸入 C = $LCUOut;輸入安全性累績更新 OS 組建)" -WarningAction Inquire
+if ( $SecOSNumber -eq 'c')
+{
+$LCU = $LCUOut
+} else {
+$LCU = $SecOSNumber
+}
+Write-Host "OS 組建: $LCU" -ForegroundColor Green
+$SecOSConf = Read-Host "請確認輸入的 OS 組建是否正確? (Y = 確認並開始移除)" -WarningAction Inquire
+if ( $SecOSConf -eq 'y')
+{
+Get-WindowsPackage -Online | Where-Object { $_.PackageName -like "*$LCU*" } |
+ForEach-Object {
+      if (($_.PackageState -eq ([Microsoft.Dism.Commands.PackageFeatureState]::Installed)) -and ($_.ReleaseType -eq ([Microsoft.Dism.Commands.ReleaseType]::SecurityUpdate)))
+            {
+               $LCUPackageName = ($_.PackageName)
+               Write-Host "開始移除 Security Update 套件: $LCUPackageName" -ForegroundColor Green
+               Remove-WindowsPackage -Online -PackageName ($_.PackageName) -NoRestart
+               Write-Host "移除 Security Update 套件作業結束!" -ForegroundColor Blue
+            }
+    }
+Write-Host '請重新啟動系統以完成移除作業!' -ForegroundColor Green
+$RebootASK = Read-Host "請問您是否想要重新啟動系統以完成移除作業? (Y = 是，立即重新啟動)" -WarningAction Inquire
+if ( $RebootASK -eq 'y' )
+{
+Restart-Computer -Force
+}
+} else {
+CLS
+Write-Host "作業已取消!" -ForegroundColor Green
+}
