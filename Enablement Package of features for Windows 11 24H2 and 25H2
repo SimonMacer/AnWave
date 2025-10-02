@@ -2,6 +2,17 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14]
 
+# Enable Snipping Tool: Live Annotation feature in Generally Available Channels.
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1478357135]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+"FlightId"="FX:1388ABC4"
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\875711118]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+# https://x.com/phantomofearth/status/1956722300168146945
+
 # Enable Windows 11 Builds 26100.6713 and 26200.6713 (KB5065789) Gradual rollout features.
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1150694031]
 "EnabledState"=dword:00000002
