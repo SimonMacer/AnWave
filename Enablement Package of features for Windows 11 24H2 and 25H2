@@ -2,6 +2,27 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14]
 
+# KB5065789 (26100.6725 and 26200.6725)
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1738716810]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+"FlightId"="FX:1382176E"
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2485652622]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+"FlightId"="FX:138833FE"
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\575010446]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+"FlightId"="FX:1388343A"
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\709228174]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+"FlightId"="FX:13883485"
+
 # You can find apps installed on your PC or apps available in the Microsoft Store directly within the Windows share window using “Find Apps” under the “Share using” section.
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2390122639]
 "EnabledState"=dword:00000002
