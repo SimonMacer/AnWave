@@ -1,0 +1,137 @@
+#
+# update Windows Recovery Environment (WinRE)
+#
+
+#
+# 1. Place the Cumulative Update for Windows 11, version 25H2 for x64-based Systems update MSU file in the "C:\Users\*UserName*\Desktop\KB" directory.
+# 2. Place the Safe OS Dynamic Update for Windows (Ge) Version 25H2 for x64-based Systems update CAB file in the "C:\Users\*UserName*\Desktop\KB" directory.
+# 3. Place the KB5043080 Checkpoint Cumulative Update for Windows 11, version 24H2 and 25H2 update MSU file in the "C:\Users\*UserName*\Desktop\KB" directory.
+#
+
+function Get-TS { return "{0:HH:mm:ss}" -f [DateTime]::Now }
+
+$userPath = $env:username
+$WORKING_PATH = "C:\Users\$userPath\Desktop\WORKING_WINRE"
+
+# Set KB File Name
+$LCUFileName = "windows11.0-kb5070773-x64_b235da912270f84b761402e9511000a4f500b4ac.msu"
+$SAFEDUFileName = "windows11.0-kb5070762-x64_4b467e35732c13393ba032305d398b615423a8ad.cab"
+$CHECKPOINTFileName = "windows11.0-kb5043080-x64_953449672073f8fb99badb4cc6d5d7849b9c83e8.msu"
+
+# Set LCU, SafeDU
+$LCU_PATH = "C:\Users\$userPath\Desktop\KB\$LCUFileName"
+$SAFE_OS_DU_PATH = "C:\Users\$userPath\Desktop\KB\$SAFEDUFileName"
+$CHECKPOINT_KB = "C:\Users\$userPath\Desktop\KB\$CHECKPOINTFileName"
+
+# Set MOUNT PATH
+$WINRE_MOUNT = "C:\WinPerp2\mountRE"
+
+if ((Test-Path $LCU_PATH) -and (Test-Path $SAFE_OS_DU_PATH) -and (Test-Path $CHECKPOINT_KB)) {
+
+try
+{
+    Remove-Item -Force -Path $WINRE_MOUNT -confirm:$false -recurse
+}
+Catch { }
+try
+{
+    Remove-Item -Force -Path $WORKING_PATH -confirm:$false -recurse
+}
+Catch { }
+try
+{
+    New-Item -Force -Path $WINRE_MOUNT -ItemType Directory
+}
+Catch { }
+try
+{
+    New-Item -Force -Path $WORKING_PATH -ItemType Directory
+}
+Catch { }
+CLS
+Write-Host "$(Get-TS): Starting update Windows Recovery Environment (WinRE)!" -ForegroundColor Green
+
+$command = 'reagentc /disable'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+
+Write-Host "$(Get-TS): Copying winre.wim image to [$WORKING_PATH\winre.wim]!" -ForegroundColor Green
+try
+{
+    Copy-Item -Path "C:\windows\system32\recovery\winre.wim" -Destination $WORKING_PATH"\winre.wim" -Force -ErrorAction stop | Out-Null
+}
+Catch { }
+Write-Host "$(Get-TS): Mounting winre.wim image!" -ForegroundColor Green
+try
+{
+    Mount-WindowsImage -ImagePath $WORKING_PATH"\winre.wim" -Index 1 -Path $WINRE_MOUNT -ErrorAction stop | Out-Null
+}
+Catch { }
+
+# update Windows Recovery Environment (WinRE)
+Write-Host "$(Get-TS): update Windows Recovery Environment (WinRE)!" -ForegroundColor Green
+try
+{
+    Add-WindowsPackage -Path $WINRE_MOUNT -PackagePath $LCU_PATH | Out-Null
+}
+Catch { }
+
+# Add latest Safe OS Dynamic Update
+Write-Host "$(Get-TS): Add latest Safe OS Dynamic Update!" -ForegroundColor Green
+try
+{
+    Add-WindowsPackage -Path $WINRE_MOUNT -PackagePath $SAFE_OS_DU_PATH -ErrorAction stop | Out-Null
+}
+Catch { }
+
+# Perform image cleanup
+Write-Host "$(Get-TS): Perform image cleanup!" -ForegroundColor Green
+try
+{
+    DISM /image:$WINRE_MOUNT /cleanup-image /StartComponentCleanup /ResetBase /Defer | Out-Null
+}
+Catch { }
+
+# Dismount
+Write-Host "$(Get-TS): Dismount [$WINRE_MOUNT]!" -ForegroundColor Green
+try
+{
+    Dismount-WindowsImage -Path $WINRE_MOUNT  -Save -ErrorAction stop | Out-Null
+}
+Catch { }
+
+# Export
+Write-Host "$(Get-TS): Export [$WORKING_PATH\winre2.wim]!" -ForegroundColor Green
+try
+{
+    Export-WindowsImage -SourceImagePath $WORKING_PATH"\winre.wim" -SourceIndex 1 -DestinationImagePath $WORKING_PATH"\winre2.wim" -ErrorAction stop | Out-Null
+}
+Catch { }
+try
+{
+    Remove-Item -Force -Path "C:\windows\system32\recovery\winre.wim" -confirm:$false -recurse
+}
+Catch { }
+try
+{
+    Copy-Item -Path $WORKING_PATH"\winre2.wim" -Destination "C:\windows\system32\recovery\winre.wim" -Force -ErrorAction stop | Out-Null
+}
+Catch { }
+
+DISM /Get-WimInfo /WimFile:"C:\windows\system32\recovery\winre.wim" /index:1
+
+$command = 'reagentc /enable'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'reagentc /info'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+
+try
+{
+    Remove-Item -Force -Path "C:\WinPerp2" -confirm:$false -recurse
+}
+Catch { }
+try
+{
+    Remove-Item -Force -Path $WORKING_PATH -confirm:$false -recurse
+}
+Catch { }
+}
