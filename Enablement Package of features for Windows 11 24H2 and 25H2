@@ -2,6 +2,59 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14]
 
+# Enable Live Wallpaper (This feature is disabled and the CFR value will be ignored)
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\123478158]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+
+# Enable Network Speed Test Button
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3197378190]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+
+# Enable Drag Tray Improvements
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1043086990]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\304234127]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2935882895]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+
+# Enable New Privacy and Security Settings Page
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1129197711]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+
+# The mobile devices settings page is being revamped. ViVeTool ID: 56845155
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3332913294]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+
+# Dark Mode dialog prereq. ViVeTool ID: 58383338
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3587705487]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+
+# Dark Mode Run. ViVeTool ID: 59270880
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3231968911]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+
+# Dark Mode Folder Options. ViVeTool ID: 59203365
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1255272590]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+
+# Snipping Tool New Windowed Recording Feature
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\1008595087]
+"EnabledState"=dword:00000002
+"EnabledStateOptions"=dword:00000000
+
 # KB5070773 (26100.6901 and 26200.6901)
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\2174616719]
 "EnabledState"=dword:00000002
