@@ -1,0 +1,394 @@
+#
+# Update each main OS Windows image including the Windows Recovery Environment (WinRE)
+#
+
+function Get-TS { return "{0:HH:mm:ss}" -f [DateTime]::Now }
+
+# Set OS Build Number
+$WINVER_OS = "26200.6901"
+
+# Variable (Do not change)
+$WIN_NAME = ""
+$WINOS_IMAGES = ""
+$WimIndex = ""
+
+# Set environment variable
+$userPath = $env:username
+$MEDIA_NEW_PATH = "C:\Users\$userPath\Desktop\Win11_24H2_Customize\GAC-WIM"
+$WORKING_PATH = "C:\Users\$userPath\Desktop\Win11_24H2_Customize\WORKING_WIM"
+
+# Set KB Number
+$eKBNumber = "5054156"
+$LCUNumber = "5070773"
+$SAFEDUNumber = "5070762"
+$DoNetNumber = "5066128"
+
+# Set eKB, LCU, SafeDU and more
+$eKB_PATH = "C:\Users\$userPath\Desktop\Win11_24H2_Customize\KB\Windows11.0-KB$eKBNumber-x64.msu"
+$LCU_PATH = "C:\Users\$userPath\Desktop\Win11_24H2_Customize\KB\Windows11.0-KB$LCUNumber-x64.msu"
+$SAFE_OS_DU_PATH = "C:\Users\$userPath\Desktop\Win11_24H2_Customize\KB\Windows11.0-KB$SAFEDUNumber-x64.msu"
+$DoNet_PATH = "C:\Users\$userPath\Desktop\Win11_24H2_Customize\KB\Windows11.0-KB$DoNetNumber-x64-NDP481.msu"
+$CHECKPOINT_KB = "C:\Users\$userPath\Desktop\Win11_24H2_Customize\Checkpoint\Windows11.0-KB5043080-x64.msu"
+$CHECKPOINT_Ge = "C:\Users\$userPath\Desktop\Win11_24H2_Customize\KB\Windows11.0-KB5043080-x64.msu"
+
+# Set MOUNT PATH
+$MAIN_OS_MOUNT = "C:\WinPerp2\mount"
+$WINRE_MOUNT = "C:\WinPerp2\mountRE"
+
+try
+{
+    $WINOS_IMAGES = Get-WindowsImage -ImagePath $MEDIA_NEW_PATH"\install.wim"
+}
+Catch { }
+try
+{
+    Remove-Item -Force -Path $MAIN_OS_MOUNT -confirm:$false -recurse
+}
+Catch { }
+try
+{
+    Remove-Item -Force -Path $WINRE_MOUNT -confirm:$false -recurse
+}
+Catch { }
+try
+{
+    Remove-Item -Force -Path $WORKING_PATH -confirm:$false -recurse
+}
+Catch { }
+try
+{
+    New-Item -Force -Path $MAIN_OS_MOUNT -ItemType Directory
+}
+Catch { }
+try
+{
+    New-Item -Force -Path $WINRE_MOUNT -ItemType Directory
+}
+Catch { }
+try
+{
+    New-Item -Force -Path $WORKING_PATH -ItemType Directory
+}
+Catch { }
+CLS
+Write-Host "$(Get-TS): Starting media refresh" -ForegroundColor Green
+Write-Host "$(Get-TS): Copy KB5043080 Checkpoint Cumulative Update for Windows 11, version 24H2 and 25H2!" -ForegroundColor Green
+try
+{
+    Copy-Item -Path $CHECKPOINT_KB -Destination $CHECKPOINT_Ge -Force -ErrorAction stop | Out-Null
+}
+Catch { }
+
+Foreach ($IMAGE in $WINOS_IMAGES)
+{
+
+    # first mount the main OS image
+    Write-Host "$(Get-TS): Mounting [$MEDIA_NEW_PATH\install.wim] image!" -ForegroundColor Green
+    try
+    {
+        Mount-WindowsImage -ImagePath $MEDIA_NEW_PATH"\install.wim" -Index $IMAGE.ImageIndex -Path $MAIN_OS_MOUNT -ErrorAction stop| Out-Null
+    }
+    Catch { }
+
+    if ($IMAGE.ImageIndex -eq "1")
+    {
+
+        #
+        # update Windows Recovery Environment (WinRE) within this OS image
+        #
+        Write-Host "$(Get-TS): Copying winre.wim image to [$WORKING_PATH\winre.wim]!" -ForegroundColor Green
+        try
+        {
+            Copy-Item -Path $MAIN_OS_MOUNT"\windows\system32\recovery\winre.wim" -Destination $WORKING_PATH"\winre.wim" -Force -ErrorAction stop | Out-Null
+        }
+        Catch { }
+        Write-Host "$(Get-TS): Mounting winre.wim image!" -ForegroundColor Green
+        try
+        {
+            Mount-WindowsImage -ImagePath $WORKING_PATH"\winre.wim" -Index 1 -Path $WINRE_MOUNT -ErrorAction stop | Out-Null
+        }
+        Catch { }
+
+        # update Windows Recovery Environment (WinRE) within this OS image
+        Write-Host "$(Get-TS): update Windows Recovery Environment (WinRE) within this OS image!" -ForegroundColor Green
+        try
+        {
+            Add-WindowsPackage -Path $WINRE_MOUNT -PackagePath $LCU_PATH | Out-Null
+        }
+        Catch { }
+
+        # Add latest Safe OS Dynamic Update for Windows (Ge) Version 25H2 for x64-based Systems
+        Write-Host "$(Get-TS): Add latest Safe OS Dynamic Update for Windows (Ge) Version 25H2 for x64-based Systems!" -ForegroundColor Green
+        try
+        {
+            Add-WindowsPackage -Path $WINRE_MOUNT -PackagePath $SAFE_OS_DU_PATH -ErrorAction stop | Out-Null
+        }
+        Catch { }
+
+        # Perform image cleanup
+        Write-Host "$(Get-TS): Perform image cleanup!" -ForegroundColor Green
+        try
+        {
+            DISM /image:$WINRE_MOUNT /cleanup-image /StartComponentCleanup /ResetBase /Defer | Out-Null
+        }
+        Catch { }
+
+        # Dismount
+        Write-Host "$(Get-TS): Dismount [$WINRE_MOUNT]!" -ForegroundColor Green
+        try
+        {
+            Dismount-WindowsImage -Path $WINRE_MOUNT  -Save -ErrorAction stop | Out-Null
+        }
+        Catch { }
+
+        # Export
+        Write-Host "$(Get-TS): Export [$WORKING_PATH\winre2.wim]!" -ForegroundColor Green
+        try
+        {
+            Export-WindowsImage -SourceImagePath $WORKING_PATH"\winre.wim" -SourceIndex 1 -DestinationImagePath $WORKING_PATH"\winre2.wim" -ErrorAction stop | Out-Null
+        }
+        Catch { }
+
+    }
+
+    if ($IMAGE.ImageIndex -eq "6")
+    {
+
+        #
+        # update Windows Recovery Environment (WinRE) within this OS image
+        #
+        try
+        {
+            Remove-Item -Force -Path $WORKING_PATH"\winre.wim" -confirm:$false -recurse
+        }
+        Catch { }
+        try
+        {
+            Remove-Item -Force -Path $WORKING_PATH"\winre2.wim" -confirm:$false -recurse
+        }
+        Catch { }
+        Write-Host "$(Get-TS): Copying winre.wim image to [$WORKING_PATH\winre.wim]!" -ForegroundColor Green
+        try
+        {
+            Copy-Item -Path $MAIN_OS_MOUNT"\windows\system32\recovery\winre.wim" -Destination $WORKING_PATH"\winre.wim" -Force -ErrorAction stop | Out-Null
+        }
+        Catch { }
+        Write-Host "$(Get-TS): Mounting winre.wim image!" -ForegroundColor Green
+        try
+        {
+            Mount-WindowsImage -ImagePath $WORKING_PATH"\winre.wim" -Index 1 -Path $WINRE_MOUNT -ErrorAction stop | Out-Null
+        }
+        Catch { }
+
+        # update Windows Recovery Environment (WinRE) within this OS image
+        Write-Host "$(Get-TS): update Windows Recovery Environment (WinRE) within this OS image!" -ForegroundColor Green
+        try
+        {
+            Add-WindowsPackage -Path $WINRE_MOUNT -PackagePath $LCU_PATH | Out-Null
+        }
+        Catch { }
+
+        # Add latest Safe OS Dynamic Update for Windows (Ge) Version 25H2 for x64-based Systems
+        Write-Host "$(Get-TS): Add latest Safe OS Dynamic Update for Windows (Ge) Version 25H2 for x64-based Systems!" -ForegroundColor Green
+        try
+        {
+            Add-WindowsPackage -Path $WINRE_MOUNT -PackagePath $SAFE_OS_DU_PATH -ErrorAction stop | Out-Null
+        }
+        Catch { }
+
+        # Perform image cleanup
+        Write-Host "$(Get-TS): Perform image cleanup!" -ForegroundColor Green
+        try
+        {
+            DISM /image:$WINRE_MOUNT /cleanup-image /StartComponentCleanup /ResetBase /Defer | Out-Null
+        }
+        Catch { }
+
+        # Dismount
+        Write-Host "$(Get-TS): Dismount [$WINRE_MOUNT]!" -ForegroundColor Green
+        try
+        {
+            Dismount-WindowsImage -Path $WINRE_MOUNT  -Save -ErrorAction stop | Out-Null
+        }
+        Catch { }
+
+        # Export
+        Write-Host "$(Get-TS): Export [$WORKING_PATH\winre2.wim]!" -ForegroundColor Green
+        try
+        {
+            Export-WindowsImage -SourceImagePath $WORKING_PATH"\winre.wim" -SourceIndex 1 -DestinationImagePath $WORKING_PATH"\winre2.wim" -ErrorAction stop | Out-Null
+        }
+        Catch { }
+
+    }
+
+    #
+    # update Main OS
+    #
+
+    # Add Feature Update for Windows 11 25H2 via Enablement Package (KB5054156)
+    Write-Host "$(Get-TS): Add Feature Update for Windows 11 25H2 via Enablement Package (KB5054156)!" -ForegroundColor Green
+    try
+    {
+        Add-WindowsPackage -Path $MAIN_OS_MOUNT -PackagePath $eKB_PATH -ErrorAction stop | Out-Null
+    }
+    Catch { }
+    # Add latest Cumulative Update for Windows 11, version 25H2 for x64-based Systems
+    Write-Host "$(Get-TS): Add latest Cumulative Update for Windows 11, version 25H2 for x64-based Systems!" -ForegroundColor Green
+    try
+    {
+        Add-WindowsPackage -Path $MAIN_OS_MOUNT -PackagePath $LCU_PATH -ErrorAction stop | Out-Null
+    }
+    Catch { }
+
+    # Perform image cleanup.
+    Write-Host "$(Get-TS): Perform image cleanup. Some Optional Components might require the image to be booted, and thus image cleanup may fail. We'll catch and handle as a warning." -ForegroundColor Green
+    try
+    {
+        DISM /image:$MAIN_OS_MOUNT /cleanup-image /StartComponentCleanup | Out-Null
+        if ($LastExitCode -ne 0)
+        {
+            if ($LastExitCode -eq -2146498554)
+            {
+                # We hit 0x800F0806 CBS_E_PENDING. We will ignore this with a warning
+                # This is likely due to legacy components being added that require online operations.
+                Write-Warning "$(Get-TS): Failed to perform image cleanup on main OS, index $($IMAGE.ImageIndex). Exit code: $LastExitCode. The operation cannot be performed until pending servicing operations are completed. The image must be booted to complete the pending servicing operation."
+            }
+            else
+            {
+                throw "Error: Failed to perform image cleanup on main OS, index $($IMAGE.ImageIndex). Exit code: $LastExitCode"
+            }
+        }
+    }
+    Catch { }
+
+    # Add latest Cumulative Update for .NET Framework 3.5 and 4.8.1 for Windows 11, version 25H2 for x64
+    Write-Host "$(Get-TS): Add latest Cumulative Update for .NET Framework 3.5 and 4.8.1 for Windows 11, version 25H2 for x64!" -ForegroundColor Green
+    try
+    {
+        Add-WindowsPackage -Path $MAIN_OS_MOUNT -PackagePath $DoNet_PATH -ErrorAction stop | Out-Null
+    }
+    Catch { }
+    # Add latest Safe OS Dynamic Update for Windows (Ge) Version 25H2 for x64-based Systems
+    Write-Host "$(Get-TS): Add latest Safe OS Dynamic Update for Windows (Ge) Version 25H2 for x64-based Systems!" -ForegroundColor Green
+    try
+    {
+        Add-WindowsPackage -Path $MAIN_OS_MOUNT -PackagePath $SAFE_OS_DU_PATH -ErrorAction stop | Out-Null
+    }
+    Catch { }
+    try
+    {
+        Remove-Item -Force -Path $MAIN_OS_MOUNT"\windows\system32\recovery\winre.wim" -confirm:$false -recurse
+    }
+    Catch { }
+    try
+    {
+        Copy-Item -Path $WORKING_PATH"\winre2.wim" -Destination $MAIN_OS_MOUNT"\windows\system32\recovery\winre.wim" -Force -ErrorAction stop | Out-Null
+    }
+    Catch { }
+
+    # Deploy
+    Write-Host "$(Get-TS): Deploy personal preference settings and local policy settings management!" -ForegroundColor Green
+    Write-Host "$(Get-TS): Deploy [C:\WinPerp2\mount\Users\Default\NTUSER.DAT]!" -ForegroundColor Green
+    $command = 'reg load HKLM\OFFLINE C:\WinPerp2\mount\Users\Default\NTUSER.DAT'
+    Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+    Start-Sleep -Seconds 2
+    $regFilesPath = "C:\Users\$userPath\Desktop\Win11_24H2_Customize\User"
+    $regFiles = Get-ChildItem -Path $regFilesPath -Filter "*.reg"
+    foreach ($file in $regFiles) {
+        Write-Host "$(Get-TS): Importing registry file: $($file.FullName)" -ForegroundColor Green
+        Start-Process -FilePath "C:\Users\$userPath\Desktop\Win11_24H2_Customize\PowerRun.exe" -ArgumentList "regedit.exe /s ", "`"$($file.FullName)`"" -Wait -NoNewWindow
+        Write-Host "$(Get-TS): Finished importing $($file.Name)"
+    }
+    Start-Sleep -Seconds 2
+    Write-Host "$(Get-TS): Unload HKLM\OFFLINE" -ForegroundColor Green
+    $command = 'reg unload HKLM\OFFLINE'
+    Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+    Start-Sleep -Seconds 1
+    Write-Host "$(Get-TS): Deploy [C:\WinPerp2\mount\Windows\System32\Config\System]!" -ForegroundColor Green
+    $command = 'reg load HKLM\OFFLINE C:\WinPerp2\mount\Windows\System32\Config\System'
+    Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+    Start-Sleep -Seconds 2
+    $regFilesPath = "C:\Users\$userPath\Desktop\Win11_24H2_Customize\System"
+    $regFiles = Get-ChildItem -Path $regFilesPath -Filter "*.reg"
+    foreach ($file in $regFiles) {
+        Write-Host "$(Get-TS): Importing registry file: $($file.FullName)" -ForegroundColor Green
+        Start-Process -FilePath "C:\Users\$userPath\Desktop\Win11_24H2_Customize\PowerRun.exe" -ArgumentList "regedit.exe /s ", "`"$($file.FullName)`"" -Wait -NoNewWindow
+        Write-Host "$(Get-TS): Finished importing $($file.Name)"
+    }
+    $regFilesPath = "C:\Users\$userPath\Desktop\Win11_24H2_Customize\SystemMain"
+    $regFiles = Get-ChildItem -Path $regFilesPath -Filter "*.reg"
+    foreach ($file in $regFiles) {
+        Write-Host "$(Get-TS): Importing registry file: $($file.FullName)" -ForegroundColor Green
+        Start-Process -FilePath "C:\Users\$userPath\Desktop\Win11_24H2_Customize\PowerRun.exe" -ArgumentList "regedit.exe /s ", "`"$($file.FullName)`"" -Wait -NoNewWindow
+        Write-Host "$(Get-TS): Finished importing $($file.Name)"
+    }
+    Start-Sleep -Seconds 2
+    Write-Host "$(Get-TS): Unload HKLM\OFFLINE" -ForegroundColor Green
+    $command = 'reg unload HKLM\OFFLINE'
+    Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+    Start-Sleep -Seconds 1
+    Write-Host "$(Get-TS): Deploy [C:\WinPerp2\mount\Windows\System32\Config\Software]!" -ForegroundColor Green
+    $command = 'reg load HKLM\OFFLINE C:\WinPerp2\mount\Windows\System32\Config\Software'
+    Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+    Start-Sleep -Seconds 2
+    $regFilesPath = "C:\Users\$userPath\Desktop\Win11_24H2_Customize\Tweak"
+    $regFiles = Get-ChildItem -Path $regFilesPath -Filter "*.reg"
+    foreach ($file in $regFiles) {
+        Write-Host "$(Get-TS): Importing registry file: $($file.FullName)" -ForegroundColor Green
+        Start-Process -FilePath "C:\Users\$userPath\Desktop\Win11_24H2_Customize\PowerRun.exe" -ArgumentList "regedit.exe /s ", "`"$($file.FullName)`"" -Wait -NoNewWindow
+        Write-Host "$(Get-TS): Finished importing $($file.Name)"
+    }
+    Start-Sleep -Seconds 2
+    Write-Host "$(Get-TS): Unload HKLM\OFFLINE" -ForegroundColor Green
+    $command = 'reg unload HKLM\OFFLINE'
+    Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+    Start-Sleep -Seconds 1
+    Write-Host "$(Get-TS): Add driver: C:\Users\%username%\Desktop\Win11_24H2_Customize\Drivers" -ForegroundColor Green
+    $command = 'dism /Image:C:\WinPerp2\mount /Add-Driver /Driver:"C:\Users\%username%\Desktop\Win11_24H2_Customize\Drivers" /Recurse'
+    Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+
+    # Dismount
+    Write-Host "$(Get-TS): Dismount [$MAIN_OS_MOUNT]!" -ForegroundColor Green
+    try
+    {
+        Dismount-WindowsImage -Path $MAIN_OS_MOUNT -Save -ErrorAction stop | Out-Null
+    }
+    Catch { }
+
+    # Export
+
+    if ($IMAGE.ImageIndex -eq "1")
+    {
+       $WimIndex = '1'
+       $WIN_NAME = "Windows 11 Home Edition, version 25H2 ($WINVER_OS)"
+    }
+    if ($IMAGE.ImageIndex -eq "2")
+    {
+       $WimIndex = '2'
+       $WIN_NAME = "Windows 11 Pro Edition, version 25H2 ($WINVER_OS)"
+    }
+    if ($IMAGE.ImageIndex -eq "3")
+    {
+       $WimIndex = '3'
+       $WIN_NAME = "Windows 11 Education, version 25H2 ($WINVER_OS)"
+    }
+    if ($IMAGE.ImageIndex -eq "4")
+    {
+       $WimIndex = '4'
+       $WIN_NAME = "Windows 11 Pro Education, version 25H2 ($WINVER_OS)"
+    }
+    if ($IMAGE.ImageIndex -eq "5")
+    {
+       $WimIndex = '5'
+       $WIN_NAME = "Windows 11 Pro for Workstations, version 25H2 ($WINVER_OS)"
+    }
+    if ($IMAGE.ImageIndex -eq "6")
+    {
+       $WimIndex = '6'
+       $WIN_NAME = "Windows 11 Enterprise LTSC 2024, version 25H2 ($WINVER_OS)"
+    }
+    Write-Host "$(Get-TS): Export [$WORKING_PATH\install.esd] - $WIN_NAME!" -ForegroundColor Green
+    DISM /export-image /SourceImageFile:$MEDIA_NEW_PATH"\install.wim" /SourceIndex:$WimIndex /DestinationImageFile:$WORKING_PATH"\install.esd" /DestinationName:"$WIN_NAME" /Compress:recovery
+    DISM /Get-WimInfo /WimFile:$WORKING_PATH"\install.esd" /index:$WimIndex
+}
