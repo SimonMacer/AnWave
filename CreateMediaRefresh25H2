@@ -23,13 +23,6 @@ param (
     [string] $OSNumber
 )
 
-    Write-Host "[LCU] KB$LCUNumber Cumulative Update for Windows 11 Version 24H2 and 25H2" -ForegroundColor Blue
-    Write-Host "[Enablement] Feature Update for Windows 11 25H2 via Enablement Package (KB$EKBNumber)" -ForegroundColor Blue
-    Write-Host "[SafeOS DU] KB$SAFEOSDUNumber Safe OS Dynamic Update for Windows 11 Version 24H2 and 25H2" -ForegroundColor Blue
-    Write-Host "[Setup DU] KB$SETUPDUNumber Setup Dynamic Update for Windows 11 Version 24H2 and 25H2" -ForegroundColor Blue
-    Write-Host "[NetFx] KB$DoNetCUNumber Cumulative Update for .NET Framework 3.5 and 4.8.1 for Windows 11 Version 24H2 and 25H2" -ForegroundColor Blue
-    Write-Host "OS Build Number: $OSNumber" -ForegroundColor Blue
-
 function Get-TS { return "{0:HH:mm:ss}" -f [DateTime]::Now }
 
 # Set OS Build Number
@@ -95,6 +88,13 @@ Catch { }
 CLS
 Write-Host "$(Get-TS): Starting media refresh" -ForegroundColor Green
 Write-Host "$(Get-TS): Copy KB5043080 Checkpoint Cumulative Update for Windows 11, version 24H2 and 25H2!" -ForegroundColor Green
+Write-Host "[LCU] KB$LCUNumber Cumulative Update for Windows 11 Version 24H2 and 25H2" -ForegroundColor Blue
+Write-Host "[Checkpoint] KB5043080 Checkpoint Cumulative Update for Windows 11 Version 24H2 and 25H2" -ForegroundColor Blue
+Write-Host "[Enablement] Feature Update for Windows 11 25H2 via Enablement Package (KB$EKBNumber)" -ForegroundColor Blue
+Write-Host "[SafeOS DU] KB$SAFEOSDUNumber Safe OS Dynamic Update for Windows 11 Version 24H2 and 25H2" -ForegroundColor Blue
+Write-Host "[Setup DU] KB$SETUPDUNumber Setup Dynamic Update for Windows 11 Version 24H2 and 25H2" -ForegroundColor Blue
+Write-Host "[NetFx] KB$DoNetCUNumber Cumulative Update for .NET Framework 3.5 and 4.8.1 for Windows 11 Version 24H2 and 25H2" -ForegroundColor Blue
+Write-Host "OS Build Number: $OSNumber" -ForegroundColor Blue
 try
 {
     Copy-Item -Path $CHECKPOINT_KB -Destination $CHECKPOINT_Ge -Force -ErrorAction stop | Out-Null
