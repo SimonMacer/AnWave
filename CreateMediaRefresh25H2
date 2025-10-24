@@ -2,10 +2,38 @@
 # Update each main OS Windows image including the Windows Recovery Environment (WinRE)
 #
 
+param (
+
+    [Parameter(Position=0,mandatory=$false)]
+    [string] $LCUNumber,
+
+    [Parameter(Position = 1,mandatory=$false)]
+    [string] $SAFEOSDUNumber,
+
+    [Parameter(Position = 2, Mandatory=$false)]
+    [string] $SETUPDUNumber,
+
+    [Parameter(Position = 3, Mandatory=$false)]
+    [string] $DoNetCUNumber,
+
+    [Parameter(Position = 4, Mandatory=$false)]
+    [string] $EKBNumber,
+
+    [Parameter(Position = 5, Mandatory=$false)]
+    [string] $OSNumber
+)
+
+    Write-Host "[LCU] KB$LCUNumber Cumulative Update for Windows 11 Version 24H2 and 25H2" -ForegroundColor Blue
+    Write-Host "[Enablement] Feature Update for Windows 11 25H2 via Enablement Package (KB$EKBNumber)" -ForegroundColor Blue
+    Write-Host "[SafeOS DU] KB$SAFEOSDUNumber Safe OS Dynamic Update for Windows 11 Version 24H2 and 25H2" -ForegroundColor Blue
+    Write-Host "[Setup DU] KB$SETUPDUNumber Setup Dynamic Update for Windows 11 Version 24H2 and 25H2" -ForegroundColor Blue
+    Write-Host "[NetFx] KB$DoNetCUNumber Cumulative Update for .NET Framework 3.5 and 4.8.1 for Windows 11 Version 24H2 and 25H2" -ForegroundColor Blue
+    Write-Host "OS Build Number: $OSNumber" -ForegroundColor Blue
+
 function Get-TS { return "{0:HH:mm:ss}" -f [DateTime]::Now }
 
 # Set OS Build Number
-$WINVER_OS = "26200.6901"
+$WINVER_OS = $OSNumber
 
 # Variable (Do not change)
 $WIN_NAME = ""
@@ -17,17 +45,11 @@ $userPath = $env:username
 $MEDIA_NEW_PATH = "C:\Users\$userPath\Desktop\Win11_24H2_Customize\GAC-WIM"
 $WORKING_PATH = "C:\Users\$userPath\Desktop\Win11_24H2_Customize\WORKING_WIM"
 
-# Set KB Number
-$eKBNumber = "5054156"
-$LCUNumber = "5070773"
-$SAFEDUNumber = "5070762"
-$DoNetNumber = "5066128"
-
 # Set eKB, LCU, SafeDU and more
-$eKB_PATH = "C:\Users\$userPath\Desktop\Win11_24H2_Customize\KB\Windows11.0-KB$eKBNumber-x64.msu"
+$eKB_PATH = "C:\Users\$userPath\Desktop\Win11_24H2_Customize\KB\Windows11.0-KB$EKBNumber-x64.msu"
 $LCU_PATH = "C:\Users\$userPath\Desktop\Win11_24H2_Customize\KB\Windows11.0-KB$LCUNumber-x64.msu"
-$SAFE_OS_DU_PATH = "C:\Users\$userPath\Desktop\Win11_24H2_Customize\KB\Windows11.0-KB$SAFEDUNumber-x64.msu"
-$DoNet_PATH = "C:\Users\$userPath\Desktop\Win11_24H2_Customize\KB\Windows11.0-KB$DoNetNumber-x64-NDP481.msu"
+$SAFE_OS_DU_PATH = "C:\Users\$userPath\Desktop\Win11_24H2_Customize\KB\Windows11.0-KB$SAFEOSDUNumber-x64.msu"
+$DoNet_PATH = "C:\Users\$userPath\Desktop\Win11_24H2_Customize\KB\Windows11.0-KB$DoNetCUNumber-x64-NDP481.msu"
 $CHECKPOINT_KB = "C:\Users\$userPath\Desktop\Win11_24H2_Customize\Checkpoint\Windows11.0-KB5043080-x64.msu"
 $CHECKPOINT_Ge = "C:\Users\$userPath\Desktop\Win11_24H2_Customize\KB\Windows11.0-KB5043080-x64.msu"
 
@@ -226,8 +248,8 @@ Foreach ($IMAGE in $WINOS_IMAGES)
     # update Main OS
     #
 
-    # Add Feature Update for Windows 11 25H2 via Enablement Package (KB5054156)
-    Write-Host "$(Get-TS): Add Feature Update for Windows 11 25H2 via Enablement Package (KB5054156)!" -ForegroundColor Green
+    # Add Feature Update for Windows 11 25H2 via Enablement Package
+    Write-Host "$(Get-TS): Add Feature Update for Windows 11 25H2 via Enablement Package (KB$EKBNumber)!" -ForegroundColor Green
     try
     {
         Add-WindowsPackage -Path $MAIN_OS_MOUNT -PackagePath $eKB_PATH -ErrorAction stop | Out-Null
