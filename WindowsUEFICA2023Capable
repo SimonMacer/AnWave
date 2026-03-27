@@ -1,5 +1,5 @@
 # 提供給巴哈姆特電腦應用綜合討論專用@Uncyler825
-# WindowsUEFICA2023Capable PowerShell 2025-07-30
+# WindowsUEFICA2023Capable PowerShell 2026-03-28
 # https://github.com/SimonMacer/AnWave
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Bypass -Force
 $CA2 = $false
@@ -14,18 +14,29 @@ Write-Host "Windows UEFI CA 2023 found in DB." -ForegroundColor Green
 else {
 CLS
 Write-Host "Windows UEFI CA 2023 not in DB." -ForegroundColor Red
-Pause
-Exit
+$CA2 = $false
 }
 }
 catch {
 CLS
 Write-Host "Windows UEFI CA 2023 not in DB." -ForegroundColor Red
-Pause
-Exit
+$CA2 = $false
 }
+Write-Host "Type an option:" -ForegroundColor Red
+Write-Host "Y = Yes, Windows Boot Manager of Windows UEFI CA 2023." -ForegroundColor Green
+Write-Host "W = Downgrade to Windows Boot Manager of Microsoft Windows Production PCA 2011." -ForegroundColor Green
+Write-Host "R = Restore EFI Partition." -ForegroundColor Green
+Write-Host "N = No." -ForegroundColor Green
+$AskCA2 = Read-Host "Would you like to update Windows Boot Manager of Windows UEFI CA 2023?" -WarningAction Inquire
+$CA2011Legacy = $false
 if ($CA2 -eq $true) {
-$AskCA2 = Read-Host "Would you like to update Windows Boot Manager of Windows UEFI CA 2023? (Y = Yes, Windows Boot Manager of Windows UEFI CA 2023;N = No;R = Restore EFI Partition)" -WarningAction Inquire
+$CA2011Legacy = $true
+}
+
+if ( $AskCA2 -eq 'w') {
+$CA2011Legacy = $true
+}
+
 if ( $AskCA2 -eq 'y') {
 CLS
 $command = 'mountvol X: /s'
@@ -304,6 +315,286 @@ if ( $RebootASK -eq 'y' )
 Restart-Computer -Force
 }
 }
+if ($CA2011Legacy) {
+if (( $AskCA2 -eq 'r') -or ( $AskCA2 -eq 'w')) {
+CLS
+$command = 'mountvol X: /s'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 1 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\bootmgfw.efi" "X:\EFI\Microsoft\Boot\bootmgfw.efi" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 2 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\bootmgfw.efi" "X:\EFI\Microsoft\Boot\bootmgr.efi" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 3 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\bootmgfw.efi" "X:\EFI\Boot\bootx64.efi" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 4 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\cs-CZ\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\cs-CZ\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 5 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\cs-CZ\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\cs-CZ\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 6 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\da-DK\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\da-DK\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 7 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\da-DK\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\da-DK\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 8 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\de-DE\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\de-DE\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 9 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\de-DE\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\de-DE\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 10 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\el-GR\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\el-GR\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 11 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\el-GR\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\el-GR\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 12 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\en-GB\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\en-GB\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 13 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\en-GB\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\en-GB\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 14 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\en-US\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\en-US\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 15 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\en-US\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\en-US\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 16 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\es-ES\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\es-ES\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 17 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\es-ES\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\es-ES\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 18 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\es-MX\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\es-MX\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 19 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\es-MX\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\es-MX\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 20 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\et-EE\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\et-EE\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 21 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\et-EE\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\et-EE\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 22 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\fi-FI\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\fi-FI\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 23 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\fi-FI\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\fi-FI\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 24 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\fr-CA\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\fr-CA\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 25 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\fr-CA\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\fr-CA\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 26 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\fr-FR\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\fr-FR\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 27 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\fr-FR\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\fr-FR\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 28 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\hr-HR\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\hr-HR\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 29 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\hr-HR\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\hr-HR\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 30 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\hu-HU\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\hu-HU\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 31 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\hu-HU\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\hu-HU\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 32 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\it-IT\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\it-IT\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 33 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\it-IT\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\it-IT\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 34 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\ja-JP\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\ja-JP\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 35 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\ja-JP\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\ja-JP\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 36 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\ko-KR\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\ko-KR\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 37 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\ko-KR\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\ko-KR\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 38 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\lt-LT\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\lt-LT\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 39 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\lt-LT\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\lt-LT\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 40 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\lv-LV\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\lv-LV\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 41 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\lv-LV\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\lv-LV\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 42 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\nb-NO\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\nb-NO\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 43 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\nb-NO\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\nb-NO\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 44 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\nl-NL\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\nl-NL\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 45 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\nl-NL\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\nl-NL\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 46 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\pl-PL\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\pl-PL\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 47 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\pl-PL\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\pl-PL\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 48 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\pt-BR\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\pt-BR\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 49 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\pt-BR\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\pt-BR\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 50 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\pt-PT\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\pt-PT\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 51 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\pt-PT\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\pt-PT\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 52 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\ro-RO\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\ro-RO\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 53 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\ro-RO\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\ro-RO\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 54 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\ru-RU\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\ru-RU\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 55 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\ru-RU\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\ru-RU\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 56 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\sk-SK\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\sk-SK\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 57 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\sk-SK\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\sk-SK\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 58 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\sl-SI\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\sl-SI\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 59 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\sl-SI\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\sl-SI\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 60 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\sr-Latn-RS\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\sr-Latn-RS\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 61 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\sr-Latn-RS\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\sr-Latn-RS\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 62 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\sv-SE\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\sv-SE\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 63 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\sv-SE\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\sv-SE\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 64 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\tr-TR\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\tr-TR\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 65 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\tr-TR\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\tr-TR\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 66 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\uk-UA\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\uk-UA\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 67 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\uk-UA\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\uk-UA\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 68 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\zh-CN\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\zh-CN\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 69 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\zh-CN\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\zh-CN\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 70 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\zh-TW\bootmgfw.efi.mui" "X:\EFI\Microsoft\Boot\zh-TW\bootmgfw.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 71 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\EFI\zh-TW\bootmgr.efi.mui" "X:\EFI\Microsoft\Boot\zh-TW\bootmgr.efi.mui" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 72 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\Fonts\chs_boot.ttf" "X:\EFI\Microsoft\Boot\Fonts\chs_boot.ttf" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 73 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\Fonts\cht_boot.ttf" "X:\EFI\Microsoft\Boot\Fonts\cht_boot.ttf" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 74 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\Fonts\jpn_boot.ttf" "X:\EFI\Microsoft\Boot\Fonts\jpn_boot.ttf" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 75 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\Fonts\kor_boot.ttf" "X:\EFI\Microsoft\Boot\Fonts\kor_boot.ttf" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 76 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\Fonts\malgun_boot.ttf" "X:\EFI\Microsoft\Boot\Fonts\malgun_boot.ttf" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 77 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\Fonts\malgunn_boot.ttf" "X:\EFI\Microsoft\Boot\Fonts\malgunn_boot.ttf" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 78 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\Fonts\meiryo_boot.ttf" "X:\EFI\Microsoft\Boot\Fonts\meiryo_boot.ttf" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 79 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\Fonts\meiryon_boot.ttf" "X:\EFI\Microsoft\Boot\Fonts\meiryon_boot.ttf" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 80 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\Fonts\msjh_boot.ttf" "X:\EFI\Microsoft\Boot\Fonts\msjh_boot.ttf" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 81 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\Fonts\msjhn_boot.ttf" "X:\EFI\Microsoft\Boot\Fonts\msjhn_boot.ttf" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 82 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\Fonts\msyh_boot.ttf" "X:\EFI\Microsoft\Boot\Fonts\msyh_boot.ttf" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 83 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\Fonts\msyhn_boot.ttf" "X:\EFI\Microsoft\Boot\Fonts\msyhn_boot.ttf" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 84 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\Fonts\segmono_boot.ttf" "X:\EFI\Microsoft\Boot\Fonts\segmono_boot.ttf" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 85 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\Fonts\segoe_slboot.ttf" "X:\EFI\Microsoft\Boot\Fonts\segoe_slboot.ttf" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 86 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\Fonts\segoen_slboot.ttf" "X:\EFI\Microsoft\Boot\Fonts\segoen_slboot.ttf" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+Write-Host "Updated files: 87 of 87!" -ForegroundColor Green
+$command = 'copy "%WINDIR%\Boot\Fonts\wgl4_boot.ttf" "X:\EFI\Microsoft\Boot\Fonts\wgl4_boot.ttf" /Y'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Secureboot\Servicing" /v "WindowsUEFICA2023Capable" /t REG_DWORD /d 1 /f'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+$command = 'mountvol X: /d'
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c $command" -NoNewWindow -Wait
+CLS
+Write-Host "Windows Boot Manager of Microsoft Windows Production PCA 2011 Update successful!" -ForegroundColor Green
+Write-Output 'Please restart the system!'
+$RebootASK = Read-Host "Would you like to restart the system? (Y = Yes)" -WarningAction Inquire
+if ( $RebootASK -eq 'y' )
+{
+Restart-Computer -Force
+}
+}
+} else {
 if ( $AskCA2 -eq 'r') {
 CLS
 $command = 'mountvol X: /s'
@@ -325,14 +616,9 @@ if ( $RebootASK -eq 'y' )
 Restart-Computer -Force
 }
 }
+}
 if ( $AskCA2 -eq 'n') {
 Exit
 } else {
-Exit
-}
-} else {
-CLS
-Write-Host "Windows UEFI CA 2023 not in DB." -ForegroundColor Red
-Pause
 Exit
 }
