@@ -21,8 +21,7 @@ Exit
 catch {
 CLS
 Write-Host "Windows UEFI CA 2023 not in DB." -ForegroundColor Red
-Pause
-Exit
+$CA2 = $false
 }
 if ($CA2 -eq $false) {
 $AskCA2 = Read-Host "Would you like to update Windows Boot Manager of Windows UEFI CA 2023? (Y = Yes, Windows Boot Manager of Windows UEFI CA 2023;N = No;R = Restore EFI Partition)" -WarningAction Inquire
