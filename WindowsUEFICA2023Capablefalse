@@ -14,8 +14,7 @@ Write-Host "Windows UEFI CA 2023 found in DB." -ForegroundColor Green
 else {
 CLS
 Write-Host "Windows UEFI CA 2023 not in DB." -ForegroundColor Red
-Pause
-Exit
+$CA2 = $false
 }
 }
 catch {
