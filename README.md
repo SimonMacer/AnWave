@@ -5,9 +5,8 @@ AnWave 2024
 * 【Main Feature】AnWave UI - Manage downloaded AMD/NVIDIA drivers
 * 【Main Feature】AMD Radeon Software Customize Setup
 * 【Main Feature】Advanced Cleanup Utility
-* 【Main Feature】NVIDIA Power Management
 * 【Main Feature】Windows Key-Point
-* 【Main Feature】Microsoft Defender Uninstaller
+
 
 ### ※Requirements
 * Microsoft .NET Framework 4.5 or newer
@@ -17,10 +16,10 @@ AnWave 2024
 ### ※Introduction
 --------
 
-This is a personal project developed using Visual Studio 2022 C#. Includes AMD Radeon Software Customize Setup, For customizing AMD Software: Adrenalin Edition installation. and NVIDIA Power Management, For used to create GPU power profiles for each application. and Microsoft Defender Uninstaller, For used to remove Microsoft Defender components. and Windows Key-Point, Best Windows 10 or 11 Settings Options Organizer. and AnWave Advanced Cleanup Utility, Cleanup AMD and NVIDIA graphics card drivers and application utilities.
+This is a personal project developed using Visual Studio 2022 C#. Includes AMD Radeon Software Customize Setup, For customizing AMD Software: Adrenalin Edition installation. and Windows Key-Point, Best Windows 10 or 11 Settings Options Organizer. and AnWave Advanced Cleanup Utility, Cleanup AMD and NVIDIA graphics card drivers and application utilities.
 
 ### ※AnWave Demo
-[https://youtu.be/AnxMkhC1bHg?si=cvi8pWJhVf9ik73R](https://youtu.be/bqJye1MkG7M?si=zYHwjnyoag0IzYRg)
+[https://youtu.be/yEow3n5rLQ0?si=sI7T9NfrWngEFfoo](https://youtu.be/bqJye1MkG7M?si=zYHwjnyoag0IzYRg)
 
 ### ※Release
 
@@ -46,14 +45,14 @@ Set the path to the AMD/NVIDIA driver. Press the [Extract] button to start decom
 
 * In the [Extracted Packed] Tab, select a unpacked driver from tree view to start the installation.
 
-![AnWave Install Drivers](https://i.meee.com.tw/Oh9AhEx.png "AnWave Install Drivers")
+![AnWave Install Drivers](https://i.meee.com.tw/DR62zie.png "AnWave Install Drivers")
 
 ### ※Advanced Cleanup Utility
 In the AnWave window menu [Feature] > [Advanced Cleanup Utility Center], open the AnWave Advanced Cleanup Utility Center window and select an option for the cleaning process.
 
-* Supports for AMD Ryzen™ Chipset Driver, AMD Software: Adrenalin Edition, AMD Software: PRO Edition, AMD ROCm™ Software, AMD Privacy View, AMD Chatbot, AMD Install Manager, NVIDIA GeForce Game Ready Driver, NVIDIA Studio Driver, NVIDIA Geforce Experience, NVIDIA App, NVIDIA Broadcast, NVIDIA FrameView, NVIDIA CUDA Toolkit and NVIDIA Power Management cleanup.
+* Supports for AMD Ryzen™ Chipset Driver, AMD Software: Adrenalin Edition, AMD Software: PRO Edition, AMD ROCm™ Software, AMD Privacy View, AMD Chatbot, AMD Install Manager, NVIDIA GeForce Game Ready Driver, NVIDIA Studio Driver, NVIDIA Geforce Experience, NVIDIA App, NVIDIA Broadcast, NVIDIA FrameView and NVIDIA CUDA Toolkit cleanup.
 
-![Advanced Cleanup Utility](https://i.meee.com.tw/oL0FsIv.png "Advanced Cleanup Utility")
+![Advanced Cleanup Utility](https://i.meee.com.tw/kDyM3Ib.png "Advanced Cleanup Utility")
 
 ### ※NVIDIA DLSS Global Override Mode
 Allow you to update DLSS games and apps to use the latest DLSS models.
@@ -79,7 +78,7 @@ DLSS Global Override Mode Recommend
 
 7. Run nvidiaDlssGlom.exe and click 'Update' button.
 
-![NVIDIA DLSS Global Override Mode](https://i.meee.com.tw/JCwi0G6.png "NVIDIA DLSS Global Override Mode")
+![NVIDIA DLSS Global Override Mode](https://i.meee.com.tw/Dic0uxA.png "NVIDIA DLSS Global Override Mode")
 
 ### ※Restore Microsoft Dolby Digital Decoder/Encoder MFT (and WordPad) support in Windows 11, version 24H2
 Microsoft has removed the AC-3 codec (Dolby Digital) and WordPad features in Windows 11 24H2 or higher builds. Now, you can use this toolkit to install AC-3 codec (Dolby Digital) and WordPad FoD and re-enable these features.
@@ -88,15 +87,7 @@ Microsoft has removed the AC-3 codec (Dolby Digital) and WordPad features in Win
 
 【2】WordPad Features On Demand for Microsoft Windows (Server) operating system version 24H2.
 
-1. Download [AnWave](https://github.com/SimonMacer/AnWave/releases).
-
-2. Run AnWave.exe. Menu > System > Features on Demand Optional > Bringing back Dolby AC-3 or Bringing back WordPad.
-
-> Playing Dolby Digital audio using Microsoft.ZuneMusic (aka Microsoft Media Player) requires the installation of Microsoft Dolby Audio Extensions. [Download](https://drive.google.com/file/d/156Wa7XQ6SMSvEhML20VPyt5ar8Z2_uqz/view?usp=sharing)
-
-![Features on Demand Optional](https://i.meee.com.tw/E6UVmXK.png "Features on Demand Optional")
-
-![Bringing back Dolby AC-3](https://i.meee.com.tw/n71R4g1.png "Bringing back Dolby AC-3")
+- Download [Dolby AC-3 and WordPad FoD Optional-In](https://github.com/SimonMacer/AnWave/releases/tag/RollbackDolby).
 
 ### ※Disable or Enable Memory Integrity and VBS Enablement
 
@@ -127,13 +118,11 @@ Some applications and hardware device drivers may be incompatible with memory in
 ### ※Microsoft Defender Uninstaller
 Microsoft Defender Uninstaller is a utility tool for uninstalling Windows Defender. Microsoft Defender Uninstaller is included with AnWave, and a standalone version is also available for download. [Microsoft Defender Uninstaller Standalone Download](https://github.com/SimonMacer/AnWave/releases/tag/AnWave-Split)
 
-See 【AnWave】[Microsoft Defender Uninstaller](https://github.com/SimonMacer/AnWave/discussions/22)
-
 ### ※Disable Memory Integrity and VBS Enablement in Windows 11, version 24H2
 
 HOW TO: Run AnWave.exe. Menu > System > Disable Memory Integrity and VBS Enablement.
 
-![Disable Memory Integrity and VBS Enablement](https://i.meee.com.tw/EIlAtaL.png "Disable Memory Integrity and VBS Enablement")
+![Disable Memory Integrity and VBS Enablement](https://i.meee.com.tw/1uy3nN7.png "Disable Memory Integrity and VBS Enablement")
 
 ![Disable Memory Integrity and VBS Enablement](https://i.meee.com.tw/L4KJBLv.png "Disable Memory Integrity and VBS Enablement")
 
@@ -156,7 +145,7 @@ See 【HOW-TO】[Install Legacy DX11 driver into Adrenalin 24.x.x and Disable DX
 ### ※AnWave Library
 --------
 
-### 【AnWave】NVIDIA Power Management:https://github.com/SimonMacer/AnWave/discussions/3
+### [NVIDIA Power Management](https://github.com/SimonMacer/AnWave/releases/tag/NVPMMan)
 
 ### 【AMD Ryzen】AMD Ryzen CPU - Precision Boost Overdrive (PBO) Google Spreadsheets:https://github.com/SimonMacer/AnWave/discussions/13
 
