@@ -19,7 +19,7 @@ AnWave 2024
 This is a personal project developed using Visual Studio 2022 C#. Includes AMD Radeon Software Customize Setup, For customizing AMD Software: Adrenalin Edition installation. and Windows Key-Point, Best Windows 10 or 11 Settings Options Organizer. and AnWave Advanced Cleanup Utility, Cleanup AMD and NVIDIA graphics card drivers and application utilities.
 
 ### ※AnWave Demo
-[https://youtu.be/yEow3n5rLQ0?si=sI7T9NfrWngEFfoo](https://youtu.be/yEow3n5rLQ0?si=sI7T9NfrWngEFfoo)
+[AnWave V8 - 自訂 AMD Software: Adrenalin Edition 安裝](https://youtu.be/yEow3n5rLQ0?si=qxqGxAKR25ZVhgk6)
 
 ### ※Release
 
